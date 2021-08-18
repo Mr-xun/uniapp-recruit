@@ -1,0 +1,15 @@
+{
+  "name": "MrXunUniApp",
+  "version": "1.0.0",
+  "description": "uniapp+colorui",
+  "author": "Mr-xun",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "git仓库地址"
+  },
+  "engines": {
+    "npm": ">=5.5.0",
+    "node": ">=9.3.0"
+  }
+}

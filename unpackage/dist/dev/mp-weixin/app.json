@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/layout",
+    "pages/index/background",
+    "pages/index/text",
+    "pages/index/icon",
+    "pages/list/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarBackgroundColor": "#0081ff",
+    "navigationBarTitleText": "ColorUi for UniApp",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "usingComponts": true
+  },
+  "permission": {},
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}
