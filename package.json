@@ -6,7 +6,7 @@
   "homepage": "",
   "repository": {
     "type": "git",
-    "url": "git仓库地址"
+    "url": "https://github.com/Mr-xun/uniapp-mp.git"
   },
   "engines": {
     "npm": ">=5.5.0",
