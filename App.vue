@@ -4,7 +4,6 @@
 		onLaunch: function() {
 			uni.getSystemInfo({
 				success: function(e) {
-					console.log(e,8)
 					// #ifndef MP
 					Vue.prototype.StatusBar = e.statusBarHeight;
 					if (e.platform == 'android') {
@@ -116,11 +115,11 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	/*每个页面公共css */
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
-
+	@import "uview-ui/index.scss";
 
 	.nav-list {
 		display: flex;

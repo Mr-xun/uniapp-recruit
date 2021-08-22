@@ -5,7 +5,8 @@
     "pages/index/background",
     "pages/index/text",
     "pages/index/icon",
-    "pages/list/index"
+    "pages/list/index",
+    "pages/my/my"
   ],
   "subPackages": [],
   "window": {
@@ -15,8 +16,25 @@
     "navigationBarTextStyle": "white",
     "usingComponts": true
   },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/basics.png",
+        "selectedIconPath": "static/tabbar/basics_cur.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "static/tabbar/about.png",
+        "selectedIconPath": "static/tabbar/about_cur.png"
+      }
+    ]
+  },
   "permission": {},
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

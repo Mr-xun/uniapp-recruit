@@ -1,11 +1,13 @@
 <template name="index">
 	<view>
 		<scroll-view scroll-y class="page">
-			<image src="https://cdn.nlark.com/yuque/0/2019/png/280374/1552996358228-assets/web-upload/e256b4ce-d9a4-488b-8da2-032747213982.png"
-			 mode="widthFix" class="response"></image>
+			<image
+				src="https://cdn.nlark.com/yuque/0/2019/png/280374/1552996358228-assets/web-upload/e256b4ce-d9a4-488b-8da2-032747213982.png"
+				mode="widthFix" class="response"></image>
 			<view class="nav-list">
-				<navigator hover-class="none" :url="'/pages/index/' + item.name" class="nav-li" navigateTo :class="'bg-'+item.color"
-				 :style="[{animation: 'show ' + ((index+1)*0.2+1) + 's 1'}]" v-for="(item,index) in elements" :key="index">
+				<navigator hover-class="none" :url="'/pages/index/' + item.name" class="nav-li" navigateTo
+					:class="'bg-'+item.color" :style="[{animation: 'show ' + ((index+1)*0.2+1) + 's 1'}]"
+					v-for="(item,index) in elements" :key="index">
 					<view class="nav-title">{{item.title}}</view>
 					<view class="nav-name">{{item.name}}</view>
 					<text :class="'cuIcon-' + item.cuIcon"></text>
@@ -50,6 +52,24 @@
 		},
 		onShow() {
 			console.log("success")
+		},
+		async onLoad(options) {
+			// uni.login({
+			// 	provider: 'weixin',
+			// 	success(res) {
+			// 		let code = res.code;
+			// 		uniCloud.callFunction({
+			// 			name: 'login',
+			// 			data: {
+			// 				code: code
+			// 			},
+			// 			success(res) {
+			// 				console.log(res, 11)
+			// 			}
+			// 		})
+			// 		console.log(res)
+			// 	}
+			// })
 		}
 	}
 </script>
