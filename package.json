@@ -1,8 +1,15 @@
 {
   "name": "MrXunUniApp",
-  "version": "1.0.0",
-  "description": "uniapp+colorui",
   "author": "Mr-xun",
+  "version": "1.0.0",
+  "description": "uniapp+unicloud+colorui+uview",
+  "keywords": [
+    "uniapp",
+    "unicloud",
+    "colorui",
+    "uview",
+    "uview-ui"
+  ],
   "homepage": "",
   "repository": {
     "type": "git",
@@ -11,5 +18,12 @@
   "engines": {
     "npm": ">=5.5.0",
     "node": ">=9.3.0"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0"
+  },
+  "dependencies": {
+    "uview-ui": "^1.8.4"
   }
 }

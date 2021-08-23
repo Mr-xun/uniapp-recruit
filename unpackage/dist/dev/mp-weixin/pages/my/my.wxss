@@ -25,4 +25,10 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* uni.scss */
+.user-avatar.data-v-0be17cc6 {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100rpx;
+  margin: auto;
+}
 

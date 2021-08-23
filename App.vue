@@ -120,7 +120,6 @@
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
 	@import "uview-ui/index.scss";
-
 	.nav-list {
 		display: flex;
 		flex-wrap: wrap;

@@ -1,9 +1,10 @@
 <template>
 	<view class="my-page">
 		<view>用户：{{userInfo.nickName || ''}}</view>
-		<image :src="userInfo.avatarUrl" mode=""></image>
+		<image class="user-avatar" :src="userInfo.avatarUrl" mode=""></image>
 		<u-button type="success" @click="getUserInfo()">获取默认信息</u-button>
 		<u-button type="success" @click="updateUserInfo()">更新微信信息</u-button>
+		<u-button type="success" @click="uniCloudRouterTest()">测试cloudRouter</u-button>
 	</view>
 </template>
 
@@ -50,11 +51,17 @@
 								userInfo
 							},
 							success: (res) => {
-								_this.userInfo = Object.assign(_this.userInfo,userInfo)
+								_this.userInfo = Object.assign(_this.userInfo, userInfo)
 								console.log(res, '返回值')
 							}
 						})
 					}
+				})
+			},
+
+			uniCloudRouterTest() {
+				this.$cloudRequest['hello-uni-cloud-router'].call('hello/sayHello').then(res => {
+					console.log(res, 88)
 				})
 			}
 
@@ -63,5 +70,10 @@
 </script>
 
 <style lang="scss" scoped>
-	.ma-page {}
+	.user-avatar {
+		width: 200rpx;
+		height: 200rpx;
+		border-radius: 100rpx;
+		margin: auto;
+	}
 </style>

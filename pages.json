@@ -1,6 +1,6 @@
 {
 	"easycom": {
-		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
@@ -57,7 +57,7 @@
 		"current": 0, //当前激活的模式(list 的索引项)
 		"list": [{
 			"name": "首页", //模式名称
-			"path": "pages/index/index", //启动页面
+			"path": "pages/my/my", //启动页面
 			"query": "" //启动参数
 		}]
 	}
