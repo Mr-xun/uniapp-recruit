@@ -8,7 +8,7 @@ const state = {
 	tokenExpireTime: uni.getStorageSync('tokenExpired') || null
 }
 const getters = {
-	userInfo: (state) => state.userInfo;
+	userInfo: (state) => state.userInfo
 }
 const mutations = {
 	setAccessToken(state, token) {

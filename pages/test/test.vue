@@ -3,12 +3,15 @@
 		<view>用户：{{userInfo.nickName || ''}}</view>
 		<image class="user-avatar" :src="userInfo.avatarUrl" mode=""></image>
 		<u-button type="success" @click="getUserInfo()">获取默认信息</u-button>
-		<u-button type="success" @click="updateUserInfo()">更新微信信息</u-button>
-		<u-button type="success" @click="uniCloudRouterTest()">测试cloudRouter</u-button>
+		<u-button type="success" @click="updateUserInfo()">同步微信信息</u-button>
+		<u-button type="success" @click="loginOrRegister()">注册或登录</u-button>
 	</view>
 </template>
 
 <script>
+	import {
+		mapMutations
+	} from 'vuex'
 	import apiCloud from "../../common/apiCloud.js"
 	export default {
 		data() {
@@ -20,6 +23,7 @@
 			this.getUserInfo()
 		},
 		methods: {
+			...mapMutations('user',['setAccessToken','setTokenExpireTime','setUserInfo']),
 			getUserInfo() {
 				let _this = this;
 				uni.login({
@@ -58,13 +62,28 @@
 					}
 				})
 			},
-
-			uniCloudRouterTest() {
-				this.$cloudRequest['hello-uni-cloud-router'].call('hello/sayHello').then(res => {
-					console.log(res, 88)
+			//登录或注册
+			loginOrRegister() {
+				uni.login({
+					provider: "weixin",
+					success: (res) => {
+						this.$cloudRequest.user.call('user/loginOrRegister', {
+							code: res.code
+						}).then(res => {
+							let {
+								code,
+								msg,
+								data
+							} = res;
+							if (code == 200) {
+								this.setAccessToken(data.token)
+								this.setTokenExpireTime(data.tokenExpired)
+								this.setUserInfo(data.userInfo)
+							}
+						})
+					}
 				})
 			}
-
 		}
 	}
 </script>

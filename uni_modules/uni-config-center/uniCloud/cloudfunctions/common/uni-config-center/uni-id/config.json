@@ -1,0 +1,14 @@
+{
+	"passwordSecret": "mr-xun-secret",
+	"tokenSecret": "mr-xun-secret",
+	"tokenExpiresIn": 7200,
+	"mp-weixin": {
+		"tokenExpiresIn": 259200,
+		"oauth": {
+			"weixin": {
+				"appid": "wxcbb55b334edc667f",
+				"appsecret": "ca7ca05d49c9f315224f9aeb622b0bf2"
+			}
+		}
+	}
+}

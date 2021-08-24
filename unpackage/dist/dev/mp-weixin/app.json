@@ -6,7 +6,7 @@
     "pages/index/text",
     "pages/index/icon",
     "pages/list/index",
-    "pages/my/my"
+    "pages/user/user"
   ],
   "subPackages": [],
   "window": {
@@ -25,7 +25,7 @@
         "selectedIconPath": "static/tabbar/basics_cur.png"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "static/tabbar/about.png",
         "selectedIconPath": "static/tabbar/about_cur.png"
@@ -35,5 +35,6 @@
   "permission": {},
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  }
+  },
+  "sitemapLocation": "sitemap27.json"
 }

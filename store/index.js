@@ -17,3 +17,5 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
 const store = new Vuex.Store({
 	modules
 })
+
+export default store;

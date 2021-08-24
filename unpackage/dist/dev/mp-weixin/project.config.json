@@ -31,9 +31,11 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "",
+	"libVersion": "2.16.0",
 	"appid": "wxcbb55b334edc667f",
 	"projectname": "uniapp",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -54,7 +56,7 @@
 					"name": "首页",
 					"query": "",
 					"id": 0,
-					"pathName": "pages/my/my"
+					"pathName": "pages/user/user"
 				}
 			]
 		}

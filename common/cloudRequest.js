@@ -37,7 +37,7 @@ RequestContext.prototype.call = function(action, data) {
 		if (res.result) {
 			this.response.code = res.result.code === 0 ? 200 : res.result.code || null
 			this.response.msg = res.result.msg || res.result.message || '';
-			this.response.data = res.result.data || res.result || null
+			this.response.data = res.result.data ||  null
 			return Promise.resolve(this.response)
 		}
 		return Promise.reject(res)
