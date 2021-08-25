@@ -21,31 +21,22 @@ module.exports = class UserService extends Service {
 	}
 	//更新用户信息
 	async updateByWeixin(userInfo) {
-		let uid = ""
-		let updateData = null
 		let response = {
 			code: 200,
 			msg: '更新用户信息成功',
 			data: null
 		}
 		let user = await uniID.checkToken(this.ctx.event.uniIdToken)
-		uid = user.uid;
-		if (!uid) {
-			response.code = 401
-			response.msg = '用户未登录'
-			return response
+		let uid = user.uid;
+		let updateData = {
+			nickname: userInfo.nickName,
+			gender: userInfo.gender,
+			avatar: userInfo.avatarUrl,
+			country: userInfo.country,
+			province: userInfo.province,
+			city: userInfo.city,
 		}
-		if (user.code == 0) {
-			updateData = {
-				nickname: userInfo.nickName,
-				gender: userInfo.gender,
-				avatar: userInfo.avatarUrl,
-				country: userInfo.country,
-				province: userInfo.province,
-				city: userInfo.city,
-			}
-			this.db.collection('uni-id-users').doc(uid).update(updateData)
-		}
+		this.db.collection('uni-id-users').doc(uid).update(updateData)
 		response.data = updateData
 		this.uidlog(response, 'updateByWeixin')
 		return response

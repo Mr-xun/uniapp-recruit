@@ -4,6 +4,13 @@ module.exports = (options) => {
 	return async function auth(ctx, next) {
 		// 校验 token
 		const auth = await uniID.checkToken(ctx.event.uniIdToken);
+		if (!auth.uid) {
+			//用户未登录 抛出信息
+			throw {
+				code: auth.code,
+				message: auth.message
+			};
+		}
 		if (auth.code) {
 			// 校验失败，抛出错误信息
 			throw {

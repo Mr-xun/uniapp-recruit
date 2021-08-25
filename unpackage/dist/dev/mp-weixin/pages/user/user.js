@@ -94,10 +94,10 @@ var components
 try {
   components = {
     uAvatar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 117))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 102))
     },
     uButton: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 104))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 109))
     }
   }
 } catch (e) {
@@ -154,7 +154,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));
+
+
+
+
+
+
+
 
 
 
@@ -169,11 +176,24 @@ __webpack_require__.r(__webpack_exports__);
 var _vuex = __webpack_require__(/*! vuex */ 12);
 
 
-var _apiCloud = _interopRequireDefault(__webpack_require__(/*! ../../common/apiCloud.js */ 96));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
+var _apiCloud = _interopRequireDefault(__webpack_require__(/*! ../../common/apiCloud.js */ 96));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 {
   data: function data() {
     return {
-      userInfo: {} };
+      userInfo: {},
+      id: 0, // 使用 marker点击事件 需要填写id
+      title: 'map',
+      latitude: 39.909,
+      longitude: 116.39742,
+      covers: [{
+        latitude: 39.909,
+        longitude: 116.39742,
+        iconPath: '../../static/tabbar/about_cur.png' },
+      {
+        latitude: 39.90,
+        longitude: 116.39,
+        iconPath: '../../static/tabbar/basics_cur.png' }] };
+
 
   },
   onLoad: function onLoad() {},
@@ -197,8 +217,58 @@ var _apiCloud = _interopRequireDefault(__webpack_require__(/*! ../../common/apiC
         } });
 
     },
+    //登录或注册
+    loginOrRegister: function loginOrRegister() {var _this2 = this;
+      uni.showLoading({
+        title: '加载中' });
+
+      uni.login({
+        provider: "weixin",
+        success: function success(res) {
+          _this2.$cloudRequest.user.call('user/loginOrRegister', {
+            code: res.code }).
+          then(function (res) {var
+
+            code =
+
+
+            res.code,msg = res.msg,data = res.data;
+            if (code == 200) {
+              _this2.userInfo = data.userInfo;
+              _this2.setAccessToken(data.token);
+              _this2.setTokenExpireTime(data.tokenExpired);
+              _this2.setUserInfo(data.userInfo);
+              uni.showToast({
+                icon: 'success',
+                title: '登录成功' });
+
+            } else {
+              uni.showToast({
+                title: msg });
+
+            }
+
+            uni.hideLoading();
+          }).catch(function (err) {
+            uni.showModal({
+              title: '提示',
+              content: '系统错误:' + JSON.stringify(err),
+              success: function success(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定');
+                } else if (res.cancel) {
+                  console.log('用户点击取消');
+                }
+              } });
+
+            uni.hideLoading();
+          });
+        } });
+
+    },
+
     //更新微信信息
-    updateUserInfo: function updateUserInfo() {var _this2 = this;
+    updateUserInfo: function updateUserInfo() {var _this3 = this;
       uni.showLoading({
         title: '加载中' });
 
@@ -206,14 +276,14 @@ var _apiCloud = _interopRequireDefault(__webpack_require__(/*! ../../common/apiC
         desc: '我想要你的基本信息',
         success: function success(res) {
           var userInfo = res.userInfo;
-          _this2.$cloudRequest.user.call('user/updateByWeixin', userInfo).then(function (res) {var
+          _this3.$cloudRequest.user.call('user/updateByWeixin', userInfo).then(function (res) {var
 
             code =
 
 
             res.code,msg = res.msg,data = res.data;
             if (code == 200) {
-              _this2.userInfo = data;
+              _this3.userInfo = data;
               uni.showToast({
                 icon: 'success',
                 title: '更新信息成功' });
@@ -225,41 +295,167 @@ var _apiCloud = _interopRequireDefault(__webpack_require__(/*! ../../common/apiC
 
             }
             uni.hideLoading();
+          }).catch(function (err) {
+            uni.showModal({
+              title: '提示',
+              content: '系统错误:' + JSON.stringify(err),
+              success: function success(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定');
+                } else if (res.cancel) {
+                  console.log('用户点击取消');
+                }
+              } });
+
+            uni.hideLoading();
           });
         } });
 
     },
-    //登录或注册
-    loginOrRegister: function loginOrRegister() {var _this3 = this;
-      uni.showLoading({
-        title: '加载中' });
+    //添加商户
+    addMerchant: function addMerchant() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var params;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                params = {
+                  merchantName: '商家名称',
+                  merchantType: 1,
+                  merchantIntro: '商家介绍',
+                  geo_location: {
+                    latitude: '',
+                    longitude: '' } };
 
-      uni.login({
-        provider: "weixin",
+
+                uni.showLoading({
+                  title: '加载中' });
+
+                uni.getLocation({
+                  type: 'gcj02',
+                  success: function success(locationRes) {
+                    params.geo_location.latitude = locationRes.latitude;
+                    params.geo_location.longitude = locationRes.longitude;
+                    uni.request({
+                      header: {
+                        "Content-Type": "application/text" },
+
+                      url: "https://restapi.amap.com/v3/geocode/regeo?output=JSON&location=".concat(locationRes.longitude, ",").concat(locationRes.latitude, "&key=d27c8c33e47aea8fa848fb2d2b1d365c"),
+                      success: function success(res) {var
+
+                        statusCode =
+
+                        res.statusCode,data = res.data;
+                        if (statusCode === 200) {
+                          if (data.status == 1) {
+                            var citysMap = ['北京市', '上海市', '天津市', '重庆市'];
+
+                            var addressComponent = data.regeocode.addressComponent;
+                            var formatted_address = data.regeocode.formatted_address;
+                            params.country = addressComponent.country;
+                            params.province = addressComponent.province;
+                            params.city = addressComponent.city;
+                            params.district = addressComponent.district;
+                            params.address = formatted_address;
+                            if (citysMap.indexOf(params.province) > -1) {
+                              params.city = params.province;
+                            }
+                          }
+                        } else {
+                          console.log("获取信息失败，请重试！");
+                        }
+
+                      },
+                      complete: function complete() {
+                        console.log(params, 22);
+                        _this4.$cloudRequest.food.call('merchant/add', params).then(
+                        function (res) {var
+
+                          code =
+
+                          res.code,msg = res.msg;
+                          console.log(res, 'merchantAdd');
+                          if (code == 200) {
+                            uni.showToast({
+                              icon: 'success',
+                              title: msg });
+
+
+                          } else {
+                            uni.showToast({
+                              title: msg });
+
+                          }
+                          uni.hideLoading();
+                        }).catch(function (err) {
+                          uni.showModal({
+                            title: '提示',
+                            content: '系统错误:' + JSON.stringify(err),
+                            success: function success(res) {
+                              if (res.confirm) {
+                                console.log('用户点击确定');
+                              } else if (res.cancel) {
+                                console.log('用户点击取消');
+                              }
+                            } });
+
+                        });
+                      } });
+
+                  } });case 3:case "end":return _context.stop();}}}, _callee);}))();
+
+
+    },
+    clickMarker: function clickMarker(e) {
+      console.log(e);
+    },
+    getLocation: function getLocation() {
+      uni.getLocation({
+        type: 'wgs84',
+        geocode: true,
         success: function success(res) {
-          _this3.$cloudRequest.user.call('user/loginOrRegister', {
-            code: res.code }).
-          then(function (res) {var
+          console.log(res, 88);
+          console.log('当前位置的经度：' + res.longitude);
+          console.log('当前位置的纬度：' + res.latitude);
+          var latitude = res.latitude;
+          var longitude = res.longitude;
+          uni.request({
+            header: {
+              "Content-Type": "application/text" },
 
-            code =
+            //注意:这里的key值需要高德地图的 web服务生成的key  只有web服务才有逆地理编码
+            url: 'https://restapi.amap.com/v3/geocode/regeo?output=JSON&location=' +
+            longitude + ',' + latitude +
+            '&key=d27c8c33e47aea8fa848fb2d2b1d365c&radius=1000',
+            success: function success(re) {
+              console.log(re.data);
+            } });
 
+        } });
 
-            res.code,msg = res.msg,data = res.data;
-            if (code == 200) {
-              _this3.userInfo = data.userInfo;
-              _this3.setAccessToken(data.token);
-              _this3.setTokenExpireTime(data.tokenExpired);
-              _this3.setUserInfo(data.userInfo);
-              uni.showToast({
-                icon: 'success',
-                title: '登录成功' });
+    },
+    chooseLocation: function chooseLocation() {
+      uni.chooseLocation({
+        type: 'wgs84',
+        geocode: true,
+        success: function success(res) {
+          console.log('位置名称：' + res.name);
+          console.log('详细地址：' + res.address);
+          console.log('纬度：' + res.latitude);
+          console.log('经度：' + res.longitude);
+        } });
 
-            } else {
-              uni.showToast({
-                title: msg });
+    },
+    openLocation: function openLocation() {
+      uni.getLocation({
+        type: 'gcj02', //返回可以用于uni.openLocation的经纬度
+        success: function success(res) {
+          var latitude = res.latitude;
+          var longitude = res.longitude;
+          uni.openLocation({
+            name: '国航世纪大厦',
+            address: '亮马桥国行世纪大厦',
+            latitude: latitude,
+            longitude: longitude,
+            success: function success() {
+              console.log('success');
+            } });
 
-            }
-          });
         } });
 
     } }) };exports.default = _default;

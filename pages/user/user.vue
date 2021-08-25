@@ -3,9 +3,16 @@
 		<view>用户：{{userInfo.nickname || userInfo.nickName || ''}}</view>
 		<u-avatar v-if="userInfo.avatar" :src="userInfo.avatar" mode="square" size="200" show-sex
 			:sex-icon="userInfo.gender ==1?'man':'woman'"></u-avatar>
-		<u-button type="success" @click="getUserInfo()">获取默认信息</u-button>
-		<u-button type="success" @click="loginOrRegister()">注册或登录</u-button>
-		<u-button type="success" @click="updateUserInfo()">同步微信信息</u-button>
+		<!-- <u-button type="success" ripple class="margin-xs" @click="getUserInfo()">获取默认信息</u-button> -->
+		<u-button type="success" ripple @click="loginOrRegister()">注册或登录</u-button>
+		<u-button type="success" ripple class="margin-xs" @click="updateUserInfo()">同步微信信息</u-button>
+		<u-button type="success" ripple @click="addMerchant()">同步位置并添加模拟商户</u-button>
+		<u-button type="success" ripple class="margin-xs" @click="getLocation()">获取当前位置</u-button>
+		<u-button type="success" ripple @click="chooseLocation()">选择位置</u-button>
+		<u-button type="success" ripple class="margin-xs" @click="openLocation()">查看位置</u-button>
+		<!-- <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" :markers="covers"
+			@markertap='clickMarker'>
+		</map> -->
 	</view>
 </template>
 
@@ -17,7 +24,20 @@
 	export default {
 		data() {
 			return {
-				userInfo: {}
+				userInfo: {},
+				id: 0, // 使用 marker点击事件 需要填写id
+				title: 'map',
+				latitude: 39.909,
+				longitude: 116.39742,
+				covers: [{
+					latitude: 39.909,
+					longitude: 116.39742,
+					iconPath: '../../static/tabbar/about_cur.png'
+				}, {
+					latitude: 39.90,
+					longitude: 116.39,
+					iconPath: '../../static/tabbar/basics_cur.png'
+				}]
 			}
 		},
 		onLoad() {},
@@ -37,38 +57,6 @@
 								_this.userInfo = res.result;
 								console.log('登录完成', res, _this.userInfo)
 							}
-						})
-					}
-				})
-			},
-			//更新微信信息
-			updateUserInfo() {
-				uni.showLoading({
-					title: '加载中'
-				});
-				uni.getUserProfile({
-					desc: '我想要你的基本信息',
-					success: (res) => {
-						let userInfo = res.userInfo;
-						this.$cloudRequest.user.call('user/updateByWeixin', userInfo).then(res => {
-							let {
-								code,
-								msg,
-								data
-							} = res;
-							if (code == 200) {
-								this.userInfo = data
-								uni.showToast({
-									icon: 'success',
-									title: '更新信息成功'
-								})
-
-							} else {
-								uni.showToast({
-									title: msg
-								})
-							}
-							uni.hideLoading()
 						})
 					}
 				})
@@ -103,10 +91,218 @@
 									title: msg
 								})
 							}
+
+							uni.hideLoading()
+						}).catch(err => {
+							uni.showModal({
+								title: '提示',
+								content: '系统错误:' + JSON.stringify(err),
+								success: function(res) {
+									if (res.confirm) {
+										console.log('用户点击确定');
+									} else if (res.cancel) {
+										console.log('用户点击取消');
+									}
+								}
+							});
+							uni.hideLoading()
 						})
 					}
 				})
-			}
+			},
+
+			//更新微信信息
+			updateUserInfo() {
+				uni.showLoading({
+					title: '加载中'
+				});
+				uni.getUserProfile({
+					desc: '我想要你的基本信息',
+					success: (res) => {
+						let userInfo = res.userInfo;
+						this.$cloudRequest.user.call('user/updateByWeixin', userInfo).then(res => {
+							let {
+								code,
+								msg,
+								data
+							} = res;
+							if (code == 200) {
+								this.userInfo = data
+								uni.showToast({
+									icon: 'success',
+									title: '更新信息成功'
+								})
+
+							} else {
+								uni.showToast({
+									title: msg
+								})
+							}
+							uni.hideLoading()
+						}).catch(err => {
+							uni.showModal({
+								title: '提示',
+								content: '系统错误:' + JSON.stringify(err),
+								success: function(res) {
+									if (res.confirm) {
+										console.log('用户点击确定');
+									} else if (res.cancel) {
+										console.log('用户点击取消');
+									}
+								}
+							});
+							uni.hideLoading()
+						})
+					}
+				})
+			},
+			//添加商户
+			async addMerchant() {
+				let params = {
+					merchantName: '商家名称',
+					merchantType: 1,
+					merchantIntro: '商家介绍',
+					geo_location: {
+						latitude: '',
+						longitude: '',
+					}
+				}
+				uni.showLoading({
+					title: '加载中'
+				});
+				uni.getLocation({
+					type: 'gcj02',
+					success: (locationRes) => {
+						params.geo_location.latitude = locationRes.latitude;
+						params.geo_location.longitude = locationRes.longitude;
+						uni.request({
+							header: {
+								"Content-Type": "application/text"
+							},
+							url: `https://restapi.amap.com/v3/geocode/regeo?output=JSON&location=${locationRes.longitude},${locationRes.latitude}&key=d27c8c33e47aea8fa848fb2d2b1d365c`,
+							success(res) {
+								let {
+									statusCode,
+									data
+								} = res
+								if (statusCode === 200) {
+									if (data.status == 1) {
+										let citysMap = ['北京市', '上海市', '天津市', '重庆市'];
+
+										let addressComponent = data.regeocode.addressComponent
+										let formatted_address = data.regeocode.formatted_address
+										params.country = addressComponent.country
+										params.province = addressComponent.province
+										params.city = addressComponent.city
+										params.district = addressComponent.district
+										params.address = formatted_address
+										if (citysMap.indexOf(params.province) > -1) {
+											params.city = params.province;
+										}
+									}
+								} else {
+									console.log("获取信息失败，请重试！")
+								}
+
+							},
+							complete: () => {
+								console.log(params, 22)
+								this.$cloudRequest.food.call('merchant/add', params).then(
+									res => {
+										let {
+											code,
+											msg,
+										} = res;
+										console.log(res, 'merchantAdd')
+										if (code == 200) {
+											uni.showToast({
+												icon: 'success',
+												title: msg
+											})
+
+										} else {
+											uni.showToast({
+												title: msg
+											})
+										}
+										uni.hideLoading()
+									}).catch(err => {
+									uni.showModal({
+										title: '提示',
+										content: '系统错误:' + JSON.stringify(err),
+										success: function(res) {
+											if (res.confirm) {
+												console.log('用户点击确定');
+											} else if (res.cancel) {
+												console.log('用户点击取消');
+											}
+										}
+									});
+								})
+							}
+						});
+					},
+				})
+
+			},
+			clickMarker(e) {
+				console.log(e)
+			},
+			getLocation() {
+				uni.getLocation({
+					type: 'wgs84',
+					geocode: true,
+					success: function(res) {
+						console.log(res, 88)
+						console.log('当前位置的经度：' + res.longitude);
+						console.log('当前位置的纬度：' + res.latitude);
+						const latitude = res.latitude;
+						const longitude = res.longitude;
+						uni.request({
+							header: {
+								"Content-Type": "application/text"
+							},
+							//注意:这里的key值需要高德地图的 web服务生成的key  只有web服务才有逆地理编码
+							url: 'https://restapi.amap.com/v3/geocode/regeo?output=JSON&location=' +
+								longitude + ',' + latitude +
+								'&key=d27c8c33e47aea8fa848fb2d2b1d365c&radius=1000',
+							success(re) {
+								console.log(re.data)
+							}
+						});
+					}
+				});
+			},
+			chooseLocation() {
+				uni.chooseLocation({
+					type: 'wgs84',
+					geocode: true,
+					success: function(res) {
+						console.log('位置名称：' + res.name);
+						console.log('详细地址：' + res.address);
+						console.log('纬度：' + res.latitude);
+						console.log('经度：' + res.longitude);
+					}
+				});
+			},
+			openLocation() {
+				uni.getLocation({
+					type: 'gcj02', //返回可以用于uni.openLocation的经纬度
+					success: function(res) {
+						const latitude = res.latitude;
+						const longitude = res.longitude;
+						uni.openLocation({
+							name: '国航世纪大厦',
+							address: '亮马桥国行世纪大厦',
+							latitude: latitude,
+							longitude: longitude,
+							success: function() {
+								console.log('success');
+							}
+						});
+					}
+				});
+			},
 		}
 	}
 </script>
