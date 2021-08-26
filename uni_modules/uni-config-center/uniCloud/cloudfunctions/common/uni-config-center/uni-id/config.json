@@ -1,7 +1,7 @@
 {
 	"passwordSecret": "mr-xun-secret",
 	"tokenSecret": "mr-xun-secret",
-	"tokenExpiresIn": 7200,
+	"tokenExpiresIn": 259200,
 	"mp-weixin": {
 		"tokenExpiresIn": 259200,
 		"oauth": {

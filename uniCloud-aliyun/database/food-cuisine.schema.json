@@ -1,0 +1,117 @@
+{
+	"bsonType": "object",
+	"description": "美食菜品表",
+	"required": ["merchant_name", "merchant_id","cuisine_name"],
+	"permission": {
+		"read": false,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"merchant_id": {
+			"bsonType": "string",
+			"title": "商户id",
+			"label": "商户id",
+			"description": "所属商户id，不能为空"
+		},
+		"merchant_name": {
+			"bsonType": "string",
+			"title": "商户名称",
+			"label": "商户名称",
+			"description": "所属商户名称，不能为空",
+			"trim": "both"
+		},
+		"cuisine_name": {
+			"bsonType": "string",
+			"title": "菜品名称",
+			"label": "菜品名称",
+			"errorMessage": "{label}不能为空",
+			"trim": "both"
+		},
+		"cuisine_intro": {
+			"bsonType": "string",
+			"title": "菜品介绍",
+			"label": "菜品介绍"
+		},
+		"cuisine_avatar": {
+			"bsonType": "string",
+			"title": "菜品图",
+			"description": "菜品缩略图地址"
+		},
+		"cuisine_imgs":{
+			"bsonType":"array",
+			"title":"菜品介绍图"
+		},
+		"price": {
+			"bsonType": "array",
+			"title": "菜品价格"
+		},
+		"category": {
+			"bsonType": "array",
+			"title": "菜品类别"
+		},
+		
+		"status": {
+			"bsonType": "int",
+			"title": "菜品状态",
+			"label": "菜品状态",
+			"required": "{label}必填",
+			"errorMessage": "{label}不能为空",
+			"enum": [{
+					"value": 1,
+					"text": "上架"
+				},
+				{
+					"value": 2,
+					"text": "下架"
+				}
+			]
+		},
+		"like_count": {
+			"bsonType": "int",
+			"title": "喜欢人数",
+			"description": "喜欢数、点赞数"
+		},
+		"collect_count": {
+			"bsonType": "int",
+			"title": "收藏人数",
+			"description": "收藏数"
+		},
+		"eat_count": {
+			"bsonType": "int",
+			"title": "品尝人数",
+			"description": "品尝人数"
+		},
+		"comment_count": {
+			"bsonType": "int",
+			"title": "评论数",
+			"description": "评论数量"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建用户"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "修改时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "修改用户"
+		}
+	}
+}

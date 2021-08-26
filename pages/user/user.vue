@@ -3,13 +3,30 @@
 		<view>用户：{{userInfo.nickname || userInfo.nickName || ''}}</view>
 		<u-avatar v-if="userInfo.avatar" :src="userInfo.avatar" mode="square" size="200" show-sex
 			:sex-icon="userInfo.gender ==1?'man':'woman'"></u-avatar>
-		<!-- <u-button type="success" ripple class="margin-xs" @click="getUserInfo()">获取默认信息</u-button> -->
-		<u-button type="success" ripple @click="loginOrRegister()">注册或登录</u-button>
-		<u-button type="success" ripple class="margin-xs" @click="updateUserInfo()">同步微信信息</u-button>
-		<u-button type="success" ripple @click="addMerchant()">同步位置并添加模拟商户</u-button>
-		<u-button type="success" ripple class="margin-xs" @click="getLocation()">获取当前位置</u-button>
-		<u-button type="success" ripple @click="chooseLocation()">选择位置</u-button>
-		<u-button type="success" ripple class="margin-xs" @click="openLocation()">查看位置</u-button>
+		<view class="margin-bottom-sm">
+			<!-- <u-button type="success" ripple  @click="getUserInfo()">获取默认信息</u-button> -->
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="loginOrRegister()">注册或登录</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="updateUserInfo()">同步微信信息</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="addMerchant()">同步位置并添加模拟商户</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="addCuisine()">添加模拟菜系</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="getLocation()">获取当前位置</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="chooseLocation()">选择位置</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="openLocation()">查看位置</u-button>
+		</view>
 		<!-- <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" :markers="covers"
 			@markertap='clickMarker'>
 		</map> -->
@@ -94,6 +111,7 @@
 
 							uni.hideLoading()
 						}).catch(err => {
+							uni.hideLoading()
 							uni.showModal({
 								title: '提示',
 								content: '系统错误:' + JSON.stringify(err),
@@ -105,7 +123,6 @@
 									}
 								}
 							});
-							uni.hideLoading()
 						})
 					}
 				})
@@ -140,6 +157,7 @@
 							}
 							uni.hideLoading()
 						}).catch(err => {
+							uni.hideLoading()
 							uni.showModal({
 								title: '提示',
 								content: '系统错误:' + JSON.stringify(err),
@@ -151,7 +169,6 @@
 									}
 								}
 							});
-							uni.hideLoading()
 						})
 					}
 				})
@@ -227,6 +244,7 @@
 										}
 										uni.hideLoading()
 									}).catch(err => {
+									uni.hideLoading()
 									uni.showModal({
 										title: '提示',
 										content: '系统错误:' + JSON.stringify(err),
@@ -244,6 +262,12 @@
 					},
 				})
 
+			},
+			//新增菜系
+			addCuisine() {
+				this.$cloudRequest.food.call('cuisine/add').then(res => {
+					console.log(res)
+				})
 			},
 			clickMarker(e) {
 				console.log(e)
@@ -308,5 +332,8 @@
 </script>
 
 <style lang="scss" scoped>
-
+	.btn-test {
+		margin-bottom: 10rpx;
+		;
+	}
 </style>
