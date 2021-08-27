@@ -3,7 +3,7 @@
 		<view class="user-card">
 			<view class="user-nickname">
 				<view v-if="isLogin">
-					<text v-if="!userInfo.nickname">{{userInfo.nickname}}</text>
+					<text v-if="userInfo.nickname">{{userInfo.nickname}}</text>
 					<text v-else @click="updateUserInfo">同步您的微信信息</text>
 				</view>
 				<view v-else @click="loginOrRegister">
