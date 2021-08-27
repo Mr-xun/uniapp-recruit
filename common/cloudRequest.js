@@ -1,5 +1,6 @@
 /**
- * Created by Mr-xun on 2021-08-23
+ * 云函数调用
+ * Created by Mr-Xun on 2021-08-23
  **/
 let cloudRequest = {}
 cloudRequest = new Proxy(cloudRequest, {
@@ -33,7 +34,7 @@ RequestContext.prototype.call = function(action, data) {
 			action,
 			data
 		}
-	}).then(res => {
+	}).then(res => {	
 		if (res.result) {
 			this.response.code = res.result.code === 0 ? 200 : res.result.code || null
 			this.response.msg = res.result.msg || res.result.message || '';

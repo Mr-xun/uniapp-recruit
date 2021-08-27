@@ -6,7 +6,8 @@
     "pages/index/text",
     "pages/index/icon",
     "pages/list/index",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/test/test"
   ],
   "subPackages": [],
   "window": {
@@ -29,6 +30,12 @@
         "text": "我的",
         "iconPath": "static/tabbar/about.png",
         "selectedIconPath": "static/tabbar/about_cur.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "测试",
+        "iconPath": "static/tabbar/about.png",
+        "selectedIconPath": "static/tabbar/about_cur.png"
       }
     ]
   },
@@ -40,5 +47,5 @@
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   },
-  "sitemapLocation": "sitemap75.json"
+  "sitemapLocation": "sitemap60.json"
 }

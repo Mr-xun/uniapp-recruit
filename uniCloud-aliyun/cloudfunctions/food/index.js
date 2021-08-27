@@ -1,4 +1,7 @@
 'use strict';
+/**
+ * Created by Mr-Xun on 2021-08-25
+ **/
 const {
 	Router
 } = require('uni-cloud-router');

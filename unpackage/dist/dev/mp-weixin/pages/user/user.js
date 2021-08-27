@@ -96,10 +96,7 @@ var components
 try {
   components = {
     uAvatar: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 104))
-    },
-    uButton: function() {
-      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-button/u-button */ "node-modules/uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! uview-ui/components/u-button/u-button.vue */ 111))
+      return __webpack_require__.e(/*! import() | node-modules/uview-ui/components/u-avatar/u-avatar */ "node-modules/uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! uview-ui/components/u-avatar/u-avatar.vue */ 112))
     }
   }
 } catch (e) {
@@ -156,20 +153,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));
 
 
 
@@ -195,11 +179,17 @@ __webpack_require__.r(__webpack_exports__);
 var _vuex = __webpack_require__(/*! vuex */ 12);
 
 
+
+
 var _apiCloud = _interopRequireDefault(__webpack_require__(/*! ../../common/apiCloud.js */ 96));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 {
+  computed: _objectSpread({},
+  (0, _vuex.mapGetters)('user', ['userInfo', 'isLogin'])),
+
   data: function data() {
     return {
-      userInfo: {},
+      uploadImageUrl: '', //上传的文件
+      uploadVideoUrl: '', //上传的视频
       id: 0, // 使用 marker点击事件 需要填写id
       title: 'map',
       latitude: 39.909,
@@ -216,8 +206,9 @@ var _apiCloud = _interopRequireDefault(__webpack_require__(/*! ../../common/apiC
 
   },
   onLoad: function onLoad() {},
-  methods: _objectSpread(_objectSpread({},
-  (0, _vuex.mapMutations)('user', ['setAccessToken', 'setTokenExpireTime', 'setUserInfo'])), {}, {
+  methods: _objectSpread(_objectSpread(_objectSpread({},
+  (0, _vuex.mapMutations)('user', ['setAccessToken', 'setTokenExpireTime', 'setUserInfo'])),
+  (0, _vuex.mapActions)('user', ['loginOrRegister', 'updateUserInfo'])), {}, {
     getUserInfo: function getUserInfo() {
       var _this = this;
       uni.login({
@@ -235,104 +226,8 @@ var _apiCloud = _interopRequireDefault(__webpack_require__(/*! ../../common/apiC
 
         } });
 
-    },
-    //登录或注册
-    loginOrRegister: function loginOrRegister() {var _this2 = this;
-      uni.showLoading({
-        title: '加载中' });
-
-      uni.login({
-        provider: "weixin",
-        success: function success(res) {
-          _this2.$cloudRequest.user.call('user/loginOrRegister', {
-            code: res.code }).
-          then(function (res) {var
-
-            code =
-
-
-            res.code,msg = res.msg,data = res.data;
-            if (code == 200) {
-              _this2.userInfo = data.userInfo;
-              _this2.setAccessToken(data.token);
-              _this2.setTokenExpireTime(data.tokenExpired);
-              _this2.setUserInfo(data.userInfo);
-              uni.showToast({
-                icon: 'success',
-                title: '登录成功' });
-
-            } else {
-              uni.showToast({
-                title: msg });
-
-            }
-
-            uni.hideLoading();
-          }).catch(function (err) {
-            uni.hideLoading();
-            uni.showModal({
-              title: '提示',
-              content: '系统错误:' + JSON.stringify(err),
-              success: function success(res) {
-                if (res.confirm) {
-                  console.log('用户点击确定');
-                } else if (res.cancel) {
-                  console.log('用户点击取消');
-                }
-              } });
-
-          });
-        } });
-
-    },
-
-    //更新微信信息
-    updateUserInfo: function updateUserInfo() {var _this3 = this;
-      uni.showLoading({
-        title: '加载中' });
-
-      uni.getUserProfile({
-        desc: '我想要你的基本信息',
-        success: function success(res) {
-          var userInfo = res.userInfo;
-          _this3.$cloudRequest.user.call('user/updateByWeixin', userInfo).then(function (res) {var
-
-            code =
-
-
-            res.code,msg = res.msg,data = res.data;
-            if (code == 200) {
-              _this3.userInfo = data;
-              uni.showToast({
-                icon: 'success',
-                title: '更新信息成功' });
-
-
-            } else {
-              uni.showToast({
-                title: msg });
-
-            }
-            uni.hideLoading();
-          }).catch(function (err) {
-            uni.hideLoading();
-            uni.showModal({
-              title: '提示',
-              content: '系统错误:' + JSON.stringify(err),
-              success: function success(res) {
-                if (res.confirm) {
-                  console.log('用户点击确定');
-                } else if (res.cancel) {
-                  console.log('用户点击取消');
-                }
-              } });
-
-          });
-        } });
-
-    },
-    //添加商户
-    addMerchant: function addMerchant() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var params;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+    }, //添加商户
+    addMerchant: function addMerchant() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var params;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
                 params = {
                   merchantName: '商家名称',
                   merchantType: 1,
@@ -382,7 +277,7 @@ var _apiCloud = _interopRequireDefault(__webpack_require__(/*! ../../common/apiC
                       },
                       complete: function complete() {
                         console.log(params, 22);
-                        _this4.$cloudRequest.food.call('merchant/add', params).then(
+                        _this2.$cloudRequest.food.call('merchant/add', params).then(
                         function (res) {var
 
                           code =
@@ -484,8 +379,141 @@ var _apiCloud = _interopRequireDefault(__webpack_require__(/*! ../../common/apiC
 
         } });
 
+    },
+    //上传图片
+    uploadImg: function uploadImg() {var _this3 = this;
+      new Promise(function (resolve, reject) {
+        uni.chooseImage({
+          count: 1,
+          success: function success(res) {
+            console.log(res, 123);
+            var path = res.tempFilePaths[0];
+            uni.getImageInfo({
+              src: path,
+              success: function success(info) {
+                var t = _this3.$u.timeFormat(new Date().getTime(),
+                'yyyymmddhhMMss');
+                var rand = (Math.round(Math.random() * 1000000) + '').
+                padStart(6, '0');
+                var extName = info.type;
+                var fileName = t + '_' + rand + '.' + extName;
+                var options = {
+                  filePath: path,
+                  cloudPath: fileName };
+
+                console.log(fileName, 333);
+                resolve(options);
+              },
+              fail: function fail(err) {
+                reject(new Error(err.errMsg || '未能获取图片类型'));
+              } });
+
+          },
+          fail: function fail() {
+            reject(new Error('Fail_Cancel'));
+          } });
+
+      }).then(function (options) {
+        uni.showLoading({
+          title: '文件上传中...' });
+
+        return uniCloud.uploadFile(_objectSpread(_objectSpread({},
+        options), {}, {
+          onUploadProgress: function onUploadProgress(e) {
+            console.log(e, 'process');
+          } }));
+
+      }).then(function (res) {
+        uni.hideLoading();
+        console.log(res, 444);
+        _this3.uploadImageUrl = res.fileID;
+        uni.showModal({
+          content: '图片上传成功，fileId为：' + res.fileID,
+          showCancel: false });
+
+      }).catch(function (err) {
+        uni.hideLoading();
+        console.log(err);
+        if (err.message !== 'Fail_Cancel') {
+          uni.showModal({
+            content: "\u56FE\u7247\u4E0A\u4F20\u5931\u8D25\uFF0C\u9519\u8BEF\u4FE1\u606F\u4E3A\uFF1A".concat(err.message),
+            showCancel: false });
+
+        }
+      });
+
+    },
+    uploadVideo: function uploadVideo() {var _this4 = this;
+      new Promise(function (resolve, reject) {
+        uni.chooseVideo({
+          count: 1,
+          success: function success(res) {
+            console.log(res, 123);
+            var path = res.tempFilePath;
+            uni.getVideoInfo({
+              src: path,
+              success: function success(info) {
+                console.log(info, 78);
+                var t = _this4.$u.timeFormat(new Date().getTime(),
+                'yyyymmddhhMMss');
+                var rand = (Math.round(Math.random() * 1000000) + '').
+                padStart(6, '0');
+                var extName = '';
+                switch (info.type) {
+                  case 'video/mp4':
+                    extName = 'mp4';
+                    break;
+                  default:
+                    break;}
+
+                var fileName = t + '_' + rand + '.' + extName;
+                var options = {
+                  filePath: path,
+                  cloudPath: fileName };
+
+                console.log(fileName, 333);
+                resolve(options);
+              },
+              fail: function fail(err) {
+                reject(new Error(err.errMsg || '未能获取视频类型'));
+              } });
+
+          },
+          fail: function fail() {
+            reject(new Error('Fail_Cancel'));
+          } });
+
+      }).then(function (options) {
+        uni.showLoading({
+          title: '文件上传中...' });
+
+        return uniCloud.uploadFile(_objectSpread(_objectSpread({},
+        options), {}, {
+          onUploadProgress: function onUploadProgress(e) {
+            console.log(e, 'process');
+          } }));
+
+      }).then(function (res) {
+        uni.hideLoading();
+        console.log(res, 444);
+        _this4.uploadVideoUrl = res.fileID;
+        uni.showModal({
+          content: '视频上传成功，fileId为：' + res.fileID,
+          showCancel: false });
+
+      }).catch(function (err) {
+        uni.hideLoading();
+        console.log(err);
+        if (err.message !== 'Fail_Cancel') {
+          uni.showModal({
+            content: "\u89C6\u9891\u4E0A\u4F20\u5931\u8D25\uFF0C\u9519\u8BEF\u4FE1\u606F\u4E3A\uFF1A".concat(err.message),
+            showCancel: false });
+
+        }
+      });
+
     } }) };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 16)["default"]))
 
 /***/ }),
 

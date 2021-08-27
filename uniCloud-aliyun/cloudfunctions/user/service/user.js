@@ -23,7 +23,7 @@ module.exports = class UserService extends Service {
 	async updateByWeixin(userInfo) {
 		let response = {
 			code: 200,
-			msg: '更新用户信息成功',
+			msg: '微信同步成功',
 			data: null
 		}
 		let user = await uniID.checkToken(this.ctx.event.uniIdToken)

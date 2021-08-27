@@ -26,7 +26,6 @@
 					// #endif
 				}
 			})
-
 			Vue.prototype.ColorList = [{
 					title: '嫣红',
 					name: 'red',
@@ -103,8 +102,6 @@
 					color: '#ffffff'
 				},
 			]
-
-
 		},
 		onShow: function() {
 			console.log('App Show')

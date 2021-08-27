@@ -30,6 +30,13 @@
 				"navigationBarTitleText": "个人中心",
 				"navigationStyle": "default"
 			}
+		},
+		{
+			"path": "pages/test/test",
+			"style": {
+				"navigationBarTitleText": "测试",
+				"navigationStyle": "default"
+			}
 		}
 	],
 	"tabBar": {
@@ -41,6 +48,11 @@
 		}, {
 			"pagePath": "pages/user/user",
 			"text": "我的",
+			"iconPath": "static/tabbar/about.png",
+			"selectedIconPath": "static/tabbar/about_cur.png"
+		}, {
+			"pagePath": "pages/test/test",
+			"text": "测试",
 			"iconPath": "static/tabbar/about.png",
 			"selectedIconPath": "static/tabbar/about_cur.png"
 		}]

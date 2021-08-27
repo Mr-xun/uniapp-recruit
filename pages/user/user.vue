@@ -1,47 +1,40 @@
 <template>
-	<view class="my-page text-center">
-		<view>用户：{{userInfo.nickname || userInfo.nickName || ''}}</view>
-		<u-avatar v-if="userInfo.avatar" :src="userInfo.avatar" mode="square" size="200" show-sex
-			:sex-icon="userInfo.gender ==1?'man':'woman'"></u-avatar>
-		<view class="margin-bottom-sm">
-			<!-- <u-button type="success" ripple  @click="getUserInfo()">获取默认信息</u-button> -->
+	<view class="user-page text-center">
+		<view class="user-card">
+			<view class="user-nickname">
+				<view v-if="isLogin">
+					<text v-if="!userInfo.nickname">{{userInfo.nickname}}</text>
+					<text v-else @click="updateUserInfo">同步您的微信信息</text>
+				</view>
+				<view v-else @click="loginOrRegister">
+					<text>暂未登录</text>
+				</view>
+			</view>
+			<u-avatar v-if="isLogin" :src="userInfo.avatar" mode="square" size="200" show-sex
+				:sex-icon="userInfo.gender ==1?'man':'woman'"></u-avatar>
+			<view class="user-mobile">
+				<text v-if="userInfo.mobile" class="user-mobile">{{userInfo.mobile || ''}}</text>
+				<text v-else>绑定您的手机号</text>
+				<text class="cuIcon-write"></text>
+			</view>
 		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="loginOrRegister()">注册或登录</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="updateUserInfo()">同步微信信息</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="addMerchant()">同步位置并添加模拟商户</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="addCuisine()">添加模拟菜系</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="getLocation()">获取当前位置</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="chooseLocation()">选择位置</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="openLocation()">查看位置</u-button>
-		</view>
-		<!-- <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" :markers="covers"
-			@markertap='clickMarker'>
-		</map> -->
 	</view>
 </template>
-
 <script>
 	import {
-		mapMutations
+		mapActions,
+		mapMutations,
+		mapGetters
 	} from 'vuex'
 	import apiCloud from "../../common/apiCloud.js"
 	export default {
+		computed: {
+			...mapGetters('user', ['userInfo', 'isLogin'])
+		},
 		data() {
 			return {
-				userInfo: {},
+				uploadImageUrl: '', //上传的文件
+				uploadVideoUrl: '', //上传的视频
 				id: 0, // 使用 marker点击事件 需要填写id
 				title: 'map',
 				latitude: 39.909,
@@ -60,6 +53,7 @@
 		onLoad() {},
 		methods: {
 			...mapMutations('user', ['setAccessToken', 'setTokenExpireTime', 'setUserInfo']),
+			...mapActions('user', ['loginOrRegister', 'updateUserInfo']),
 			getUserInfo() {
 				let _this = this;
 				uni.login({
@@ -77,103 +71,7 @@
 						})
 					}
 				})
-			},
-			//登录或注册
-			loginOrRegister() {
-				uni.showLoading({
-					title: '加载中'
-				});
-				uni.login({
-					provider: "weixin",
-					success: (res) => {
-						this.$cloudRequest.user.call('user/loginOrRegister', {
-							code: res.code
-						}).then(res => {
-							let {
-								code,
-								msg,
-								data
-							} = res;
-							if (code == 200) {
-								this.userInfo = data.userInfo
-								this.setAccessToken(data.token)
-								this.setTokenExpireTime(data.tokenExpired)
-								this.setUserInfo(data.userInfo)
-								uni.showToast({
-									icon: 'success',
-									title: '登录成功'
-								})
-							} else {
-								uni.showToast({
-									title: msg
-								})
-							}
-
-							uni.hideLoading()
-						}).catch(err => {
-							uni.hideLoading()
-							uni.showModal({
-								title: '提示',
-								content: '系统错误:' + JSON.stringify(err),
-								success: function(res) {
-									if (res.confirm) {
-										console.log('用户点击确定');
-									} else if (res.cancel) {
-										console.log('用户点击取消');
-									}
-								}
-							});
-						})
-					}
-				})
-			},
-
-			//更新微信信息
-			updateUserInfo() {
-				uni.showLoading({
-					title: '加载中'
-				});
-				uni.getUserProfile({
-					desc: '我想要你的基本信息',
-					success: (res) => {
-						let userInfo = res.userInfo;
-						this.$cloudRequest.user.call('user/updateByWeixin', userInfo).then(res => {
-							let {
-								code,
-								msg,
-								data
-							} = res;
-							if (code == 200) {
-								this.userInfo = data
-								uni.showToast({
-									icon: 'success',
-									title: '更新信息成功'
-								})
-
-							} else {
-								uni.showToast({
-									title: msg
-								})
-							}
-							uni.hideLoading()
-						}).catch(err => {
-							uni.hideLoading()
-							uni.showModal({
-								title: '提示',
-								content: '系统错误:' + JSON.stringify(err),
-								success: function(res) {
-									if (res.confirm) {
-										console.log('用户点击确定');
-									} else if (res.cancel) {
-										console.log('用户点击取消');
-									}
-								}
-							});
-						})
-					}
-				})
-			},
-			//添加商户
+			}, //添加商户
 			async addMerchant() {
 				let params = {
 					merchantName: '商家名称',
@@ -327,6 +225,140 @@
 					}
 				});
 			},
+			//上传图片
+			uploadImg() {
+				new Promise((resolve, reject) => {
+					uni.chooseImage({
+						count: 1,
+						success: (res) => {
+							console.log(res, 123)
+							let path = res.tempFilePaths[0];
+							uni.getImageInfo({
+								src: path,
+								success: (info) => {
+									let t = this.$u.timeFormat(new Date().getTime(),
+										'yyyymmddhhMMss');
+									let rand = (Math.round(Math.random() * 1000000) + '')
+										.padStart(6, '0');
+									let extName = info.type;
+									var fileName = t + '_' + rand + '.' + extName;
+									const options = {
+										filePath: path,
+										cloudPath: fileName
+									}
+									console.log(fileName, 333)
+									resolve(options)
+								},
+								fail(err) {
+									reject(new Error(err.errMsg || '未能获取图片类型'))
+								}
+							})
+						},
+						fail: () => {
+							reject(new Error('Fail_Cancel'))
+						}
+					})
+				}).then(options => {
+					uni.showLoading({
+						title: '文件上传中...'
+					})
+					return uniCloud.uploadFile({
+						...options,
+						onUploadProgress(e) {
+							console.log(e, 'process')
+						}
+					})
+				}).then(res => {
+					uni.hideLoading()
+					console.log(res, 444);
+					this.uploadImageUrl = res.fileID
+					uni.showModal({
+						content: '图片上传成功，fileId为：' + res.fileID,
+						showCancel: false
+					})
+				}).catch((err) => {
+					uni.hideLoading()
+					console.log(err);
+					if (err.message !== 'Fail_Cancel') {
+						uni.showModal({
+							content: `图片上传失败，错误信息为：${err.message}`,
+							showCancel: false
+						})
+					}
+				})
+
+			},
+			uploadVideo() {
+				new Promise((resolve, reject) => {
+					uni.chooseVideo({
+						count: 1,
+						success: (res) => {
+							console.log(res, 123)
+							let path = res.tempFilePath;
+							uni.getVideoInfo({
+								src: path,
+								success: (info) => {
+									console.log(info, 78)
+									let t = this.$u.timeFormat(new Date().getTime(),
+										'yyyymmddhhMMss');
+									let rand = (Math.round(Math.random() * 1000000) + '')
+										.padStart(6, '0');
+									let extName = '';
+									switch (info.type) {
+										case 'video/mp4':
+											extName = 'mp4'
+											break;
+										default:
+											break;
+									}
+									var fileName = t + '_' + rand + '.' + extName;
+									const options = {
+										filePath: path,
+										cloudPath: fileName
+									}
+									console.log(fileName, 333)
+									resolve(options)
+								},
+								fail(err) {
+									reject(new Error(err.errMsg || '未能获取视频类型'))
+								}
+							})
+						},
+						fail: () => {
+							reject(new Error('Fail_Cancel'))
+						}
+					})
+				}).then(options => {
+					uni.showLoading({
+						title: '文件上传中...'
+					})
+					return uniCloud.uploadFile({
+						...options,
+						onUploadProgress(e) {
+							console.log(e, 'process')
+						}
+					})
+				}).then(res => {
+					uni.hideLoading()
+					console.log(res, 444);
+					this.uploadVideoUrl = res.fileID
+					uni.showModal({
+						content: '视频上传成功，fileId为：' + res.fileID,
+						showCancel: false
+					})
+				}).catch((err) => {
+					uni.hideLoading()
+					console.log(err);
+					if (err.message !== 'Fail_Cancel') {
+						uni.showModal({
+							content: `视频上传失败，错误信息为：${err.message}`,
+							showCancel: false
+						})
+					}
+				})
+
+			}
+
 		}
 	}
 </script>
