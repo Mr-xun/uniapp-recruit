@@ -25,11 +25,7 @@
 			}
 		},
 		{
-			"path": "pages/user/user",
-			"style": {
-				"navigationBarTitleText": "个人中心",
-				"navigationStyle": "default"
-			}
+			"path": "pages/user/user"
 		},
 		{
 			"path": "pages/test/test",

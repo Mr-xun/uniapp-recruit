@@ -1,18 +1,21 @@
 <template>
 	<view class="user-page text-center">
-		<view class="user-card">
+		<view class="user-card" :style="[{paddingTop:CustomBar + 'px'}]">
+			<view class="user-avator">
+				<u-avatar :src="userInfo.avatar" mode="circle" size="160" :show-sex="userInfo.gender"
+					:sex-icon="userInfo.gender ==1?'man':'woman'"></u-avatar>
+			</view>
 			<view class="user-nickname">
 				<view v-if="isLogin">
 					<text v-if="userInfo.nickname">{{userInfo.nickname}}</text>
 					<text v-else @click="updateUserInfo">同步您的微信信息</text>
 				</view>
-				<view v-else @click="loginOrRegister">
-					<text>暂未登录</text>
+				<view v-else>
+					<button class="cu-btn round line-green  shadow" @click="loginOrRegister">立即登录</button>
 				</view>
 			</view>
-			<u-avatar v-if="isLogin" :src="userInfo.avatar" mode="square" size="200" show-sex
-				:sex-icon="userInfo.gender ==1?'man':'woman'"></u-avatar>
-			<view class="user-mobile">
+
+			<view class="user-mobile" v-if="false">
 				<text v-if="userInfo.mobile" class="user-mobile">{{userInfo.mobile || ''}}</text>
 				<text v-else>绑定您的手机号</text>
 				<text class="cuIcon-write"></text>
@@ -28,9 +31,7 @@
 	} from 'vuex'
 	import apiCloud from "../../common/apiCloud.js"
 	export default {
-		computed: {
-			...mapGetters('user', ['userInfo', 'isLogin'])
-		},
+
 		data() {
 			return {
 				uploadImageUrl: '', //上传的文件
@@ -39,6 +40,7 @@
 				title: 'map',
 				latitude: 39.909,
 				longitude: 116.39742,
+				CustomBar: this.CustomBar,
 				covers: [{
 					latitude: 39.909,
 					longitude: 116.39742,
@@ -49,6 +51,9 @@
 					iconPath: '../../static/tabbar/basics_cur.png'
 				}]
 			}
+		},
+		computed: {
+			...mapGetters('user', ['userInfo', 'isLogin'])
 		},
 		onLoad() {},
 		methods: {
@@ -364,8 +369,34 @@
 </script>
 
 <style lang="scss" scoped>
-	.btn-test {
-		margin-bottom: 10rpx;
-		;
+	.user-page {
+		background: #fff;
+		height: 100vh;
+	}
+
+	.user-card {
+		width: 100vw;
+		background-image: url(../../static/user/user-top.png);
+		background-size: 100% 100%;
+		overflow: hidden;
+		padding-bottom: 70rpx;
+
+		.user-avator {
+			margin-top: 50rpx;
+
+			/deep/ .u-avatar__img {
+				border: 2rpx solid #fff;
+				box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+			}
+		}
+
+		.user-nickname {
+			margin-top: 22rpx;
+			font-size: 32rpx;
+			color: #fff;
+			font-weight: bold;
+		}
+
+
 	}
 </style>

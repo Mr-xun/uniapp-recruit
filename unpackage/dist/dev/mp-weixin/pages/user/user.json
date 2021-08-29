@@ -1,6 +1,4 @@
 {
-  "navigationBarTitleText": "个人中心",
-  "navigationStyle": "default",
   "usingComponents": {
     "u-avatar": "/node-modules/uview-ui/components/u-avatar/u-avatar"
   }
