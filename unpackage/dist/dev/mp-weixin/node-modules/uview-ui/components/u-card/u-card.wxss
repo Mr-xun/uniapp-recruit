@@ -25,24 +25,38 @@
 /* 透明度 */
 /* 文章场景相关 */
 /* uni.scss */
-.user-publish-page.data-v-35888244 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  height: calc(100vh - 0px);
+.u-card.data-v-80bc29b2 {
+  position: relative;
+  overflow: hidden;
+  font-size: 28rpx;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+.u-card-full.data-v-80bc29b2 {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   width: 100%;
 }
-.swiper-box.data-v-35888244 {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
-  padding-bottom: 20rpx;
+.u-card--border.data-v-80bc29b2:after {
+  border-radius: 16rpx;
 }
-.swiper-item.data-v-35888244 {
-  height: 100%;
+.u-card__head--left.data-v-80bc29b2 {
+  color: #303133;
+}
+.u-card__head--left__thumb.data-v-80bc29b2 {
+  margin-right: 16rpx;
+}
+.u-card__head--left__title.data-v-80bc29b2 {
+  max-width: 400rpx;
+}
+.u-card__head--right.data-v-80bc29b2 {
+  color: #909399;
+  margin-left: 6rpx;
+}
+.u-card__body.data-v-80bc29b2 {
+  color: #606266;
+}
+.u-card__foot.data-v-80bc29b2 {
+  color: #909399;
 }
 

@@ -52,8 +52,8 @@ module.exports = class RecruitService extends Service {
 			contact_value: '17810204418', //联系电话
 			end_time: '', //结束时间,
 			publish_uid: user.uid, //发布用户uid
-			publish_uid_name: user.nickname, //发布用户昵称
-			publish_uid_avatar: user.avatar, //发布用户头像
+			publish_uid_name: user.userInfo.nickname, //发布用户昵称
+			publish_uid_avatar: user.userInfo.avatar, //发布用户头像
 			publish_time: new Date().getTime(), //发布时间
 		}
 		console.log(user, inserData, 22)
@@ -67,9 +67,7 @@ module.exports = class RecruitService extends Service {
 			msg: '获取成功',
 		}
 		let user = this.ctx.auth;
-		let dbRes = await this.db.collection('job-recruit').where({
-			publish_uid: user.uid
-		}).get()
+		let dbRes = await this.db.collection('job-recruit').where({}).get()
 		console.log(dbRes, 1)
 		response.data = dbRes.data;
 		return response
