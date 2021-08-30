@@ -28,6 +28,14 @@
 			"path": "pages/user/user"
 		},
 		{
+			"path": "pages/user/publish",
+			"style": {
+				"navigationBarTitleText": "我的发布",
+				"navigationStyle": "default"
+				
+			}
+		},
+		{
 			"path": "pages/test/test",
 			"style": {
 				"navigationBarTitleText": "测试",
@@ -54,7 +62,7 @@
 		}]
 	},
 	"globalStyle": {
-		"navigationBarBackgroundColor": "#0081ff",
+		"navigationBarBackgroundColor": "#79C58A",
 		"navigationBarTitleText": "ColorUi for UniApp",
 		"navigationStyle": "custom",
 		"navigationBarTextStyle": "white",

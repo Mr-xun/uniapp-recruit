@@ -13,13 +13,17 @@
 			<u-button type="success" ripple @click="updateUserInfo()">同步微信信息</u-button>
 		</view>
 		<view class="margin-bottom-sm">
-			<u-button type="success" ripple open-type="getPhoneNumber" @getphonenumber="getphonenumber()">获取手机号</u-button>
+			<u-button type="success" ripple open-type="getPhoneNumber" @getphonenumber="getphonenumber()">获取手机号
+			</u-button>
 		</view>
 		<view class="margin-bottom-sm">
 			<u-button type="success" ripple @click="addMerchant()">同步位置并添加模拟商户</u-button>
 		</view>
 		<view class="margin-bottom-sm">
 			<u-button type="success" ripple @click="addCuisine()">添加模拟菜系</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="publishRecruit()">发布信息</u-button>
 		</view>
 		<view class="margin-bottom-sm">
 			<u-button type="success" ripple @click="getLocation()">获取当前位置</u-button>
@@ -191,8 +195,8 @@
 				})
 			},
 			//获取手机号
-			getphonenumber(e){
-				console.log(e,111)
+			getphonenumber(e) {
+				console.log(e, 111)
 			},
 			//添加商户
 			async addMerchant() {
@@ -286,8 +290,30 @@
 			},
 			//新增菜系
 			addCuisine() {
+				uni.showLoading({
+					title: '加载中'
+				});
 				this.$cloudRequest.food.call('cuisine/add').then(res => {
 					console.log(res)
+					let {
+						code,
+						msg
+					} = res
+					if (code == 200) {
+						uni.showToast({
+							title: msg
+						});
+					} else {
+						uni.showToast({
+							title: msg,
+							icon: 'none',
+							duration: 2000
+						});
+
+					}
+					uni.hideLoading()
+				}).catch(err => {
+					uni.hideLoading()
 				})
 			},
 			clickMarker(e) {
@@ -411,6 +437,7 @@
 				})
 
 			},
+			//上传视频
 			uploadVideo() {
 				new Promise((resolve, reject) => {
 					uni.chooseVideo({
@@ -479,9 +506,32 @@
 						})
 					}
 				})
-
+			},
+			//发布信息
+			publishRecruit() {
+				uni.showLoading({
+					title: '加载中'
+				});
+				this.$cloudRequest.job.call('recruit/publish').then(res => {
+					console.log(res, 11)
+					let {
+						code,
+						msg
+					} = res
+					if (code == 200) {
+						uni.showToast({
+							title: msg
+						});
+					} else {
+						uni.showToast({
+							title: msg,
+							icon: 'none',
+							duration: 2000
+						});
+					}
+					uni.hideLoading()
+				})
 			}
-
 		}
 	}
 </script>

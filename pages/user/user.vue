@@ -1,6 +1,6 @@
 <template>
-	<view class="user-page text-center">
-		<view class="user-card" :style="[{paddingTop:CustomBar + 'px'}]">
+	<view class="user-page ">
+		<view class="user-card text-center" :style="[{paddingTop:CustomBar + 'px'}]">
 			<view class="user-avator">
 				<u-avatar :src="userInfo.avatar" mode="circle" size="160" :show-sex="userInfo.gender"
 					:sex-icon="userInfo.gender ==1?'man':'woman'"></u-avatar>
@@ -14,11 +14,33 @@
 					<button class="cu-btn round line-green  shadow" @click="loginOrRegister">立即登录</button>
 				</view>
 			</view>
-
 			<view class="user-mobile" v-if="false">
 				<text v-if="userInfo.mobile" class="user-mobile">{{userInfo.mobile || ''}}</text>
 				<text v-else>绑定您的手机号</text>
 				<text class="cuIcon-write"></text>
+			</view>
+		</view>
+		<view class="content-container">
+			<view class="content-item flex align-center">
+				<image class="item-icon" src="../../static/user/icon-info.png" mode=""></image>
+				<view class="item-con flex flex-sub justify-between">
+					<text>个人信息</text>
+					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
+				</view>
+			</view>
+			<view class="content-item flex align-center">
+				<image class="item-icon" src="../../static/user/icon-publish.png" mode=""></image>
+				<view class="item-con flex flex-sub justify-between" @click="toPage('/pages/user/publish')">
+					<text>我的发布</text>
+					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
+				</view>
+			</view>
+			<view class="content-item flex align-center">
+				<image class="item-icon" src="../../static/user/icon-collect.png" mode=""></image>
+				<view class="item-con flex flex-sub justify-between">
+					<text>我的收藏</text>
+					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -59,6 +81,12 @@
 		methods: {
 			...mapMutations('user', ['setAccessToken', 'setTokenExpireTime', 'setUserInfo']),
 			...mapActions('user', ['loginOrRegister', 'updateUserInfo']),
+			toPage(path) {
+				console.log(path,1)
+				uni.navigateTo({
+					url: path
+				})
+			},
 			getUserInfo() {
 				let _this = this;
 				uni.login({
@@ -396,7 +424,35 @@
 			color: #fff;
 			font-weight: bold;
 		}
+	}
 
+	.content-container {
+		background: #fff;
+		margin: 24rpx;
+		border-radius: 20rpx;
+		color: #666;
+		padding: 0 20rpx;
+		border: 0.5rpx solid #ebeeef;
+		box-shadow: 0 0 10rpx #ebeeef;
+
+		.content-item {
+			height: 88rpx;
+			line-height: 88rpx;
+
+			.item-icon {
+				width: 48rpx;
+				height: 48rpx;
+				margin-right: 16rpx;
+			}
+
+			.item-con {
+				border-bottom: 0.5rpx solid #ebeeef;
+			}
+
+			&:nth-last-of-type(1) .item-con {
+				border-bottom: none;
+			}
+		}
 
 	}
 </style>

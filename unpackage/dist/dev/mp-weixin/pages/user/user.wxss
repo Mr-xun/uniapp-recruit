@@ -49,4 +49,28 @@
   color: #fff;
   font-weight: bold;
 }
+.content-container.data-v-80842834 {
+  background: #fff;
+  margin: 24rpx;
+  border-radius: 20rpx;
+  color: #666;
+  padding: 0 20rpx;
+  border: 0.5rpx solid #ebeeef;
+  box-shadow: 0 0 10rpx #ebeeef;
+}
+.content-container .content-item.data-v-80842834 {
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.content-container .content-item .item-icon.data-v-80842834 {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 16rpx;
+}
+.content-container .content-item .item-con.data-v-80842834 {
+  border-bottom: 0.5rpx solid #ebeeef;
+}
+.content-container .content-item:nth-last-of-type(1) .item-con.data-v-80842834 {
+  border-bottom: none;
+}
 

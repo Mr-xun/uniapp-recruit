@@ -1,0 +1,16 @@
+{
+	"name": "job",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"uni-cloud-router": "file:../../../uni_modules/uni-cloud-router/uniCloud/cloudfunctions/common/uni-cloud-router",
+		"uni-common": "file:../common/uni-common",
+		"uni-id": "file:../../../uni_modules/uni-id/uniCloud/cloudfunctions/common/uni-id"
+	}
+}

@@ -7,11 +7,12 @@
     "pages/index/icon",
     "pages/list/index",
     "pages/user/user",
+    "pages/user/publish",
     "pages/test/test"
   ],
   "subPackages": [],
   "window": {
-    "navigationBarBackgroundColor": "#0081ff",
+    "navigationBarBackgroundColor": "#79C58A",
     "navigationBarTitleText": "ColorUi for UniApp",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white",
@@ -46,6 +47,5 @@
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

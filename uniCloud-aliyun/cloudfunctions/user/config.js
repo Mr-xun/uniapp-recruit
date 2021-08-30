@@ -1,4 +1,6 @@
-const {authMiddleWare} = require('uni-common')
+const {
+	authMiddleWare
+} = require('uni-common')
 module.exports = {
 	debug: true, //调试模式时，返回stack错误堆栈 
 	baseDir: __dirname, //应用根目录
