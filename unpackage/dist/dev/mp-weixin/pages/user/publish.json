@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "我的发布",
-  "navigationStyle": "default",
-  "usingComponents": {
-    "u-tabs-swiper": "/node-modules/uview-ui/components/u-tabs-swiper/u-tabs-swiper",
-    "u-card": "/node-modules/uview-ui/components/u-card/u-card"
-  }
-}

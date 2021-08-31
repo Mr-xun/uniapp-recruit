@@ -23,7 +23,7 @@
 		<view class="content-container">
 			<view class="content-item flex align-center">
 				<image class="item-icon" src="../../static/user/icon-info.png" mode=""></image>
-				<view class="item-con flex flex-sub justify-between">
+				<view class="item-con flex flex-sub justify-between" @click="toPage('/pages/user/info')">
 					<text>个人信息</text>
 					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
 				</view>
@@ -82,7 +82,6 @@
 			...mapMutations('user', ['setAccessToken', 'setTokenExpireTime', 'setUserInfo']),
 			...mapActions('user', ['loginOrRegister', 'updateUserInfo']),
 			toPage(path) {
-				console.log(path,1)
 				uni.navigateTo({
 					url: path
 				})

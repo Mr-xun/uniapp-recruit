@@ -14,11 +14,12 @@ module.exports = class RecruitController extends Controller {
 		} = this;
 		return service.recruit.publish(ctx.data)
 	}
-	list() {
+	//我的发布列表
+	myList() {
 		const {
 			ctx,
 			service
 		} = this;
-		return service.recruit.list(ctx.data)
+		return service.recruit.myList(ctx.data)
 	}
 }

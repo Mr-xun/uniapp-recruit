@@ -50,6 +50,8 @@ module.exports = class RecruitService extends Service {
 			recruit_count: 10, //招聘人数
 			contact_way: 1, //联系方式
 			contact_value: '17810204418', //联系电话
+			status: 1, //招聘状态 1 发布中 2 已过期 
+			is_delete: 0, //删除状态 0 未删除 1 已删除
 			end_time: '', //结束时间,
 			publish_uid: user.uid, //发布用户uid
 			publish_uid_name: user.userInfo.nickname, //发布用户昵称
@@ -60,14 +62,19 @@ module.exports = class RecruitService extends Service {
 		this.db.collection('job-recruit').add(inserData)
 		return response
 	}
-	async list() {
+	//列表
+	async myList() {
 		let response = {
 			code: 200,
 			data: null,
 			msg: '获取成功',
 		}
 		let user = this.ctx.auth;
-		let dbRes = await this.db.collection('job-recruit').where({}).get()
+		const dbCmd = this.db.command;
+		let dbRes = await this.db.collection('job-recruit').where({
+			publish_uid:user.uid,
+			id_delete: dbCmd.neq(1)
+		}).get()
 		console.log(dbRes, 1)
 		response.data = dbRes.data;
 		return response

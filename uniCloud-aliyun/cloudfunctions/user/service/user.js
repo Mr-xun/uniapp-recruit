@@ -26,7 +26,7 @@ module.exports = class UserService extends Service {
 			msg: '微信同步成功',
 			data: null
 		}
-		let user = await uniID.checkToken(this.ctx.event.uniIdToken)
+		let user = this.ctx.auth;
 		let uid = user.uid;
 		let updateData = {
 			nickname: userInfo.nickName,
@@ -39,6 +39,19 @@ module.exports = class UserService extends Service {
 		this.db.collection('uni-id-users').doc(uid).update(updateData)
 		response.data = updateData
 		this.uidlog(response, 'updateByWeixin')
+		return response
+	}
+	//获取用户信息
+	async getInfo() {
+		let response = {
+			code: 200,
+			msg: '获取成功',
+			data: {}
+		}
+		let user = this.ctx.auth;
+		let dbRes = await this.db.collection('uni-id-users').doc(user.uid).get()
+		response.data = dbRes.data[0] || {}
+		console.log(dbRes, 88)
 		return response
 	}
 	// 日志记录

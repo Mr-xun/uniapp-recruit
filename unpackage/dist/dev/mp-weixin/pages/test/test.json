@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "测试",
-  "navigationStyle": "default",
-  "usingComponents": {
-    "u-avatar": "/node-modules/uview-ui/components/u-avatar/u-avatar",
-    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
-    "u-image": "/node-modules/uview-ui/components/u-image/u-image"
-  }
-}

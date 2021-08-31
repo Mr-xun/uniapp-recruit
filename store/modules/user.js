@@ -112,6 +112,7 @@ const actions = {
 
 			uni.getUserProfile({
 				desc: '获取你的昵称、头像、地区及性别',
+				lang:"zh_CN",
 				success: (res) => {
 					uni.showLoading({
 						title: '加载中'

@@ -4,9 +4,14 @@ import store from './store';
 import cloudRequest from "./common/cloudRequest"
 import uView from "uview-ui";
 import cuCustom from './colorui/components/cu-custom.vue'
+import * as filters from './common/filters'; // global filters
 Vue.use(uView);
 Vue.component('cu-custom', cuCustom)
 
+// register global utility filters
+Object.keys(filters).forEach((key) => {
+	Vue.filter(key, filters[key]);
+});
 Vue.config.productionTip = false
 Vue.prototype.$cloudRequest = cloudRequest;
 App.mpType = 'app'

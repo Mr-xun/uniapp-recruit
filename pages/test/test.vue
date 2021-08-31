@@ -156,6 +156,7 @@
 				});
 				uni.getUserProfile({
 					desc: '我想要你的基本信息',
+					lang:"zh_CN",
 					success: (res) => {
 						let userInfo = res.userInfo;
 						this.$cloudRequest.user.call('user/updateByWeixin', userInfo).then(res => {
