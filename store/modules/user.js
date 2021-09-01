@@ -2,7 +2,7 @@
  * Created by Mr-Xun on 2021-08-23
  * 用户信息及token权限
  **/
-import cloudRequest from "../../common/cloudRequest"
+import cloudRequest from "../../common/js/cloudRequest"
 const state = {
 	userInfo: uni.getStorageSync('userInfo') || {}, //用户信息
 	accessToken: uni.getStorageSync('uni_id_token') || null, //token
@@ -14,7 +14,12 @@ const getters = {
 	tokenExpireTime: (state) => state.tokenExpireTime,
 	isLogin: (state) => { //是否登录
 		let cur_time = new Date().getTime()
-		return state.accessToken && state.tokenExpireTime > cur_time
+		if (state.accessToken && state.tokenExpireTime > cur_time) {
+			return true
+		} else {
+			uni.clearStorageSync('userInfo')
+			return false
+		}
 	},
 }
 const mutations = {
@@ -112,13 +117,13 @@ const actions = {
 
 			uni.getUserProfile({
 				desc: '获取你的昵称、头像、地区及性别',
-				lang:"zh_CN",
+				lang: "zh_CN",
 				success: (res) => {
 					uni.showLoading({
 						title: '加载中'
 					});
 					let userInfo = res.userInfo;
-					cloudRequest.user.call('user/updateByWeixin', userInfo).then(res => {
+					cloudRequest.user.call('user/updateInfo', userInfo).then(res => {
 						let {
 							code,
 							msg,
@@ -160,7 +165,33 @@ const actions = {
 			})
 		})
 	},
-
+	//获取用户信息
+	getUserInfo({
+		commit
+	}) {
+		cloudRequest.user.call('user/getInfo').then(res => {
+			let {
+				code,
+				msg,
+				data
+			} = res;
+			if (code == 200) {
+				commit('setUserInfo', data)
+			} else {
+				uni.showToast({
+					title: msg,
+					icon: 'none',
+					duration: 2000
+				})
+			}
+		}).catch(err => {
+			uni.showModal({
+				title: '提示',
+				content: '系统错误:' + JSON.stringify(err)
+			});
+			reject(err)
+		})
+	},
 }
 export default {
 	namespaced: true,

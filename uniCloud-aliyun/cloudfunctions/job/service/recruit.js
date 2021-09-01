@@ -8,7 +8,7 @@ const {
 
 module.exports = class RecruitService extends Service {
 	//发布
-	publish() {
+	async publish() {
 		let response = {
 			code: 200,
 			data: null,
@@ -59,7 +59,7 @@ module.exports = class RecruitService extends Service {
 			publish_time: new Date().getTime(), //发布时间
 		}
 		console.log(user, inserData, 22)
-		this.db.collection('job-recruit').add(inserData)
+		await this.db.collection('job-recruit').add(inserData)
 		return response
 	}
 	//列表
@@ -75,7 +75,6 @@ module.exports = class RecruitService extends Service {
 			publish_uid:user.uid,
 			id_delete: dbCmd.neq(1)
 		}).get()
-		console.log(dbRes, 1)
 		response.data = dbRes.data;
 		return response
 	}

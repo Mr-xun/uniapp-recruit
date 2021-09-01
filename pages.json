@@ -25,14 +25,25 @@
 			}
 		},
 		{
-			"path": "pages/user/index"
+			"path": "pages/user/index",
+			"style": {
+				"disableScroll": true
+			}
 		},
 		{
 			"path": "pages/user/info",
 			"style": {
 				"navigationBarTitleText": "个人信息",
-				"navigationStyle": "default"
-
+				"navigationStyle": "default",
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/user/edit",
+			"style": {
+				"navigationBarTitleText": "修改信息",
+				"navigationStyle": "default",
+				"disableScroll": true
 			}
 		},
 		{

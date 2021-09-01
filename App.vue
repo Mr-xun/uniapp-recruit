@@ -117,6 +117,7 @@
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
 	@import "uview-ui/index.scss";
+	@import "@/common/css/index.scss";
 	.nav-list {
 		display: flex;
 		flex-wrap: wrap;

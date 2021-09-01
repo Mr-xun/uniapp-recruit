@@ -1,0 +1,79 @@
+@import './size.scss';
+@import './mixin.scss';
+@import './color.scss';
+
+// 设置轮播图样式
+.van-swipe-item {
+    text-align: center;
+}
+// 去掉vant的列表样式
+.van-cell {
+    padding:0;
+    line-height: normal;
+}
+// 修改vant 弹窗按钮样式
+.van-dialog .van-dialog__footer--buttons{
+    padding: 0 20px 15px;
+    line-height: 22px;
+}
+.van-dialog .van-button:after{
+    display: none;
+}
+.van-dialog .van-button:before{
+    display: none;
+}
+
+// 修改vant 弹窗按钮样式
+.continue-dialog {
+    &.van-dialog {
+        width: rem(560);
+        padding: rem(40) 0 0;
+        box-sizing: border-box;
+        border-radius: rem(20);
+    }
+    .van-dialog__header {
+        padding-top: 0;
+        font-size: rem(34);
+        color: #1D1D26;
+        font-weight: bolder;
+        margin-bottom: rem(30);
+    }
+    .van-dialog__footer {
+        text-align: center;
+        margin-top: rem(40);
+        padding: 0 20px 15px
+    }
+    .van-button--large {
+        width: rem(210);
+        height: rem(88);
+        line-height: rem(88);
+        font-size: rem(32);
+        border-radius: rem(10);
+        box-sizing: border-box;
+    }
+    .van-dialog__cancel {
+        margin-right: rem(40);
+        background: #fff;
+        color: $themeA;
+        box-sizing: border-box;
+        border: 1Px solid $themeA;
+    }
+    .van-dialog__confirm {
+        background: $themeA;
+        color: #fff;
+        border: 1Px solid transparent;
+    }
+    .van-hairline--top::after {
+        border-top-width: 0;
+    }
+    .van-dialog__message {
+        padding: 0 rem(40);
+        text-align: left;
+    }
+}
+
+
+
+.border{
+    border: 1Px solid $themeA;
+}

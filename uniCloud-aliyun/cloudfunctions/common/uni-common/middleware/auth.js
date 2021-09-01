@@ -1,4 +1,5 @@
 const uniID = require("uni-id");
+const utils = require("../utils")
 module.exports = (options) => {
 	// 返回中间件函数
 	return async function auth(ctx, next) {

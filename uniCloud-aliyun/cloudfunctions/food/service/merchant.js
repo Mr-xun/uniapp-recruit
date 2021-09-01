@@ -42,7 +42,7 @@ module.exports = class MerchantService extends Service {
 			last_modify_uid: user.uid, //更新用户
 			last_modify_time: new Date().getTime() //更新时间
 		}
-		insertData = Object.assign(insertData, utils.toUnderline(data))
+		insertData = Object.assign(insertData, data)
 		insertData.geo_location = new this.db.Geo.Point(data.geo_location.longitude, data.geo_location.latitude)
 		let dbRes = await this.db.collection('food-merchant').add(insertData)
 		return response

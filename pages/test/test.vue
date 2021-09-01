@@ -56,7 +56,7 @@
 	import {
 		mapMutations
 	} from 'vuex'
-	import apiCloud from "../../common/apiCloud.js"
+	import apiCloud from "../../common/js/apiCloud.js"
 	export default {
 		data() {
 			return {
@@ -159,7 +159,7 @@
 					lang:"zh_CN",
 					success: (res) => {
 						let userInfo = res.userInfo;
-						this.$cloudRequest.user.call('user/updateByWeixin', userInfo).then(res => {
+						this.$cloudRequest.user.call('user/updateInfo', userInfo).then(res => {
 							let {
 								code,
 								msg,
