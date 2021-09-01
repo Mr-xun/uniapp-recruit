@@ -22,7 +22,7 @@
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">生日</text>
-				<text class="item-val">{{userInfo.age}}</text>
+				<text class="item-val">{{userInfo.birthday | date('yyyy-mm-dd')}}</text>
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">年龄</text>

@@ -22,7 +22,7 @@
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">生日</text>
-				<text class="item-val">{{userInfo.age}}</text>
+				<text class="item-val">{{userInfo.birthday | date('yyyy-mm-dd')}}</text>
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">年龄</text>
@@ -100,9 +100,10 @@
 			//保存信息
 			toSave() {
 				let userInfo = {
+					birthday:new Date('1996-04-30'),
 					realname: '荀潇 ' + this.$u.timeFormat(new Date(), 'mm-dd hh:MM:ss'),
 					mobile:'17810104418',
-					address: '北京市丰台区蒲安西里2号楼' + this.$u.timeFormat(new Date(), 'mm-dd hh:MM:ss'),
+					address: '北京市蒲安西里2号楼 ' + this.$u.timeFormat(new Date(), 'mm-dd hh:MM:ss'),
 				}
 				if (this.btnLoading) return
 				this.btnLoading = true
