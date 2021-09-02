@@ -13,6 +13,10 @@
 				<text class="item-val">{{userInfo.realname}}</text>
 			</view>
 			<view class="info-item flex align-center justify-between">
+				<text class="item-type">身份证</text>
+				<text class="item-val">{{userInfo.id_card}}</text>
+			</view>
+			<view class="info-item flex align-center justify-between">
 				<text class="item-type">用户名</text>
 				<text class="item-val">{{userInfo.nickname}}</text>
 			</view>
