@@ -52,6 +52,9 @@ module.exports = class UserService extends Service {
 		if (userInfo.city) updateData.city = userInfo.city; //城市
 		if (userInfo.district) updateData.district = userInfo.district; //市区
 		if (userInfo.address) updateData.address = userInfo.address; //详细地址
+		if(userInfo.geo_location){
+			userInfo.geo_location = new this.db.Geo.Point(userInfo.geo_location.longitude, userInfo.geo_location.latitude)
+		}
 		if (userInfo.edu_school) updateData.edu_school = userInfo.edu_school; //学校
 		if (userInfo.edu_qualification) updateData.edu_qualification = userInfo.edu_qualification; //学历
 		if (userInfo.edu_entrance_time) updateData.edu_entrance_time = userInfo.edu_entrance_time; //入学时间

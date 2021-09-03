@@ -32,12 +32,12 @@ const toUnderline = (data) => {
 /**
  * @description 根据出生日期算出年龄
  **/
-const jsGetAge = (strBirthday) => {
+const jsGetAge = (birthday) => {
 	var returnAge;
-	var strBirthdayArr = strBirthday.split("-");
-	var birthYear = strBirthdayArr[0];
-	var birthMonth = strBirthdayArr[1];
-	var birthDay = strBirthdayArr[2];
+	var brithDate = new Date(birthday)
+	var birthYear = brithDate.getFullYear();
+	var birthMonth = brithDate.getMonth() + 1;
+	var birthDay = brithDate.getDate();
 
 	d = new Date();
 	var nowYear = d.getFullYear();

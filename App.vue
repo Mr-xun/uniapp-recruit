@@ -1,7 +1,8 @@
 <script>
 	import Vue from 'vue'
+	let _this = this
 	export default {
-		onLaunch: function() {
+		onLaunch: () => {
 			uni.getSystemInfo({
 				success: function(e) {
 					// #ifndef MP
@@ -118,6 +119,7 @@
 	@import "colorui/icon.css";
 	@import "uview-ui/index.scss";
 	@import "@/common/css/index.scss";
+
 	.nav-list {
 		display: flex;
 		flex-wrap: wrap;

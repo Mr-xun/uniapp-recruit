@@ -49,7 +49,7 @@
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">家庭住址</text>
-				<text class="item-val">{{userInfo.address}}</text>
+				<text class="item-val text-cut">{{userInfo.address}}</text>
 			</view>
 			<view class="info-split">
 				职业技能
@@ -132,6 +132,7 @@
 
 	.item-val {
 		color: #666666;
+		margin-left: 20rpx;
 	}
 
 	.item-img {
