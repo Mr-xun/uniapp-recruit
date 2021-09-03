@@ -303,7 +303,7 @@
 							header: {
 								"Content-Type": "application/text"
 							},
-							url: `https://restapi.amap.com/v3/geocode/regeo?output=JSON&location=${locationRes.longitude},${locationRes.latitude}&key=d27c8c33e47aea8fa848fb2d2b1d365c`,
+							url: `https://restapi.amap.com/v3/geocode/regeo?output=JSON&location=${choooseRes.longitude},${choooseRes.latitude}&key=d27c8c33e47aea8fa848fb2d2b1d365c`,
 							success: (res) => {
 								let {
 									statusCode,
