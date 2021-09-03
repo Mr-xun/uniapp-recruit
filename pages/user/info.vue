@@ -75,7 +75,7 @@
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">毕业时间</text>
-				<text class="item-val">{{userInfo.edu_graduated_time}}</text>
+				<text class="item-val">{{userInfo.edu_graduated_time  | date('yyyy月mm月')}}</text>
 			</view>
 		</scroll-view>
 		<view class="bottom-btn flex align-center justify-center">
@@ -132,7 +132,7 @@
 
 	.item-val {
 		color: #666666;
-		margin-left: 20rpx;
+		margin-left: 30rpx;
 	}
 
 	.item-img {
