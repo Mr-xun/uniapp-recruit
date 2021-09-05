@@ -127,12 +127,14 @@
 	}
 
 	.item-type {
+		width: 160rpx;
 		color: #333333;
+		white-space: nowrap;
 	}
 
 	.item-val {
 		color: #666666;
-		margin-left: 30rpx;
+		margin-left: 20rpx;
 	}
 
 	.item-img {

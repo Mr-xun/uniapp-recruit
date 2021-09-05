@@ -57,7 +57,7 @@
 				<u-input class="item-val flex flex-sub" v-model="editInfo.email" type="emial" input-align='right'
 					placeholder="请输入邮箱" />
 			</view>
-			<view class="info-item flex align-center justify-between" @click="chooseLocation">
+			<view class="info-item flex align-center justify-between" @click="isSettingLocationAuthorize">
 				<text class="item-type">家庭住址</text>
 				<text class="item-val flex flex-sub text-cut" :class="{'item-no-val': !editInfo.address}">
 					<template v-if="editInfo.address">{{editInfo.address}}</template>
@@ -89,7 +89,12 @@
 			</view>
 			<view class="info-item flex align-center justify-between" @click="showDatePicker('eduGraduatedTimePicker')">
 				<text class="item-type">毕业时间</text>
-				<text class="item-val flex flex-sub" :class="{'item-no-val': !editInfo.edu_graduated_time}">					<template v-if="editInfo.edu_graduated_time">{{editInfo.edu_graduated_time | date('yyyy年mm月')}}</template>					<template v-else>请选择毕业时间</template>				</text>				<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
+				<text class="item-val flex flex-sub" :class="{'item-no-val': !editInfo.edu_graduated_time}">
+					<template
+						v-if="editInfo.edu_graduated_time">{{editInfo.edu_graduated_time | date('yyyy年mm月')}}</template>
+					<template v-else>请选择毕业时间</template>
+				</text>
+				<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
 			</view>
 		</scroll-view>
 		<view class="bottom-btn flex align-center justify-center">
@@ -101,8 +106,8 @@
 			confirm-color='#79C58A'>
 		</u-select>
 		<u-picker v-model="datePicker.visiable" mode="time" :default-time='datePicker.value'
-			:start-year='datePicker.minDate' :end-year='datePicker.maxDate' :params="datePicker.params" @confirm="confirmDatePicker($event,datePicker.key)"
-			confirm-color='#79C58A'></u-picker>
+			:start-year='datePicker.minDate' :end-year='datePicker.maxDate' :params="datePicker.params"
+			@confirm="confirmDatePicker($event,datePicker.key)" confirm-color='#79C58A'></u-picker>
 		<u-toast ref="uToast" />
 	</view>
 </template>
@@ -158,8 +163,8 @@
 					//日期选择器
 					visiable: false,
 					value: "",
-					key:'',
-					params:{},
+					key: '',
+					params: {},
 					minDate: "1930",
 					maxDate: new Date().getFullYear()
 				}
@@ -186,7 +191,7 @@
 			},
 			//确定选择
 			confirmSelector(data, key) {
-				this.$set(this.editInfo, key,data[0].value)
+				this.$set(this.editInfo, key, data[0].value)
 			},
 			//显示生日选择器
 			showDatePicker(picker) {
@@ -196,9 +201,9 @@
 				this.datePicker.value = this.$u.timeFormat(this.editInfo[this[picker].key], 'yyyy-mm-dd')
 			},
 			//确认出生日期
-			confirmDatePicker(time,key) {
+			confirmDatePicker(time, key) {
 				let timeArr = []
-				Object.keys(time).forEach(key=>{
+				Object.keys(time).forEach(key => {
 					timeArr.push(time[key])
 				})
 				let timeStr = timeArr.join('-')
@@ -275,12 +280,63 @@
 					}
 				})
 			},
-			//获取当前定位
-			getCurLocation() {
+			//判断是否设置过授权定位信息
+			isSettingLocationAuthorize(a = 'scope.userLocation') {
+				uni.getSetting({
+					success: (res) => {
+						if (!res.authSetting[a]) {
+							this.getAuthorizeInfo()
+						} else {
+							this.chooseLocation()
+						}
+					}
+				})
+			},
+			//获取授权信息
+			getAuthorizeInfo(a = 'scope.userLocation') {
+				uni.authorize({
+					scope: a,
+					success: () => { //1.1 允许授权
+						this.chooseLocation();
+					},
+					fail: () => { //1.2 拒绝授权
+						uni.showModal({
+							title: '已拒绝授权，无法获取当前位置信息',
+							content: '是否重新打开授权设置？',
+							success:(res)=> {
+								if (res.confirm) {
+									uni.openSetting({
+										success: (res)=> {
+											if (res.authSetting['scope.userLocation']) {
+												this.chooseLocation()
+											}
+										}
+									})
+								} else if (res.cancel) {
+									uni.showToast({
+										title: '您拒绝了授权，无法获取当前位置信息',
+										icon: 'none',
+										duration: 2000
+									})
+								}
+							}
+						});
+					}
+				})
+			},
+			//获取用户当前定位
+			getUserLocation() {
 				uni.getLocation({
 					type: 'gcj02',
 					success: (locationRes) => {
 						this.sureAddress(locationRes)
+					},
+					fail: () => {
+						uni.showToast({
+							title: '获取当前位置信息失败',
+							icon: 'none',
+							duration: 2000
+						})
 					}
 				})
 			},
@@ -290,7 +346,9 @@
 					latitude: location.latitude,
 					longitude: location.longitude,
 					success: (choooseRes) => {
-						this.editInfo.address = choooseRes.address + choooseRes.name;
+						if (choooseRes.address && choooseRes.name) {
+							this.editInfo.address = choooseRes.address + choooseRes.name;
+						}
 						console.log('位置名称：' + choooseRes.name);
 						console.log('详细地址：' + choooseRes.address);
 						console.log('纬度：' + choooseRes.latitude);
@@ -331,22 +389,22 @@
 										}
 									}
 								} else {
-									console.log("获取信息失败，请重试！")
+									uni.showToast({
+										title: '解析位置信息失败，请重试！',
+										icon: 'none',
+										duration: 2000
+									})
 								}
 							},
-							complete: () => {
-								console.log(this.editInfo, 22)
-							}
 						});
-
-					}
+					},
 				});
 			},
 			//选择位置
 			chooseLocation() {
 				//判断是否上传过定位
 				if (this.$u.test.isEmpty(this.editInfo.geo_location)) {
-					this.getCurLocation()
+					this.getUserLocation()
 				} else {
 					this.sureAddress(this.editInfo.geo_location)
 				}
@@ -377,7 +435,6 @@
 					})
 					return
 				}
-				console.log(this.editInfo, 88)
 				if (this.btnLoading) return
 				this.btnLoading = true
 				this.$cloudRequest.user.call('user/updateInfo', this.editInfo).then(res => {
@@ -441,7 +498,9 @@
 	}
 
 	.item-type {
+		width: 120rpx;
 		color: #333333;
+		white-space: nowrap;
 	}
 
 	.item-val {

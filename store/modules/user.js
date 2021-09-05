@@ -35,6 +35,12 @@ const mutations = {
 		state.userInfo = info;
 		uni.setStorageSync('userInfo', info);
 	},
+	logout(state, info) {
+		state.userInfo = {};
+		state.accessToken = "";
+		state.tokenExpireTime = "";
+		uni.clearStorageSync()
+	},
 }
 const actions = {
 	//登录或注册

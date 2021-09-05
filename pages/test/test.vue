@@ -26,6 +26,9 @@
 			<u-button type="success" ripple @click="publishRecruit()">发布信息</u-button>
 		</view>
 		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="asyncSchool()">同步院校</u-button>
+		</view>
+		<view class="margin-bottom-sm">
 			<u-button type="success" ripple @click="getLocation()">获取当前位置</u-button>
 		</view>
 		<view class="margin-bottom-sm">
@@ -39,6 +42,9 @@
 		</view>
 		<view class="margin-bottom-sm">
 			<u-button type="success" ripple @click="uploadVideo()">上传视频</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="userLogout()">退出登录</u-button>
 		</view>
 		<view class="margin-bottom-sm" v-if="uploadImageUrl">
 			<u-image width="100%" height="300rpx" :src="uploadImageUrl" mode="widthFix"></u-image>
@@ -54,7 +60,9 @@
 
 <script>
 	import {
-		mapMutations
+		mapMutations,
+		mapActions,
+		mapGetters
 	} from 'vuex'
 	import apiCloud from "../../common/js/apiCloud.js"
 	export default {
@@ -80,7 +88,7 @@
 		},
 		onLoad() {},
 		methods: {
-			...mapMutations('user', ['setAccessToken', 'setTokenExpireTime', 'setUserInfo']),
+			...mapMutations('user', ['setAccessToken', 'setTokenExpireTime', 'setUserInfo','logout']),
 			getUserInfo() {
 				let _this = this;
 				uni.login({
@@ -532,6 +540,38 @@
 					}
 					uni.hideLoading()
 				})
+			},
+			//同步院校
+			asyncSchool(){
+				uni.showLoading({
+					title: '同步中'
+				});
+				this.$cloudRequest.job.call('school/add').then(res => {
+					console.log(res, 11)
+					let {
+						code,
+						msg
+					} = res
+					if (code == 200) {
+						uni.showToast({
+							title: msg
+						});
+					} else {
+						uni.showToast({
+							title: msg,
+							icon: 'none',
+							duration: 2000
+						});
+					}
+					uni.hideLoading()
+				})
+			},
+			//退出登录
+			userLogout(){
+				this.logout()
+				uni.showToast({
+					title: '退出登录'
+				});
 			}
 		}
 	}

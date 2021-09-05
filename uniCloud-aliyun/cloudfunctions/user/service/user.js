@@ -53,7 +53,8 @@ module.exports = class UserService extends Service {
 		if (userInfo.district) updateData.district = userInfo.district; //市区
 		if (userInfo.address) updateData.address = userInfo.address; //详细地址
 		if (userInfo.geo_location && JSON.stringify(userInfo.geo_location) !='{}'){
-			updateData.geo_location = new this.db.Geo.Point(userInfo.geo_location.longitude, userInfo.geo_location.latitude)
+			updateData.geo_location = userInfo.geo_location //定位经纬度
+			updateData.geo_point = new this.db.Geo.Point(userInfo.geo_location.longitude, userInfo.geo_location.latitude)//point类型经纬度
 		}
 		if (userInfo.edu_school) updateData.edu_school = userInfo.edu_school; //学校
 		if (userInfo.edu_qualification) updateData.edu_qualification = userInfo.edu_qualification; //学历
@@ -63,7 +64,7 @@ module.exports = class UserService extends Service {
 		if (userInfo.work_start_time) updateData.work_start_time = userInfo.work_start_time; //工作开始时间
 		if (userInfo.work_skill) updateData.work_skill = userInfo.work_skill; //工作开始时间
 		if (userInfo.job_identity) updateData.job_identity = userInfo.job_identity; //求职身份 1 上班族 2 学生
-
+		console.log(updateData,updateData.geo_location,222)
 		await this.db.collection('uni-id-users').doc(uid).update(updateData)
 		let resData = await uniID.getUserInfo({
 			uid
