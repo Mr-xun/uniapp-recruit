@@ -8,14 +8,14 @@
 const {
 	Service
 } = require('uni-cloud-router')
-const shoolData = require("../assets/school.json")
-module.exports = class RecruitService extends Service {
-	//新增院校
-	async add(data) {
+const shoolData = require("../../assets/school.json")
+module.exports = class SchoolService extends Service {
+	//同步院校
+	async asyncData(data) {
 		let response = {
 			code: 200,
 			data: null,
-			msg: '新增成功',
+			msg: '同步院校成功',
 		}
 		let user = this.ctx.auth;
 		const dbCmd = this.db.command;
@@ -23,7 +23,7 @@ module.exports = class RecruitService extends Service {
 		let dbCountRes = await this.db.collection('job-basic-school').where({}).count()
 		console.log('已录入总数:' + dbCountRes.total, 11)
 		let len = shoolData.length
-		console.log('数据总数:' + len,22)
+		console.log('数据总数:' + len, 22)
 		for (let i = dbCountRes.total; i < len; i++) {
 			let curTime = new Date().getTime();
 			let useTimes = (curTime - startTime) / 1000;
@@ -38,7 +38,7 @@ module.exports = class RecruitService extends Service {
 				province_name: shoolData[i].pname, //学校所在省
 				city_name: shoolData[i].cityname, //学校所在城市
 				district_name: shoolData[i].adname, //学校所在市区
-				address: shoolData[i].address, //学校详细地址
+				address: shoolData[i].address != '[]' ? shoolData[i].address : '', //学校详细地址
 				location: shoolData[i].location, //学校所在经纬度
 				geo_location: geo_location, //学校经纬度对象
 			}
@@ -49,10 +49,25 @@ module.exports = class RecruitService extends Service {
 			await this.db.collection('job-basic-school').add(insertData)
 			console.log(shoolData[i], '第' + (i + 1) + '条', '用时' + useTimes + 's')
 		}
-		// await this.db.collection('job-basic-school').add(shoolData)
 		let endTime = new Date().getTime();
 		let allUseTimes = (endTime - startTime) / 1000
 		console.log(shoolData, allUseTimes + 's', 777)
+		response.msg += '总用时' + allUseTimes + 's'
+		return response
+	}
+	//处理院校信息
+	async dealData() {
+		let response = {
+			code: 200,
+			data: null,
+			msg: '处理院校信息成功',
+		}
+		const dbCmd = this.db.command
+		let startTime = new Date().getTime();
+		let dbCountRes = await this.db.collection('job-basic-school').where({address:dbCmd.eq('[]')}).remove()
+		let endTime = new Date().getTime();
+		let allUseTimes = (endTime - startTime) / 1000
+		console.log(dbCountRes, allUseTimes + 's', 11)
 		response.msg += '总用时' + allUseTimes + 's'
 		return response
 	}

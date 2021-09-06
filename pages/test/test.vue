@@ -29,6 +29,12 @@
 			<u-button type="success" ripple @click="asyncSchool()">同步院校</u-button>
 		</view>
 		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="dealSchool()">处理院校信息</u-button>
+		</view>
+	<!-- 	<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="asyncPost()">同步职位</u-button>
+		</view> -->
+		<view class="margin-bottom-sm">
 			<u-button type="success" ripple @click="getLocation()">获取当前位置</u-button>
 		</view>
 		<view class="margin-bottom-sm">
@@ -546,7 +552,7 @@
 				uni.showLoading({
 					title: '同步中'
 				});
-				this.$cloudRequest.job.call('school/add').then(res => {
+				this.$cloudRequest.job.call('basic/school/asyncData').then(res => {
 					console.log(res, 11)
 					let {
 						code,
@@ -566,6 +572,58 @@
 					uni.hideLoading()
 				})
 			},
+			//处理院校信息
+			dealSchool(){
+				uni.showLoading({
+					title: '同步中'
+				});
+				this.$cloudRequest.job.call('basic/school/dealData').then(res => {
+					console.log(res, 11)
+					let {
+						code,
+						msg
+					} = res
+					if (code == 200) {
+						uni.showToast({
+							title: msg
+						});
+					} else {
+						uni.showToast({
+							title: msg,
+							icon: 'none',
+							duration: 2000
+						});
+					}
+					uni.hideLoading()
+				})
+			},
+			
+			//同步职位
+			asyncPost(){
+				uni.showLoading({
+					title: '同步中'
+				});
+				this.$cloudRequest.job.call('basic/post/asyncData').then(res => {
+					console.log(res, 11)
+					let {
+						code,
+						msg
+					} = res
+					if (code == 200) {
+						uni.showToast({
+							title: msg
+						});
+					} else {
+						uni.showToast({
+							title: msg,
+							icon: 'none',
+							duration: 2000
+						});
+					}
+					uni.hideLoading()
+				})
+			},
+			
 			//退出登录
 			userLogout(){
 				this.logout()

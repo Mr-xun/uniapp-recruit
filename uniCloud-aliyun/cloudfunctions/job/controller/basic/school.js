@@ -8,13 +8,20 @@
 const {
 	Controller
 } = require('uni-cloud-router')
-module.exports = class RecruitController extends Controller {
-	//新增院校
-	add() {
+module.exports = class SchoolController extends Controller {
+	//同步院校
+	asyncData() {
 		const {
 			ctx,
 			service
 		} = this;
-		return service.school.add(ctx.data)
+		return service.basic.school.asyncData(ctx.data)
+	}
+	//处理院校信息
+	dealData() {
+		const {
+			service
+		} = this;
+		return service.basic.school.dealData()
 	}
 }

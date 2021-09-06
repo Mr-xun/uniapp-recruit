@@ -10,4 +10,6 @@
 
 // 下面示例查询uni-id-users表的所有数据
 // db.collection('uni-id-users').get();
-db.collection('food-merchant').get()
+db.collection('job-basic-school').where({
+	name:/计算中心$/g
+}).remove()
