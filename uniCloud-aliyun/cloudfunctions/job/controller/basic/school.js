@@ -10,12 +10,35 @@ const {
 } = require('uni-cloud-router')
 module.exports = class SchoolController extends Controller {
 	//同步院校
-	asyncData() {
+	asyncAllSchool() {
 		const {
 			ctx,
 			service
 		} = this;
-		return service.basic.school.asyncData(ctx.data)
+		return service.basic.school.asyncAllSchool(ctx.data)
+	}
+	//同步高校院校
+	asyncUniversitySchool() {
+		const {
+			ctx,
+			service
+		} = this;
+		return service.basic.school.asyncUniversitySchool(ctx.data)
+	}
+	//同步同步中小学幼儿园院校
+	asyncMiddleAndPrimarySchool() {
+		const {
+			ctx,
+			service
+		} = this;
+		return service.basic.school.asyncMiddleAndPrimarySchool(ctx.data)
+	}
+	//抓取高考网大学数据
+	grapGaoKaoSchool(){
+		const {
+			service
+		} = this;
+		return service.basic.school.grapGaoKaoSchool()
 	}
 	//处理院校信息
 	dealData() {
@@ -23,5 +46,12 @@ module.exports = class SchoolController extends Controller {
 			service
 		} = this;
 		return service.basic.school.dealData()
+	}
+	
+	middleSchoolCount() {
+		const {
+			service
+		} = this;
+		return service.basic.school.middleSchoolCount()
 	}
 }

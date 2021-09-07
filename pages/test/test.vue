@@ -26,7 +26,16 @@
 			<u-button type="success" ripple @click="publishRecruit()">发布信息</u-button>
 		</view>
 		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="asyncSchool()">同步院校</u-button>
+			<u-button type="success" ripple @click="asyncAllSchool()">同步院校</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="asyncUniversitySchool()">同步高校院校</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="asyncMiddleSchool()">同步中小学幼儿园院校</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="grapGaoKaoSchool()">抓取高效数据</u-button>
 		</view>
 		<view class="margin-bottom-sm">
 			<u-button type="success" ripple @click="dealSchool()">处理院校信息</u-button>
@@ -51,6 +60,9 @@
 		</view>
 		<view class="margin-bottom-sm">
 			<u-button type="success" ripple @click="userLogout()">退出登录</u-button>
+		</view>
+		<view class="margin-bottom-sm">
+			<u-button type="success" ripple @click="getMiddleSchool()">获取当前中小学数量</u-button>
 		</view>
 		<view class="margin-bottom-sm" v-if="uploadImageUrl">
 			<u-image width="100%" height="300rpx" :src="uploadImageUrl" mode="widthFix"></u-image>
@@ -548,12 +560,85 @@
 				})
 			},
 			//同步院校
-			asyncSchool(){
+			asyncAllSchool(){
 				uni.showLoading({
 					title: '同步中'
 				});
-				this.$cloudRequest.job.call('basic/school/asyncData').then(res => {
+				this.$cloudRequest.job.call('basic/school/asyncAllSchool').then(res => {
 					console.log(res, 11)
+					let {
+						code,
+						msg
+					} = res
+					if (code == 200) {
+						uni.showToast({
+							title: msg
+						});
+					} else {
+						uni.showToast({
+							title: msg,
+							icon: 'none',
+							duration: 2000
+						});
+					}
+					uni.hideLoading()
+				})
+			},
+			//同步高校院校
+			asyncUniversitySchool(){
+				uni.showLoading({
+					title: '同步中'
+				});
+				this.$cloudRequest.job.call('basic/school/asyncUniversitySchool').then(res => {
+					console.log(res, 11)
+					let {
+						code,
+						msg
+					} = res
+					if (code == 200) {
+						uni.showToast({
+							title: msg
+						});
+					} else {
+						uni.showToast({
+							title: msg,
+							icon: 'none',
+							duration: 2000
+						});
+					}
+					uni.hideLoading()
+				})
+			},
+			//同步中小学院校
+			asyncMiddleSchool(){
+				uni.showLoading({
+					title: '同步中'
+				});
+				this.$cloudRequest.job.call('basic/school/asyncMiddleAndPrimarySchool').then(res => {
+					let {
+						code,
+						msg
+					} = res
+					if (code == 200) {
+						uni.showToast({
+							title: msg
+						});
+					} else {
+						uni.showToast({
+							title: msg,
+							icon: 'none',
+							duration: 2000
+						});
+					}
+					uni.hideLoading()
+				})
+			},
+			//抓取高效数据
+			grapGaoKaoSchool(){
+				uni.showLoading({
+					title: '同步中'
+				});
+				this.$cloudRequest.job.call('basic/school/grapGaoKaoSchool').then(res => {
 					let {
 						code,
 						msg
@@ -594,6 +679,25 @@
 							duration: 2000
 						});
 					}
+					uni.hideLoading()
+				})
+			},
+			//获取当前中小学数量
+			getMiddleSchool(){
+				uni.showLoading({
+					title: '查询中'
+				});
+				this.$cloudRequest.job.call('basic/school/middleSchoolCount').then(res => {
+					console.log(res, 11)
+					let {
+						code,
+						msg
+					} = res
+					uni.showToast({
+						title: msg,
+						icon: 'none',
+						duration: 2000
+					});
 					uni.hideLoading()
 				})
 			},

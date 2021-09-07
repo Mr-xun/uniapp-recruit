@@ -11,5 +11,5 @@
 // 下面示例查询uni-id-users表的所有数据
 // db.collection('uni-id-users').get();
 db.collection('job-basic-school').where({
-	name:/研究生院$/g
-}).remove()
+	type:/高等院校/g
+}).count()
