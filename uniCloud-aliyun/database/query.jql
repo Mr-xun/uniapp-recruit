@@ -10,6 +10,5 @@
 
 // 下面示例查询uni-id-users表的所有数据
 // db.collection('uni-id-users').get();
-db.collection('job-basic-school').where({
-	type:/高等院校/g
-}).count()
+const dbCmd = db.command;
+db.collection('job-basic-university-school').where({type:'专科（高职）'}).count()

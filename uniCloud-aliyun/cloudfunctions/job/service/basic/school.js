@@ -9,10 +9,10 @@ const {
 	Service
 } = require('uni-cloud-router')
 // const shoolData = require("../../assets/school.json")
-const basicShcool = require("../../assets/basic-school.json")
-const basicUniversitySchool = require("../../assets/basic-university-school.json")
-const basicMiddleSchool = require("../../assets/basic-middle-school.json")
-const basicGaokaoSchool = require("../../assets/basic-gaokao-school.json")
+// const basicShcool = require("../../assets/basic-school.json")
+// const basicUniversitySchool = require("../../assets/basic-university-school.json")
+// const basicMiddleSchool = require("../../assets/basic-middle-school.json")
+// const basicGaokaoSchool = require("../../assets/basic-gaokao-school.json")
 module.exports = class SchoolService extends Service {
 	//同步所有院校
 	async asyncAllSchool(data) {
@@ -58,7 +58,7 @@ module.exports = class SchoolService extends Service {
 		response.msg += '总用时' + allUseTimes + 's'
 		return response
 	}
-	basicMiddleSchool
+	
 	//同步高校院校
 	async asyncUniversitySchool() {
 		let response = {
@@ -100,14 +100,14 @@ module.exports = class SchoolService extends Service {
 		return response
 	}
 	//同步中小学幼儿园院校
-	async asyncMiddleAndPrimarySchool() {
+	async asyncPrimarySchool() {
 		let response = {
 			code: 200,
 			data: null,
 			msg: '同步中小学幼儿园院校信息成功',
 		}
 		let startTime = new Date().getTime();
-		let dbCountRes = await this.db.collection('job-basic-middle-and-primary-school').where({}).count()
+		let dbCountRes = await this.db.collection('job-basic-primary-school').where({}).count()
 		console.log('已录入总数:' + dbCountRes.total, 11)
 		let basicMiddleSchoolData = basicMiddleSchool.nc_system_school
 		let len = basicMiddleSchoolData.length;
@@ -133,7 +133,7 @@ module.exports = class SchoolService extends Service {
 			basicMiddleSchoolData[i].geo_location = geo_location;
 			basicMiddleSchoolData[i].geo_point = new this.db.Geo.Point(geo_location.longitude,
 				geo_location.latitude) //point类型经纬度;
-			await this.db.collection('job-basic-middle-and-primary-school').add(basicMiddleSchoolData[i])
+			// await this.db.collection('job-basic-primary-school').add(basicMiddleSchoolData[i])
 			console.log(basicMiddleSchoolData[i], '第' + (i + 1) + '条', '用时' + useTimes + 's')
 		}
 		let endTime = new Date().getTime();
@@ -182,50 +182,56 @@ module.exports = class SchoolService extends Service {
 		const dbCmd = this.db.command
 
 		let startTime = new Date().getTime();
-		let dbCountRes = await this.db.collection('job-basic-gaokao-school').where({}).count()
-		console.log(dbCountRes,basicGaokaoSchool.length, 111)
-		let len = basicGaokaoSchool.length;
-		for (let i = dbCountRes.total; i < len; i++) {
-			let curTime = new Date().getTime();
-			let useTimes = (curTime - startTime) / 1000;
-			let geoRes = await uniCloud.httpclient.request(
-				`https://restapi.amap.com/v3/geocode/geo?output=JSON&address=${basicGaokaoSchool[i].name}&city=${basicGaokaoSchool[i].city_name}&key=d27c8c33e47aea8fa848fb2d2b1d365c`, {
-					dataType: 'json'
-				})
-			if (geoRes.data.status == 1 && geoRes.data.count > 0) {
-				let geocodes = geoRes.data.geocodes[0]
-				let locationArr = geocodes.location.split(',')
-				let geo_location = {
-					longitude: locationArr.length ? Number(locationArr[0]) : null,
-					latitude: locationArr.length ? Number(locationArr[1]) : null,
-				}
-				basicGaokaoSchool[i].province_name = geocodes.province;
-				basicGaokaoSchool[i].district_name = geocodes.district;
-				basicGaokaoSchool[i].ad_code = geocodes.adcode;
-				basicGaokaoSchool[i].location = geocodes.location;
-				basicGaokaoSchool[i].geo_location = geo_location;
-				basicGaokaoSchool[i].geo_point = new this.db.Geo.Point(geo_location.longitude,
-					geo_location.latitude) //point类型经纬度;
-				
-			}
-			await this.db.collection('job-basic-gaokao-school').add(basicGaokaoSchool[i])
-			console.log(basicGaokaoSchool[i], '第' + (i + 1) + '条', '用时' + useTimes + 's')
-		}
+		let dbCountRes = await this.db.collection('job-basic-university-school').where({}).count()
+		console.log(dbCountRes, basicGaokaoSchool.length, 111)
+
+		await this.db.collection('job-basic-primary-school').where({
+			
+		}).update({
+			location:dbCmd.remove()
+		})
 		let endTime = new Date().getTime();
 		let allUseTimes = (endTime - startTime) / 1000
 		console.log('总用时' + allUseTimes + 's')
 		response.msg += '总用时' + allUseTimes + 's'
 		return response
 	}
-	async middleSchoolCount(){
+	//查询中小学总数量
+	async middleSchoolCount() {
 		let response = {
 			code: 200,
 			data: null,
 			msg: '',
 		}
-		let dbCountRes = await this.db.collection('job-basic-gaokao-school').where({}).count()
-		console.log(dbCountRes,basicMiddleSchool.nc_system_school.length, 111)
-		response.msg += '当前插入中小学数量为' + dbCountRes.total + '总数量为'+basicMiddleSchool.nc_system_school.length
+		let dbCountRes = await this.db.collection('job-basic-primary-school').where({}).count()
+		console.log(dbCountRes, basicMiddleSchool.nc_system_school.length, 111)
+		response.msg += '当前插入中小学数量为' + dbCountRes.total + '总数量为' + basicMiddleSchool.nc_system_school.length
 		return response
+	}
+	//毕业院校
+	async graduateList(params) {
+		let response = {
+			code: 200,
+			data: null,
+			msg: '查询成功'
+		}
+		try {
+			let dbCmd = this.db.command;
+			let nameReg = new RegExp(params.name, 'g')
+			let dbRes = await this.db.collection('job-basic-university-school').where({
+				name: nameReg
+			}).limit(20).field({
+				'location': false,
+				'geo_location': false,
+				'geo_point': false
+			}).get()
+			response.data = dbRes.data;
+		} catch (e) {
+			//TODO handle the exception
+			response.code = -1;
+			response.msg = '系统错误：' + e;
+		}
+
+		return response;
 	}
 }

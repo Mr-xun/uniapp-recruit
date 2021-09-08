@@ -79,9 +79,13 @@
 			<view class="info-split">
 				教育经历
 			</view>
-			<view class="info-item flex align-center justify-between">
+			<view class="info-item flex align-center justify-between" @click="toChooseSchool">
 				<text class="item-type">毕业院校</text>
-				<text class="item-val">{{editInfo.edu_school}}</text>
+				<text class="item-val flex flex-sub text-cut" :class="{'item-no-val': !editInfo.edu_school}">
+					<template v-if="editInfo.edu_school">{{editInfo.edu_school}}</template>
+					<template v-else>请选择毕业院校</template>
+				</text>
+				<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">学历</text>
@@ -349,10 +353,6 @@
 						if (choooseRes.address && choooseRes.name) {
 							this.editInfo.address = choooseRes.address + choooseRes.name;
 						}
-						console.log('位置名称：' + choooseRes.name);
-						console.log('详细地址：' + choooseRes.address);
-						console.log('纬度：' + choooseRes.latitude);
-						console.log('经度：' + choooseRes.longitude);
 						this.editInfo.geo_location = {
 							latitude: choooseRes.latitude,
 							longitude: choooseRes.longitude,
@@ -408,6 +408,12 @@
 				} else {
 					this.sureAddress(this.editInfo.geo_location)
 				}
+			},
+			//选择学校
+			toChooseSchool(){
+				uni.navigateTo({
+					url:'/pages/user/school'
+				})
 			},
 			//保存信息
 			toSave() {
