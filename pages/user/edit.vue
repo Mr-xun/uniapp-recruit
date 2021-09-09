@@ -79,7 +79,7 @@
 			<view class="info-split">
 				教育经历
 			</view>
-			<view class="info-item flex align-center justify-between" @click="toChooseSchool">
+			<view class="info-item flex align-center justify-between" @click="showSchoolPopup">
 				<text class="item-type">毕业院校</text>
 				<text class="item-val flex flex-sub text-cut" :class="{'item-no-val': !editInfo.edu_school}">
 					<template v-if="editInfo.edu_school">{{editInfo.edu_school}}</template>
@@ -113,6 +113,21 @@
 			:start-year='datePicker.minDate' :end-year='datePicker.maxDate' :params="datePicker.params"
 			@confirm="confirmDatePicker($event,datePicker.key)" confirm-color='#79C58A'></u-picker>
 		<u-toast ref="uToast" />
+		<u-popup mode="right" v-model="schoolPopup.visiable" border-radius="20">
+			<view class="popup-content">
+				<u-search placeholder="请输入院校" v-model="schoolPopup.value" @change="searchSchool" @custom="confirmSchool"
+					shape="square" :clearabled ='false'search-icon='edit-pen' bg-color='#f8f9fa' action-text='确定' :action-style="{color:'#79C58A'}">
+				</u-search>
+				<scroll-view scroll-y="true" style="height: calc(100vh - 100rpx);">
+					<view class="school-list">
+						<view class="school-item" v-for="(item,index) in schoolPopup.schoolList" :key='index'
+							@click="handleSchool(item)">
+							<view class="item-name text-cut" v-html="addColorSchool(item.name)"></view>
+						</view>
+					</view>
+				</scroll-view>
+			</view>
+		</u-popup>
 	</view>
 </template>
 
@@ -171,7 +186,13 @@
 					params: {},
 					minDate: "1930",
 					maxDate: new Date().getFullYear()
-				}
+				},
+				schoolPopup: {
+					//选择学校弹出层
+					visiable: false,
+					value: '',
+					schoolList: []
+				},
 			}
 		},
 		computed: {
@@ -186,6 +207,48 @@
 		},
 		methods: {
 			...mapMutations('user', ['setUserInfo']),
+			//打开选择学校弹窗
+			showSchoolPopup() {
+				this.schoolPopup.value = this.editInfo.edu_school;
+				this.schoolPopup.visiable = true;
+				this.searchSchool()
+			},
+			//查询学校
+			searchSchool() {
+				if (!this.schoolPopup.value) {
+					this.schoolPopup.schoolList = []
+					return
+				}
+				this.$cloudRequest.job.call('basic/school/graduateList', {
+					name: this.schoolPopup.value
+				}).then(res => {
+					let {
+						code,
+						msg,
+						data
+					} = res
+					if (code == 200) {
+						this.schoolPopup.schoolList = data;
+					}
+				})
+			},
+			//确定学校
+			confirmSchool(val) {
+				console.log(val, 2)
+				this.editInfo.edu_school = val;
+				this.schoolPopup.visiable = false;
+			},
+			//点击学校
+			handleSchool(item) {
+				this.schoolPopup.value = item.name;
+			},
+			//给学校加颜色
+			addColorSchool(name) {
+				let p_str = this.schoolPopup.value
+				let outp_str = name.replace(new RegExp(p_str, 'g'),
+					`<span style="color: #79C58A;font-size:bold;">${p_str}</span>`)
+				return outp_str
+			},
 			//展示下拉选择器
 			showSelector(picker) {
 				this.infoSelector.visiable = true
@@ -307,11 +370,12 @@
 						uni.showModal({
 							title: '已拒绝授权，无法获取当前位置信息',
 							content: '是否重新打开授权设置？',
-							success:(res)=> {
+							success: (res) => {
 								if (res.confirm) {
 									uni.openSetting({
-										success: (res)=> {
-											if (res.authSetting['scope.userLocation']) {
+										success: (res) => {
+											if (res.authSetting[
+													'scope.userLocation']) {
 												this.chooseLocation()
 											}
 										}
@@ -410,9 +474,9 @@
 				}
 			},
 			//选择学校
-			toChooseSchool(){
+			toChooseSchool() {
 				uni.navigateTo({
-					url:'/pages/user/school'
+					url: '/pages/user/school'
 				})
 			},
 			//保存信息
@@ -541,6 +605,20 @@
 		margin-left: 10rpx;
 		// background: url("./images/arrow-icon.png");
 		background-size: 100% 100%;
+	}
+
+	.popup-content {
+		padding: 20rpx;
+
+		.school-item {
+			font-size: 30rpx;
+			padding: 0 20rpx;
+
+			.item-name {
+				padding: 8px 0;
+				border-bottom: 1rpx dashed #ebeeef;
+			}
+		}
 	}
 
 	.bottom-btn {
