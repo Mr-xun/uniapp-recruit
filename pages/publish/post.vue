@@ -1,8 +1,8 @@
 <template>
 	<view class="publish-post-page">
 		<scroll-view scroll-y="true" class="from-wrap">
-			<u-form :model="form" ref="uForm">
-				<u-form-item label="所属公司/企业">
+			<u-form :model="form" ref="uForm" label-width="120">
+				<u-form-item label="所属公司">
 					<u-input v-model="form.company" />
 				</u-form-item>
 				<u-form-item label="岗位类型">
@@ -46,7 +46,6 @@
 		</view>
 	</view>
 </template>
-
 <script>
 	export default {
 		data() {
