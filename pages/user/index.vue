@@ -45,6 +45,13 @@
 					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
 				</view>
 			</view>
+			<view class="content-item flex align-center">
+				<image class="item-icon" src="../../static/user/icon-collect.png" mode=""></image>
+				<view class="item-con flex flex-sub justify-between">
+					<text>切换身份</text>
+					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>

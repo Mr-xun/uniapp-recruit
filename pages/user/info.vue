@@ -12,10 +12,10 @@
 				<text class="item-type">真实姓名</text>
 				<text class="item-val">{{userInfo.realname}}</text>
 			</view>
-			<view class="info-item flex align-center justify-between">
+			<!-- <view class="info-item flex align-center justify-between">
 				<text class="item-type">身份证</text>
 				<text class="item-val">{{userInfo.id_card}}</text>
-			</view>
+			</view> -->
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">用户名</text>
 				<text class="item-val">{{userInfo.nickname}}</text>
@@ -71,11 +71,7 @@
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">学历</text>
-				<text class="item-val">{{userInfo.edu_qualification}}</text>
-			</view>
-			<view class="info-item flex align-center justify-between">
-				<text class="item-type">毕业时间</text>
-				<text class="item-val">{{userInfo.edu_graduated_time  | date('yyyy月mm月')}}</text>
+				<text class="item-val">{{userInfo.edu_qualification | flEducation}}</text>
 			</view>
 		</scroll-view>
 		<view class="bottom-btn flex align-center justify-center">

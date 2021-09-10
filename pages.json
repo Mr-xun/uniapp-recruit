@@ -25,11 +25,28 @@
 			}
 		},
 		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle": "default",
+				"disableScroll": true
+			}
+		},
+		{
+			"path": "pages/publish/post",
+			"style": {
+				"navigationBarTitleText": "发布招聘",
+				"navigationStyle": "default",
+				"disableScroll": true
+			}
+		},
+		{
 			"path": "pages/user/index",
 			"style": {
 				"disableScroll": true
 			}
 		},
+		
 		{
 			"path": "pages/user/info",
 			"style": {
@@ -72,7 +89,7 @@
 	],
 	"tabBar": {
 		"list": [{
-			"pagePath": "pages/index/index",
+			"pagePath": "pages/home/index",
 			"text": "首页",
 			"iconPath": "static/tabbar/basics.png",
 			"selectedIconPath": "static/tabbar/basics_cur.png"
@@ -100,7 +117,7 @@
 		"current": 0, //当前激活的模式(list 的索引项)
 		"list": [{
 			"name": "首页", //模式名称
-			"path": "pages/user/edit", //启动页面
+			"path": "pages/home/index", //启动页面
 			"query": "" //启动参数
 		}]
 	}

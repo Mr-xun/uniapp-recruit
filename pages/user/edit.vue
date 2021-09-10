@@ -6,18 +6,20 @@
 			</view>
 			<view class="info-item flex align-center justify-between" @click="uploadAvatar">
 				<text class="item-type">用户头像</text>
-				<image class="item-img" :src="editInfo.avatar" mode=""></image>
+				<image v-if="editInfo.avatar" class="item-img" :src="editInfo.avatar" mode=""></image>
+				<text v-else class="item-val flex flex-sub" :class="{'item-no-val': !editInfo.gender}">请上传头像</text>
+				<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">真实姓名</text>
 				<u-input class="item-val flex flex-sub" v-model="editInfo.realname" type="text" input-align='right'
 					placeholder="请输入真实姓名" placeholder-style='color:#999;' />
 			</view>
-			<view class="info-item flex align-center justify-between">
+		<!-- 	<view class="info-item flex align-center justify-between">
 				<text class="item-type">身份证</text>
 				<u-input class="item-val flex flex-sub" v-model="editInfo.id_card" type="idcard" input-align='right'
 					placeholder="请输入身份证" placeholder-style='color:#999;' @input="changeCardID" />
-			</view>
+			</view> -->
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">用户名</text>
 				<u-input class="item-val flex flex-sub" v-model="editInfo.nickname" type="text" input-align='right'
@@ -87,11 +89,15 @@
 				</text>
 				<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
 			</view>
-			<view class="info-item flex align-center justify-between">
+			<view class="info-item flex align-center justify-between" @click="showSelector('eduQualificationPicker')">
 				<text class="item-type">学历</text>
-				<text class="item-val">{{editInfo.edu_qualification}}</text>
+				<text class="item-val flex flex-sub text-cut" :class="{'item-no-val': !editInfo.edu_qualification}">
+					<template v-if="editInfo.edu_qualification">{{editInfo.edu_qualification | flEducation}}</template>
+					<template v-else>请选择学历</template>
+				</text>
+				<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
 			</view>
-			<view class="info-item flex align-center justify-between" @click="showDatePicker('eduGraduatedTimePicker')">
+			<!-- <view class="info-item flex align-center justify-between" @click="showDatePicker('eduGraduatedTimePicker')">
 				<text class="item-type">毕业时间</text>
 				<text class="item-val flex flex-sub" :class="{'item-no-val': !editInfo.edu_graduated_time}">
 					<template
@@ -99,24 +105,28 @@
 					<template v-else>请选择毕业时间</template>
 				</text>
 				<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
-			</view>
+			</view> -->
 		</scroll-view>
 		<view class="bottom-btn flex align-center justify-center">
 			<button class="opt-btn cu-btn round" :disabled='btnLoading' @click="toSave">
 				<text v-if="btnLoading" class="cuIcon-loading2 cuIconfont-spin"></text> 保存信息</button>
 		</view>
-		<u-select title='选择性别' v-model="infoSelector.visiable" :default-value="[editInfo.gender?editInfo.gender-1:0]"
+		<!--信息下拉选择器-->
+		<u-select :title='infoSelector.title' v-model="infoSelector.visiable" :default-value="infoSelector.defalut"
 			mode="single-column" :list="infoSelector.columns" @confirm="confirmSelector($event,infoSelector.key)"
 			confirm-color='#79C58A'>
 		</u-select>
+		<!--日期选择器-->
 		<u-picker v-model="datePicker.visiable" mode="time" :default-time='datePicker.value'
 			:start-year='datePicker.minDate' :end-year='datePicker.maxDate' :params="datePicker.params"
 			@confirm="confirmDatePicker($event,datePicker.key)" confirm-color='#79C58A'></u-picker>
 		<u-toast ref="uToast" />
+		<!--popup面板选择器-->
 		<u-popup mode="right" v-model="schoolPopup.visiable" border-radius="20">
 			<view class="popup-content">
 				<u-search placeholder="请输入院校" v-model="schoolPopup.value" @change="searchSchool" @custom="confirmSchool"
-					shape="square" :clearabled ='false'search-icon='edit-pen' bg-color='#f8f9fa' action-text='确定' :action-style="{color:'#79C58A'}">
+					shape="square" :clearabled='false' search-icon='edit-pen' bg-color='#f8f9fa' action-text='确定'
+					:action-style="{color:'#79C58A'}">
 				</u-search>
 				<scroll-view scroll-y="true" style="height: calc(100vh - 100rpx);">
 					<view class="school-list">
@@ -146,6 +156,11 @@
 		title: "选择性别",
 		columns: ENUM.GENDER
 	};
+	const eduQualificationPicker = {
+		key: 'edu_qualification',
+		title: '请选择学历',
+		columns: ENUM.EDUCATION
+	}
 	const birthdayPicker = {
 		key: "birthday",
 		title: "选择时间",
@@ -167,12 +182,14 @@
 		data() {
 			return {
 				genderPicker,
+				eduQualificationPicker,
 				birthdayPicker,
 				eduGraduatedTimePicker,
 				btnLoading: false,
 				editInfo: {},
 				infoSelector: {
 					//信息选择器弹窗
+					defalut: '', //默认值
 					visiable: false,
 					title: "",
 					key: "",
@@ -251,13 +268,15 @@
 			},
 			//展示下拉选择器
 			showSelector(picker) {
-				this.infoSelector.visiable = true
+				this.infoSelector.default = [this.editInfo[this[picker].key]];
 				this.infoSelector.title = this[picker].title;
 				this.infoSelector.columns = this[picker].columns;
 				this.infoSelector.key = this[picker].key;
+				this.infoSelector.visiable = true
 			},
 			//确定选择
 			confirmSelector(data, key) {
+				console.log(data, key)
 				this.$set(this.editInfo, key, data[0].value)
 			},
 			//显示生日选择器
