@@ -14,4 +14,11 @@ module.exports = class PostController extends Controller {
 		} = this;
 		return service.basic.post.asyncData(ctx.data)
 	}
+	//获取职业分类tree结构
+	tree(){
+		const {
+			service
+		} = this;
+		return service.basic.post.tree()
+	}
 }

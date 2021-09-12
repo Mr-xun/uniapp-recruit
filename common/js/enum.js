@@ -14,7 +14,7 @@ export const GENDER = [{
 ]
 //学历
 export const EDUCATION = [{
-		label: '小学',
+		label: '小学及以下',
 		value: 1
 	},
 	{

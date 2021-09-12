@@ -19,23 +19,24 @@ module.exports = class RecruitService extends Service {
 		let inserData = {
 			comopany: publicInfo.company, //所属公司
 			comopany_id: '', //所属公司
-			title: publicInfo.title, //求职标题
-			content: publicInfo.content,//职责描述
+			post_name: publicInfo.post_name, //岗位名称
+			post_content: publicInfo.post_content,//职责描述
 			category: ['招工类别1', '类别2'],
-			type: publicInfo.type, //岗位类型
+			post_type: publicInfo.post_type, //岗位类型
+			post_type_id: publicInfo.post_type_id, //岗位类型id
 			welfare_tags: [], //福利标签
-			salary_type: 1, //工资类型 1 范围 2固定 3 面谈
+			salary_type: 1, //工资类型 1 自定义范围  3 面谈
 			salary_fix: publicInfo.salary_fix, //固定工资
-			salary_area_min: 100, //最小工资
-			salary_area_max: 200, //最高工资
+			salary_range_min: 100, //最小工资
+			salary_range_max: 200, //最高工资
 			salary_unit: '元/月', //工资单位
 			salary_payment_way: '', //工资结算方式 1: 月付  2：日结
-			apply_education: publicInfo.apply_education, //学历
-			apply_gender: publicInfo.apply_gender, //性别
-			apply_age: publicInfo.apply_age, //年龄
-			apply_age_min: 20, //最小年龄
-			apply_age_max: 60, //最大年龄
-			apply_experience: '不限', //工作经验
+			demand_education: publicInfo.demand_education, //学历
+			demand_gender: publicInfo.demand_gender, //性别要求 1:男 2:女 3:不限
+			demand_age: publicInfo.demand_age, //年龄
+			demand_age_min: 20, //最小年龄
+			demand_age_max: 60, //最大年龄
+			demand_experience: '不限', //工作经验
 			work_organ: '', //招聘组织机构
 			work_environment: [], //工作环境
 			work_contry: '', //工作地点所属国家
