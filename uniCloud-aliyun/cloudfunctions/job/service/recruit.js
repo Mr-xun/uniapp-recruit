@@ -22,8 +22,8 @@ module.exports = class RecruitService extends Service {
 			post_name: publicInfo.post_name, //岗位名称
 			post_content: publicInfo.post_content,//职责描述
 			category: ['招工类别1', '类别2'],
-			post_type: publicInfo.post_type, //岗位类型
-			post_type_id: publicInfo.post_type_id, //岗位类型id
+			post_type: publicInfo.post_type, //职位类型
+			post_type_id: publicInfo.post_type_id, //职位类型id
 			welfare_tags: [], //福利标签
 			salary_type: 1, //工资类型 1 自定义范围  3 面谈
 			salary_fix: publicInfo.salary_fix, //固定工资

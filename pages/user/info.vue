@@ -22,7 +22,7 @@
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">性别</text>
-				<text class="item-val">{{userInfo.gender | flGender}}</text>
+				<text class="item-val">{{userInfo.gender | flGenderInfo}}</text>
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">生日</text>
@@ -71,7 +71,7 @@
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">学历</text>
-				<text class="item-val">{{userInfo.edu_qualification | flEducation}}</text>
+				<text class="item-val">{{userInfo.edu_qualification | flEducationInfo}}</text>
 			</view>
 		</scroll-view>
 		<view class="bottom-btn flex align-center justify-center">

@@ -10,11 +10,11 @@
 					:refresher-triggered="triggered" @refresherpulling="onPull" @refresherrefresh="onRefresh"
 					@refresherrestore="onRestore" @refresherabort="onAbort">
 					<template v-if="!isEmpty[currentSwiper]">
-						<u-card v-for="(o,idx) in data[currentSwiper]" :key='idx' :title="o.title"
+						<u-card v-for="(o,idx) in data[currentSwiper]" :key='idx' :title="o.post_name"
 							:sub-title="o.publish_time | date('yyyy/mm/dd hh:MM:ss')" :thumb="o.publish_uid_avatar">
 							<view class="" slot="body">
 								<view class="u-body-item u-flex  u-col-between u-p-t-0">
-									<view class="u-body-item-title ">{{o.content}}</view>
+									<view class="u-body-item-title ">{{o.post_content}}</view>
 								</view>
 							</view>
 						</u-card>

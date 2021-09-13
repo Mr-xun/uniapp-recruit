@@ -28,7 +28,7 @@
 			<view class="info-item flex align-center justify-between" @click="showSelector('genderPicker')">
 				<text class="item-type">性别</text>
 				<text class="item-val flex flex-sub" :class="{'item-no-val': !editInfo.gender}">
-					<template v-if="editInfo.gender">{{editInfo.gender | flGender}}</template>
+					<template v-if="editInfo.gender">{{editInfo.gender | flGenderInfo}}</template>
 					<template v-else>请选择性别</template>
 				</text>
 				<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
@@ -92,7 +92,7 @@
 			<view class="info-item flex align-center justify-between" @click="showSelector('eduQualificationPicker')">
 				<text class="item-type">学历</text>
 				<text class="item-val flex flex-sub text-cut" :class="{'item-no-val': !editInfo.edu_qualification}">
-					<template v-if="editInfo.edu_qualification">{{editInfo.edu_qualification | flEducation}}</template>
+					<template v-if="editInfo.edu_qualification">{{editInfo.edu_qualification | flEducationInfo}}</template>
 					<template v-else>请选择学历</template>
 				</text>
 				<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
@@ -113,7 +113,7 @@
 		</view>
 		<!--信息下拉选择器-->
 		<u-select :title='infoSelector.title' v-model="infoSelector.visiable" :default-value="infoSelector.defalut"
-			mode="single-column" :list="infoSelector.columns" @confirm="confirmSelector($event,infoSelector.key)"
+			mode="single-column" :list="infoSelector.columns" label-name='text' @confirm="confirmSelector($event,infoSelector.key)"
 			confirm-color='#79C58A'>
 		</u-select>
 		<!--日期选择器-->
@@ -154,12 +154,12 @@
 	const genderPicker = {
 		key: "gender",
 		title: "选择性别",
-		columns: ENUM.GENDER
+		columns: ENUM.SET_GENDER_INFO()
 	};
 	const eduQualificationPicker = {
 		key: 'edu_qualification',
 		title: '请选择学历',
-		columns: ENUM.EDUCATION
+		columns: ENUM.SET_EDUCATION_INFO()
 	}
 	const birthdayPicker = {
 		key: "birthday",
@@ -251,7 +251,6 @@
 			},
 			//确定学校
 			confirmSchool(val) {
-				console.log(val, 2)
 				this.editInfo.edu_school = val;
 				this.schoolPopup.visiable = false;
 			},
@@ -276,7 +275,6 @@
 			},
 			//确定选择
 			confirmSelector(data, key) {
-				console.log(data, key)
 				this.$set(this.editInfo, key, data[0].value)
 			},
 			//显示生日选择器
