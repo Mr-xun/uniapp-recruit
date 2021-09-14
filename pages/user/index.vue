@@ -1,6 +1,6 @@
 <template>
 	<view class="user-page ">
-		<view class="user-card text-center" :style="[{paddingTop:CustomBar + 'px'}]">
+		<view class="user-card text-center" :style="[{paddingTop:CustomBar + 'px'}]" >
 			<template v-if="isLogin">
 				<view class="user-avator">
 					<u-avatar :src="userInfo.avatar" mode="circle" size="160" :show-sex="userInfo.gender"
@@ -23,7 +23,7 @@
 				<button class="login-btn cu-btn round line-green  shadow" @click="loginOrRegister">立即登录</button>
 			</template>
 		</view>
-		<view class="content-container">
+		<view class="content-container"  >
 			<view class="content-item flex align-center">
 				<image class="item-icon" src="../../static/user/icon-info.png" mode=""></image>
 				<view class="item-con flex flex-sub justify-between" @click="toPage('/pages/user/info')">
@@ -45,13 +45,6 @@
 					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
 				</view>
 			</view>
-			<view class="content-item flex align-center">
-				<image class="item-icon" src="../../static/user/icon-collect.png" mode=""></image>
-				<view class="item-con flex flex-sub justify-between">
-					<text>切换身份</text>
-					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
-				</view>
-			</view>
 		</view>
 	</view>
 </template>
@@ -69,7 +62,8 @@
 		computed: {
 			...mapGetters('user', ['userInfo', 'isLogin'])
 		},
-		onLoad() {},
+		onLoad() {
+		},
 		methods: {
 			...mapActions('user', ['loginOrRegister', 'updateUserInfo']),
 			toPage(path) {
@@ -86,7 +80,6 @@
 		background: #fff;
 		height: 100vh;
 	}
-
 	.user-card {
 		width: 100vw;
 		background-image: url(../../static/user/user-top.png);

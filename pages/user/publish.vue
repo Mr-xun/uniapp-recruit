@@ -119,6 +119,7 @@
 					this.isEmpty[this.currentSwiper] = true;
 					this.loading = false
 					this.triggered = false;
+					uni.hideLoading()
 				})
 			},
 		}

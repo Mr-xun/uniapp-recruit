@@ -1,93 +1,99 @@
 <template>
 	<view class="my-page text-center">
-		<view>用户：{{userInfo.nickname || userInfo.nickName || ''}}</view>
-		<u-avatar v-if="userInfo.avatar" :src="userInfo.avatar" mode="square" size="200" show-sex
-			:sex-icon="userInfo.gender ==1?'man':'woman'"></u-avatar>
-		<view class="margin-bottom-sm">
-			<!-- <u-button type="success" ripple  @click="getUserInfo()">获取默认信息</u-button> -->
+		<view class="text-container">
+			<view>用户：{{userInfo.nickname || userInfo.nickName || ''}}</view>
+			<u-avatar v-if="userInfo.avatar" :src="userInfo.avatar" mode="square" size="200" show-sex
+				:sex-icon="userInfo.gender ==1?'man':'woman'"></u-avatar>
+			<view class="margin-bottom-sm">
+				<!-- <u-button type="success" ripple  @click="getUserInfo()">获取默认信息</u-button> -->
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="loginOrRegister()">注册或登录</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="updateUserInfo()">同步微信信息</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple open-type="getPhoneNumber" @getphonenumber="getphonenumber()">获取手机号
+				</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="addMerchant()">同步位置并添加模拟商户</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="addCuisine()">添加模拟菜系</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="publishRecruit()">发布信息</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="asyncAllSchool()">同步院校</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="asyncUniversitySchool()">同步高校院校</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="asyncPrimarySchool()">同步中小学幼儿园院校</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="grapGaoKaoSchool()">抓取高效数据</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="dealSchool()">处理院校信息</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="getMiddleSchool()">获取当前中小学数量</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="getGraduateList()">获取毕业院校列表</u-button>
+			</view>
+			<!-- 	<view class="margin-bottom-sm">
+					<u-button type="success" ripple @click="asyncPost()">同步职位</u-button>
+				</view> -->
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="getLocation()">获取当前位置</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="chooseLocation()">选择位置</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="openLocation()">查看位置</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="uploadImg()">上传图片</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="uploadVideo()">上传视频</u-button>
+			</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="userLogout()">退出登录</u-button>
+			</view>
+
+			<view class="margin-bottom-sm" v-if="uploadImageUrl">
+				<u-image width="100%" height="300rpx" :src="uploadImageUrl" mode="widthFix"></u-image>
+			</view>
+			<view class="margin-bottom-sm" v-if="uploadVideoUrl">
+				<video id="myVideo" :src="uploadVideoUrl"></video>
+			</view>
+			<!-- <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" :markers="covers"
+					@markertap='clickMarker'>
+				</map> -->
 		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="loginOrRegister()">注册或登录</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="updateUserInfo()">同步微信信息</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple open-type="getPhoneNumber" @getphonenumber="getphonenumber()">获取手机号
-			</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="addMerchant()">同步位置并添加模拟商户</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="addCuisine()">添加模拟菜系</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="publishRecruit()">发布信息</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="asyncAllSchool()">同步院校</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="asyncUniversitySchool()">同步高校院校</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="asyncPrimarySchool()">同步中小学幼儿园院校</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="grapGaoKaoSchool()">抓取高效数据</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="dealSchool()">处理院校信息</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="getMiddleSchool()">获取当前中小学数量</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="getGraduateList()">获取毕业院校列表</u-button>
-		</view>
-	<!-- 	<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="asyncPost()">同步职位</u-button>
-		</view> -->
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="getLocation()">获取当前位置</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="chooseLocation()">选择位置</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="openLocation()">查看位置</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="uploadImg()">上传图片</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="uploadVideo()">上传视频</u-button>
-		</view>
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="userLogout()">退出登录</u-button>
-		</view>
-		
-		<view class="margin-bottom-sm" v-if="uploadImageUrl">
-			<u-image width="100%" height="300rpx" :src="uploadImageUrl" mode="widthFix"></u-image>
-		</view>
-		<view class="margin-bottom-sm" v-if="uploadVideoUrl">
-			<video id="myVideo" :src="uploadVideoUrl"></video>
-		</view>
-		<!-- <map style="width: 100%; height: 300px;" :latitude="latitude" :longitude="longitude" :markers="covers"
-			@markertap='clickMarker'>
-		</map> -->
 	</view>
 </template>
 
 <script>
 	import {
+		mapState,
 		mapMutations,
 		mapActions,
 		mapGetters
 	} from 'vuex'
 	import apiCloud from "../../common/js/apiCloud.js"
 	export default {
+		computed:{
+			...mapState('setting', ['tabbar'])
+		},
 		data() {
 			return {
 				userInfo: {},
@@ -110,7 +116,7 @@
 		},
 		onLoad() {},
 		methods: {
-			...mapMutations('user', ['setAccessToken', 'setTokenExpireTime', 'setUserInfo','logout']),
+			...mapMutations('user', ['setAccessToken', 'setTokenExpireTime', 'setUserInfo', 'logout']),
 			getUserInfo() {
 				let _this = this;
 				uni.login({
@@ -186,7 +192,7 @@
 				});
 				uni.getUserProfile({
 					desc: '我想要你的基本信息',
-					lang:"zh_CN",
+					lang: "zh_CN",
 					success: (res) => {
 						let userInfo = res.userInfo;
 						this.$cloudRequest.user.call('user/updateInfo', userInfo).then(res => {
@@ -564,7 +570,7 @@
 				})
 			},
 			//同步院校
-			asyncAllSchool(){
+			asyncAllSchool() {
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -589,7 +595,7 @@
 				})
 			},
 			//同步高校院校
-			asyncUniversitySchool(){
+			asyncUniversitySchool() {
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -614,7 +620,7 @@
 				})
 			},
 			//同步中小学院校
-			asyncPrimarySchool(){
+			asyncPrimarySchool() {
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -638,7 +644,7 @@
 				})
 			},
 			//抓取高效数据
-			grapGaoKaoSchool(){
+			grapGaoKaoSchool() {
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -662,7 +668,7 @@
 				})
 			},
 			//处理院校信息
-			dealSchool(){
+			dealSchool() {
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -687,7 +693,7 @@
 				})
 			},
 			//获取当前中小学数量
-			getMiddleSchool(){
+			getMiddleSchool() {
 				uni.showLoading({
 					title: '查询中'
 				});
@@ -706,11 +712,13 @@
 				})
 			},
 			//获取毕业院校列表
-			getGraduateList(){
+			getGraduateList() {
 				uni.showLoading({
 					title: '查询中'
 				});
-				this.$cloudRequest.job.call('basic/school/graduateList',{name:'青岛科技大学'}).then(res => {
+				this.$cloudRequest.job.call('basic/school/graduateList', {
+					name: '青岛科技大学'
+				}).then(res => {
 					console.log(res, 11)
 					let {
 						code,
@@ -731,7 +739,7 @@
 				})
 			},
 			//同步职位
-			asyncPost(){
+			asyncPost() {
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -755,9 +763,9 @@
 					uni.hideLoading()
 				})
 			},
-			
+
 			//退出登录
-			userLogout(){
+			userLogout() {
 				this.logout()
 				uni.showToast({
 					title: '退出登录'

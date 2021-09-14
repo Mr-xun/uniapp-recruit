@@ -5,6 +5,9 @@
 </template>
 
 <script>
+	import {
+		mapState
+	} from 'vuex'
 	import CompanyHome from './company/home.vue'
 	export default {
 		components: {
@@ -12,6 +15,9 @@
 		},
 		data() {
 			return {}
+		},
+		onLoad() {},
+		methods:{
 		}
 	}
 </script>

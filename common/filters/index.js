@@ -3,9 +3,9 @@ import * as ENUM from '@/common/js/enum.js'
  * filter genderinfo 性别信息
  */
 export function flGenderInfo(val) {
-	for (let i = 0; i < ENUM.GENDER.length; i++) {
-		if (ENUM.GENDER[i].value == val) {
-			return ENUM.GENDER[i].label
+	for (let i = 0; i < ENUM.ENUM_GENDER.length; i++) {
+		if (ENUM.ENUM_GENDER[i].value == val) {
+			return ENUM.ENUM_GENDER[i].text
 		}
 	}
 	return '--';
@@ -14,9 +14,9 @@ export function flGenderInfo(val) {
  * filter educationinfo 学历
  */
 export function flEducationInfo(val) {
-	for (let i = 0; i < ENUM.EDUCATION.length; i++) {
-		if (ENUM.EDUCATION[i].value == val) {
-			return ENUM.EDUCATION[i].label
+	for (let i = 0; i < ENUM.ENUM_EDUCATION.length; i++) {
+		if (ENUM.ENUM_EDUCATION[i].value == val) {
+			return ENUM.ENUM_EDUCATION[i].text
 		}
 	}
 	return '--';
