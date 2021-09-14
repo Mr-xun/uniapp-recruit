@@ -8,7 +8,8 @@
 				<view class="post-title flex align-center justify-between ">
 					<text class="post-name">{{item.post_name}}</text>
 					<text class="post-salary">
-						{{item.salary}}<text v-if="item.salary_type ==1">{{item.salary_unit}}</text>
+						{{item.salary}}
+						<text class="post-salary-unit" v-if="item.salary_type ==1">&nbsp;{{item.salary_unit}}</text>
 					</text>
 				</view>
 				<view class="post-company">{{item.company_name}}</view>
@@ -18,7 +19,8 @@
 					<text class="label-tag text-center">{{item.demand_age}}</text>
 					<text class="label-tag text-center">{{item.demand_experience}}</text>
 					<template v-if="item.welfare_tags">
-						<text class="label-tag text-center" v-for="(tag,idx) in item.welfare_tags.split(',')">{{tag}}</text>
+						<text class="label-tag text-center"
+							v-for="(tag,idx) in item.welfare_tags.split(',')">{{tag}}</text>
 					</template>
 				</view>
 				<view class="publish-user flex align-center justify-between">
@@ -83,11 +85,12 @@
 	.home-company-index-page {
 		.post-container {
 			.post-item-box {
-				margin: 24rpx;
+				margin: 26rpx;
 				background: #fff;
 				border-radius: 20rpx;
 				padding: 16rpx;
 				box-sizing: border-box;
+				box-shadow: 0 0 10rpx #ebeeef;
 
 				.post-name {
 					color: #333;
@@ -96,21 +99,23 @@
 				}
 
 				.post-salary {
-					font-size: 24rpx;
+					font-size: 26rpx;
 					color: #e63500;
 				}
-
+				.post-salary-unit{
+					margin-left: 8rpx;
+				}
 				.post-company {
-					font-size: 24rpx;
+					font-size: 26rpx;
 					margin-top: 10rpx;
-					margin-bottom: 16rpx;
+					margin-bottom: 4rpx;
 					color: #666;
 				}
 
 				.post-label-content {
 					.label-tag {
 						display: inline-block;
-						font-size: 22rpx;
+						font-size: 23rpx;
 						color: #666;
 						padding: 3rpx 8rpx;
 						background: #F7F7F7;
@@ -119,23 +124,27 @@
 						border-radius: 3rpx;
 					}
 				}
-				.publish-user{
+
+				.publish-user {
 					margin-top: 16rpx;
 					padding-top: 10rpx;
-					border-top: 0.5  solid #ebeeef;
-					.user-avatar{
+					border-top: 0.5rpx solid #ebeeef;
+
+					.user-avatar {
 						width: 32rpx;
 						height: 32rpx;
 						border-radius: 16rpx;
 						margin-right: 8rpx;
 					}
-					.user-name{
+
+					.user-name {
 						color: #666;
-						font-size: 24rpx;
+						font-size: 26rpx;
 					}
-					.user-contact{
+
+					.user-contact {
 						color: #666;
-						font-size: 24rpx;
+						font-size: 26rpx;
 					}
 				}
 			}
