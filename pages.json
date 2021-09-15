@@ -12,7 +12,7 @@
 			}
 		},
 		{
-			"path": "pages/publish/post",
+			"path": "pages/job/post/publish",
 			"style": {
 				"navigationBarTitleText": "发布招聘",
 				"navigationStyle": "default",
@@ -25,7 +25,6 @@
 				"disableScroll": true
 			}
 		},
-
 		{
 			"path": "pages/user/info",
 			"style": {
@@ -43,20 +42,10 @@
 			}
 		},
 		{
-			"path": "pages/user/school",
-			"style": {
-				"navigationBarTitleText": "学校",
-				"navigationStyle": "default",
-				"disableScroll": true
-			}
-		},
-		
-		{
 			"path": "pages/user/publish",
 			"style": {
 				"navigationBarTitleText": "我的发布",
 				"navigationStyle": "default"
-
 			}
 		},
 		{
@@ -64,27 +53,6 @@
 			"style": {
 				"navigationBarTitleText": "测试",
 				"navigationStyle": "default"
-			}
-		},
-		{
-			"path": "pages/index/index"
-		},
-		{
-			"path": "pages/index/layout"
-		},
-		{
-			"path": "pages/index/background"
-		},
-		{
-			"path": "pages/index/text"
-		},
-		{
-			"path": "pages/index/icon"
-		},
-		{
-			"path": "pages/list/index",
-			"style": {
-				"navigationBarTitleText": "List"
 			}
 		}
 	],
@@ -117,7 +85,7 @@
 		"current": 0, //当前激活的模式(list 的索引项)
 		"list": [{
 			"name": "首页", //模式名称
-			"path": "pages/home/index", //启动页面
+			"path": "pages/job/post/publish", //启动页面
 			"query": "" //启动参数
 		}]
 	}

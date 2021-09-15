@@ -49,7 +49,9 @@
 							maxlength='500' />
 					</u-form-item>
 					<u-form-item label="工作环境" prop="company_images" border-bottom label-position="top">
-						<u-upload width="160" height="160"></u-upload>
+						<u-upload ref='uUpload' width="160" height="160" :auto-upload='false'
+							:file-list="uploadFileList" @on-success='uploadSuccess' @on-list-change="uploadListChange"
+							@on-choose-complete="uploadChooseComplete" @on-remove="uploadRemove"></u-upload>
 					</u-form-item>
 					<u-form-item label="联系人" prop="contact_name" required border-bottom>
 						<u-input v-model="form.contact_name" input-align="right" placeholder="请输入联系人" />
@@ -154,6 +156,7 @@
 <script>
 	import * as ENUM from '@/common/js/enum.js'
 	import classifyData from '@/common/classify.data.js';
+	import * as utils from '@/common/js/utils.js'
 	export default {
 		data() {
 			return {
@@ -233,6 +236,8 @@
 					],
 					defaultSelector: [0, 0, 0]
 				},
+				cacheFileList: [], //缓存的文件
+				uploadFileList: [], //文件上传的list
 				btnLoading: false,
 				formRules: {
 					company_name: [{
@@ -307,6 +312,37 @@
 			this.getPostTree()
 		},
 		methods: {
+			//上传成功
+			uploadSuccess(data, index, lists, name) {
+				console.log(data, index, lists, name, 'success')
+			},
+			uploadListChange(lists, name) {
+				console.log(lists, this.uploadFileList, 'list-change')
+			},
+			uploadChooseComplete(lists) {
+				this.cacheFileList = []
+				lists.forEach(async item => {
+					let path = lists[0].url;
+					let extName = utils.getFileExt(path)
+					let t = this.$u.timeFormat(new Date().getTime(),
+						'yyyymmddhhMMss');
+					let rand = (Math.round(Math.random() * 1000000) + '')
+						.padStart(6, '0');
+					var fileName = t + '_' + rand + '.' + extName;
+					const options = {
+						filePath: path,
+						cloudPath: fileName
+					}
+					let result = await uniCloud.uploadFile(options)
+					this.cacheFileList.push({
+						url: result.fileID
+					})
+				})
+
+			},
+			uploadRemove(lists, name) {
+				console.log(lists, name, 'remove')
+			},
 			backHome() {
 				uni.switchTab({
 					url: "/pages/home/index"
@@ -505,6 +541,7 @@
 				this.$refs.uForm.validate(valid => {
 					if (valid) {
 						this.btnLoading = true;
+						this.form.company_images = this.cacheFileList;
 						console.log(this.form)
 						this.$cloudRequest.job.call('recruit/publish', this.form).then(res => {
 							console.log(res, 11)

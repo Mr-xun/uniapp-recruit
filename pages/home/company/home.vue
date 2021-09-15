@@ -3,7 +3,9 @@
 		<view class="margin-bottom-sm">
 			<u-button type="success" ripple @click="toPublishRecruit()">发布信息</u-button>
 		</view>
-		<view class="post-container">
+		<scroll-view scroll-y="true" class="post-container" refresher-enabled="true"
+			:refresher-triggered="loadpull.triggered" @refresherpulling="onPull" @refresherrefresh="onRefresh"
+			@refresherrestore="onRestore" @refresherabort="onAbort" @scrolltolower='scrolltolower'>
 			<view class="post-item-box" v-for="(item,index ) in postData" :key='index'>
 				<view class="post-title flex align-center justify-between ">
 					<text class="post-name">{{item.post_name}}</text>
@@ -13,15 +15,21 @@
 					</text>
 				</view>
 				<view class="post-company">{{item.company_name}}</view>
-				<view class="post-label-content">
-					<text class="label-tag text-center ">{{item.demand_education}}</text>
-					<text class="label-tag text-center">{{item.demand_gender}}</text>
-					<text class="label-tag text-center">{{item.demand_age}}</text>
-					<text class="label-tag text-center">{{item.demand_experience}}</text>
-					<template v-if="item.welfare_tags">
-						<text class="label-tag text-center"
-							v-for="(tag,idx) in item.welfare_tags.split(',')">{{tag}}</text>
-					</template>
+				<view class="demand-label-content  f20 color-6">
+					<text class="text-center" v-if="item.demand_experience">{{item.demand_experience}}</text>
+					<text class="text-center" v-if="item.demand_gender"><text class="label-line"></text>
+						{{item.demand_gender}}</text>
+					<text class="text-center" v-if="item.demand_age"><text
+							class="label-line"></text>{{item.demand_age}}</text>
+					<text class="text-center" v-if="item.demand_education"><text
+							class="label-line"></text>{{item.demand_education}}</text>
+				</view>
+				<view class="welfare-label-content f22 color-6" v-if="item.welfare_tags">
+					<text class="label-tag text-center" v-for="(tag,idx) in item.welfare_tags.split(',')" :key="idx"
+						v-if="idx < 5">
+						{{tag}}
+					</text>
+					<text class="label-tag text-center" v-if="item.welfare_tags.split(',').length >5">...</text>
 				</view>
 				<view class="publish-user flex align-center justify-between">
 					<view class="user-box flex align-center ">
@@ -33,7 +41,9 @@
 					</view>
 				</view>
 			</view>
-		</view>
+			<u-loadmore :status="loadmore.status" :icon-type="loadmore.iconType" :load-text="loadmore.text"
+				@loadmore="handleLoadMore()"  margin-bottom="20"/>
+		</scroll-view>
 	</view>
 </template>
 
@@ -41,6 +51,21 @@
 	export default {
 		data() {
 			return {
+				dataLoading: false,
+				loadpull: { //下拉刷新
+					loading: false,
+					triggered: false, //下拉刷新是否被触发
+				},
+				loadmore: { //上拉加载
+					status: 'loading',
+					iconType: 'flower',
+					text: {
+						loadmore: '加载更多',
+						loading: '努力加载中',
+						nomore: '实在没有了'
+					}
+				},
+				pageNum: 1,
 				postData: [], //职位列表
 			}
 		},
@@ -50,30 +75,79 @@
 			});
 			this.getData()
 		},
+		onReachBottom() {
+			this.handleLoadMore()
+		},
 		methods: {
 			toPublishRecruit() {
 				uni.navigateTo({
-					url: '/pages/publish/post',
+					url: '/pages/job/post/publish',
 				})
 			},
+			// 自定义下拉刷新控件被下拉
+			onPull(event) {
+				this.loadpull.triggered = true; // 需要重置
+			},
+			// 自定义下拉刷新被触发
+			onRefresh() {
+				if (this.dataLoading) return
+				this.pageNum = 1
+				this.getData()
+			},
+			// 自定义下拉刷新被复位
+			onRestore() {
+				this.loadpull.triggered = false; // 需要重置
+			},
+			// 自定义下拉刷新被中止
+			onAbort() {
+				this.loadpull.triggered = false;
+			},
+			//滚动至底部触发
+			scrolltolower() {
+				if (this.loadmore.status == 'loadmore') {
+					this.handleLoadMore()
+				}
+			},
+			//点击触发加载更多
+			handleLoadMore() {
+				this.pageNum++
+				this.loadmore.status = 'loading'
+				this.getData()
+			},
 			getData() {
-				this.$cloudRequest.job.call('recruit/allList').then(res => {
+				let params = {
+					pageSize: 15,
+					pageNum: this.pageNum,
+				}
+				this.dataLoading = true;
+				this.$cloudRequest.job.call('recruit/list', params).then(res => {
 					let {
 						code,
 						msg,
 						data
 					} = res
 					if (code == 200) {
-						this.postData = data || []
+						if (this.pageNum == 1) {
+							this.postData = data.list || []
+						} else {
+							this.postData = this.postData.concat(data.list)
+						}
+						this.loadmore.status = this.postData.length >= data.tatal ? 'nomore' : 'loadmore'
 					} else {
 						uni.showToast({
 							title: msg,
 							icon: 'none',
 							duration: 2000
 						});
+						this.loadmore.status = 'nomore'
 					}
+					this.dataLoading = false;
+					this.loadpull.triggered = false;
 					uni.hideLoading()
 				}).catch(err => {
+					this.dataLoading = false;
+					this.loadpull.triggered = false;
+					this.loadmore.status = 'nomore'
 					uni.hideLoading()
 				})
 			},
@@ -83,9 +157,16 @@
 
 <style lang="scss" scoped>
 	.home-company-index-page {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+
 		.post-container {
+			flex: 1;
+			overflow: auto;
+
 			.post-item-box {
-				margin: 26rpx;
+				margin: 24rpx;
 				background: #fff;
 				border-radius: 20rpx;
 				padding: 16rpx;
@@ -102,26 +183,37 @@
 					font-size: 26rpx;
 					color: #e63500;
 				}
-				.post-salary-unit{
+
+				.post-salary-unit {
 					margin-left: 8rpx;
 				}
+
 				.post-company {
 					font-size: 26rpx;
 					margin-top: 10rpx;
 					margin-bottom: 4rpx;
-					color: #666;
+					color: #333;
 				}
 
-				.post-label-content {
+				.demand-label-content {
+					.label-line {
+						display: inline-block;
+						margin: 0 8rpx;
+						height: 16rpx;
+						width: 1rpx;
+						background: #666;
+					}
+				}
+
+				.welfare-label-content {
 					.label-tag {
 						display: inline-block;
-						font-size: 23rpx;
-						color: #666;
 						padding: 3rpx 8rpx;
 						background: #F7F7F7;
 						margin-top: 10rpx;
 						margin-right: 8rpx;
 						border-radius: 3rpx;
+						line-height: 28rpx;
 					}
 				}
 

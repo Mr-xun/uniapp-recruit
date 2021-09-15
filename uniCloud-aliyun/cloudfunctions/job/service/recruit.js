@@ -19,6 +19,7 @@ module.exports = class RecruitService extends Service {
 		let inserData = {
 			company_name: publicInfo.company_name, //所属公司
 			comopany_id: '', //所属公司id
+			company_images:[],//公司环境
 			post_name: publicInfo.post_name, //岗位名称
 			post_content: publicInfo.post_content, //职责描述
 			category: ['招工类别1', '类别2'],
@@ -86,18 +87,40 @@ module.exports = class RecruitService extends Service {
 		return response
 	}
 	//发布列表
-	async allList() {
+	async list(query) {
 		let response = {
 			code: 200,
 			data: null,
 			msg: '获取成功',
 		}
-		let user = this.ctx.auth;
-		const dbCmd = this.db.command;
-		let dbRes = await this.db.collection('job-recruit').where({
-			id_delete: dbCmd.neq(1)
-		}).get()
-		response.data = dbRes.data;
+
+		try {
+			const user = this.ctx.auth;
+			const dbCmd = this.db.command;
+			let limit = query.pageSize || 10; //默认10条
+			let skip = 0
+			if (limit >= 50) {
+				limit = 50; //最多返回50条
+			}
+			if (query.pageNum) {
+				skip = (query.pageNum - 1) * limit;
+			}
+			let dbRes = await this.db.collection('job-recruit').where({
+				id_delete: dbCmd.neq(1)
+			}).skip(skip).limit(limit).get()
+			let dbCountRes = await this.db.collection('job-recruit').where({
+				id_delete: dbCmd.neq(1)
+			}).count()
+			response.data = {
+				tatal: dbCountRes.total,
+				list: dbRes.data
+			}
+		} catch (e) {
+			//TODO handle the exception
+			//TODO handle the exception
+			response.code = -1;
+			response.msg = '系统错误：' + e;
+		}
 		return response
 	}
 }

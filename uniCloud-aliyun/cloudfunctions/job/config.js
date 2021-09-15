@@ -10,6 +10,10 @@ module.exports = {
 			authMiddleWare({
 				tokenSecret: 'mr-xun-secret'
 			}), // 注册中间件
+			{
+				enable: true,
+				ignore: /\/recruit\/list$/
+			}, // 配置当前中间件生效规则，该规则表示以`/loginOrRegister`结尾的路由不会执行 auth 中间件校验 token
 		],
 	] //中间件
 }

@@ -6,9 +6,11 @@
 			</view>
 			<view class="info-item flex align-center justify-between" @click="uploadAvatar">
 				<text class="item-type">用户头像</text>
-				<image v-if="editInfo.avatar" class="item-img" :src="editInfo.avatar" mode=""></image>
-				<text v-else class="item-val flex flex-sub" :class="{'item-no-val': !editInfo.gender}">请上传头像</text>
-				<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
+				<view class="flex align-center">
+					<image v-if="editInfo.avatar" class="item-img" :src="editInfo.avatar" mode=""></image>
+					<text v-else class="item-val flex flex-sub" :class="{'item-no-val': !editInfo.gender}">请上传头像</text>
+					<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
+				</view>
 			</view>
 			<view class="info-item flex align-center justify-between">
 				<text class="item-type">真实姓名</text>
@@ -316,6 +318,7 @@
 						count: 1,
 						success: (res) => {
 							let path = res.tempFilePaths[0];
+							console.log(res,12332)
 							uni.getImageInfo({
 								src: path,
 								success: (info) => {
@@ -329,6 +332,7 @@
 										filePath: path,
 										cloudPath: fileName
 									}
+									console.log(options,222)
 									resolve(options)
 								},
 								fail(err) {

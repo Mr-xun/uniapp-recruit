@@ -1,6 +1,6 @@
 <template>
-	<view class="list-page">
-		<text>list页面</text>
+	<view class="post-detail-page">
+		
 	</view>
 </template>
 

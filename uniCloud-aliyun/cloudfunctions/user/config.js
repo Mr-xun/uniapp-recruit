@@ -12,8 +12,8 @@ module.exports = {
 			}), // 注册中间件
 			{
 				enable: true,
-				ignore: /\/loginOrRegister$/
-			}, // 配置当前中间件生效规则，该规则表示以`/loginOrRegister`结尾的路由不会执行 auth 中间件校验 token
+				ignore: /\/loginOrRegister$/,
+			}, // 配置当前中间件生效规则，该规则表示以`/recruit/list`结尾的路由不会执行 auth 中间件校验 token
 		],
 	] //中间件
 }

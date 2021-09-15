@@ -1,4 +1,16 @@
 /**
+ * @description 获取文件后缀
+ * @param {string}   filepath 文件路径
+ **/
+export const getFileExt = (filepath) => {
+	if (filepath != "") {
+		var index1 = filepath.lastIndexOf(".");
+		var index2 = filepath.length;
+		var type = filepath.substring(index1+1, index2);
+		return type;
+	}
+}
+/**
  * @description 根据出生日期算出年龄
  * @param {string}   strBirthday 生日
  **/
