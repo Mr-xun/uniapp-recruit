@@ -22,12 +22,20 @@ module.exports = class RecruitController extends Controller {
 		} = this;
 		return service.recruit.myList(ctx.data)
 	}
-	//全部发布列表
+	//发布列表
 	list() {
 		const {
 			ctx,
 			service
 		} = this;
 		return service.recruit.list(ctx.data)
+	}
+	//职位详情
+	detail() {
+		const {
+			ctx,
+			service
+		} = this;
+		return service.recruit.detail(ctx.data)
 	}
 }

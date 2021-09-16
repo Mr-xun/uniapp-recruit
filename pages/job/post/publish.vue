@@ -44,14 +44,13 @@
 					<u-form-item label="工作地点" prop="work_address" required border-bottom>
 						<u-input v-model="form.work_address" input-align="right" />
 					</u-form-item>
-					<u-form-item label="岗位职责" prop="post_content" required border-bottom label-position="top">
+					<u-form-item label="职位描述" prop="post_content" required border-bottom label-position="top">
 						<u-input v-model="form.post_content" type="textarea" input-align="right" height="100"
 							maxlength='500' />
 					</u-form-item>
 					<u-form-item label="工作环境" prop="company_images" border-bottom label-position="top">
-						<u-upload ref='uUpload' width="160" height="160" :auto-upload='false'
-							:file-list="uploadFileList" @on-success='uploadSuccess' @on-list-change="uploadListChange"
-							@on-choose-complete="uploadChooseComplete" @on-remove="uploadRemove"></u-upload>
+						<u-upload ref='uUpload' width="160" height="160" :auto-upload='false' max-count='9'
+							:file-list="uploadFileList" @on-list-change="uploadListChange"></u-upload>
 					</u-form-item>
 					<u-form-item label="联系人" prop="contact_name" required border-bottom>
 						<u-input v-model="form.contact_name" input-align="right" placeholder="请输入联系人" />
@@ -151,6 +150,7 @@
 					input-align="center" placeholder="最高工资" />
 			</view>
 		</u-modal>
+		<u-toast ref="uToast" />
 	</view>
 </template>
 <script>
@@ -236,7 +236,6 @@
 					],
 					defaultSelector: [0, 0, 0]
 				},
-				cacheFileList: [], //缓存的文件
 				uploadFileList: [], //文件上传的list
 				btnLoading: false,
 				formRules: {
@@ -277,7 +276,7 @@
 					}],
 					post_content: [{
 						required: true,
-						message: '请输入岗位职责',
+						message: '请输入职位描述',
 						trigger: ['blur', 'change']
 					}],
 					contact_name: [{
@@ -312,36 +311,46 @@
 			this.getPostTree()
 		},
 		methods: {
-			//上传成功
-			uploadSuccess(data, index, lists, name) {
-				console.log(data, index, lists, name, 'success')
-			},
 			uploadListChange(lists, name) {
-				console.log(lists, this.uploadFileList, 'list-change')
-			},
-			uploadChooseComplete(lists) {
-				this.cacheFileList = []
-				lists.forEach(async item => {
-					let path = lists[0].url;
-					let extName = utils.getFileExt(path)
-					let t = this.$u.timeFormat(new Date().getTime(),
-						'yyyymmddhhMMss');
-					let rand = (Math.round(Math.random() * 1000000) + '')
-						.padStart(6, '0');
-					var fileName = t + '_' + rand + '.' + extName;
-					const options = {
-						filePath: path,
-						cloudPath: fileName
-					}
-					let result = await uniCloud.uploadFile(options)
-					this.cacheFileList.push({
-						url: result.fileID
-					})
-				})
+				lists.forEach(async (item, index) => {
+					if (item.url && !item.url.match("^https://")) {
+						let path = item.url;
+						let extName = utils.getFileExt(path)
+						let t = this.$u.timeFormat(new Date().getTime(),
+							'yyyymmddhhMMss');
+						let rand = (Math.round(Math.random() * 1000000) + '')
+							.padStart(6, '0');
+						var fileName = t + '_' + rand + '.' + extName;
+						try {
+							const options = {
+								filePath: path,
+								cloudPath: fileName
+							}
+							let result = await uniCloud.uploadFile(options)
+							if (result.success == true) {
+								lists[index] = {
+									url: result.fileID
+								}
+							} else {
+								this.$refs.uToast.show({
+									title: '上传失败',
+								})
+								this.$refs.uUpload.remove(index);
+							}
 
-			},
-			uploadRemove(lists, name) {
-				console.log(lists, name, 'remove')
+						} catch (e) {
+							//TODO handle the exception
+							this.$refs.uToast.show({
+								title: JSON.stringify(e),
+							})
+							this.$refs.uUpload.remove(index);
+						}
+
+					}
+
+				})
+				this.uploadFileList = lists
+				console.log(lists, this.uploadFileList, 'list-change')
 			},
 			backHome() {
 				uni.switchTab({
@@ -418,9 +427,9 @@
 					this.$set(item, 'selected', false)
 				} else {
 					let len = this.welfarePopup.tags.filter(x => x.selected).length;
-					if (len >= 6) {
+					if (len >= 8) {
 						uni.showToast({
-							title: '企业福利最多选六项',
+							title: '企业福利最多选八项',
 							icon: 'none',
 							duration: 2000
 						});
@@ -438,7 +447,6 @@
 					}
 				})
 				this.form.welfare_tags = selectedTags.join(',')
-				console.log(this.form.welfare_tags, 88)
 				this.welfarePopup.visiable = false;
 			},
 			//确定性别要求
@@ -463,14 +471,7 @@
 					this.ageSheet.selectPicker = true
 				}
 			},
-			//确定自定义年龄
-			confirmCustomAge(obj) {
-				let min_age = this.ageSheet.selectColumns[0][obj[0]].value;
-				let max_age = this.ageSheet.selectColumns[2][obj[2]].value;
-				this.form.demand_age = min_age + '至' + max_age + '岁'
-				this.form.demand_age_min = min_age;
-				this.form.demand_age_max = max_age;
-			},
+			//更改年龄列
 			changeCustomAge(e) {
 				let column = e.column,
 					index = e.index;
@@ -479,13 +480,11 @@
 					let column1_label = this.ageSheet.selectColumns[0][e.index].label;
 					let column1_value = this.ageSheet.selectColumns[0][e.index].value;
 					this.ageSheet.defaultSelector.splice(2, 1, 0)
-					this.ageSheet.selectColumns[2] = []
-					if (column1_label == '不限') {
-						this.ageSheet.selectColumns[2].push({
-							value: '-1',
-							label: '不限'
-						})
-					} else {
+					this.ageSheet.selectColumns[2] = [{
+						value: '-1',
+						label: '不限'
+					}]
+					if (column1_label !== '不限') {
 						for (let i = column1_value + 2; i <= 70; i += 2) {
 							this.ageSheet.selectColumns[2].push({
 								value: i,
@@ -494,6 +493,18 @@
 						}
 					}
 				}
+			},
+			//确定自定义年龄
+			confirmCustomAge(obj) {
+				let min_age = this.ageSheet.selectColumns[0][obj[0]].value;
+				let max_age = this.ageSheet.selectColumns[2][obj[2]].value;
+				if (max_age == '-1') {
+					this.form.demand_age = min_age + '岁以上'
+				} else {
+					this.form.demand_age = min_age + '至' + max_age + '岁'
+				}
+				this.form.demand_age_min = min_age;
+				this.form.demand_age_max = max_age;
 			},
 			//点击选择薪资 操作
 			handleSalarySheet(idx) {
@@ -533,7 +544,7 @@
 					})
 					return
 				}
-				this.form.salary = this.form.salary_range_min + ' 至 ' + this.form.salary_range_max
+				this.form.salary = this.form.salary_range_min + ' — ' + this.form.salary_range_max
 				this.salarySheet.modal = false
 			},
 			//提交发布
@@ -541,7 +552,7 @@
 				this.$refs.uForm.validate(valid => {
 					if (valid) {
 						this.btnLoading = true;
-						this.form.company_images = this.cacheFileList;
+						this.form.company_images = this.uploadFileList;
 						console.log(this.form)
 						this.$cloudRequest.job.call('recruit/publish', this.form).then(res => {
 							console.log(res, 11)
@@ -594,8 +605,8 @@
 	}
 
 	.bottom-btn {
-		height: 128rpx;
 		background: #ffffff;
+		padding: 20rpx 20rpx 40rpx;
 
 		.opt-btn {
 			width: 690rpx;

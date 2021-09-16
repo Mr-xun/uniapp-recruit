@@ -140,8 +140,8 @@
 	}
 
 	.bottom-btn {
-		height: 128rpx;
 		background: #ffffff;
+		padding: 20rpx 20rpx 40rpx;
 		.opt-btn {
 			width: 690rpx;
 			height: 88rpx;

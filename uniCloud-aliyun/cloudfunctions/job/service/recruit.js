@@ -19,9 +19,9 @@ module.exports = class RecruitService extends Service {
 		let inserData = {
 			company_name: publicInfo.company_name, //所属公司
 			comopany_id: '', //所属公司id
-			company_images:[],//公司环境
+			company_images: [], //公司环境
 			post_name: publicInfo.post_name, //岗位名称
-			post_content: publicInfo.post_content, //职责描述
+			post_content: publicInfo.post_content, //职位描述
 			category: ['招工类别1', '类别2'],
 			post_type: publicInfo.post_type, //职位类型
 			post_type_id: publicInfo.post_type_id, //职位类型id
@@ -95,7 +95,6 @@ module.exports = class RecruitService extends Service {
 		}
 
 		try {
-			const user = this.ctx.auth;
 			const dbCmd = this.db.command;
 			let limit = query.pageSize || 10; //默认10条
 			let skip = 0
@@ -114,6 +113,35 @@ module.exports = class RecruitService extends Service {
 			response.data = {
 				tatal: dbCountRes.total,
 				list: dbRes.data
+			}
+		} catch (e) {
+			//TODO handle the exception
+			//TODO handle the exception
+			response.code = -1;
+			response.msg = '系统错误：' + e;
+		}
+		return response
+	}
+	//职位详情
+	async detail(query) {
+		let response = {
+			code: 200,
+			data: null,
+			msg: '获取成功',
+		}
+
+		try {
+			if (!query._id) {
+				response.code = -1;
+				response.msg = '缺少参数:_id';
+				return response
+			}
+			let dbRes = await this.db.collection('job-recruit').doc(query._id).get()
+			if (dbRes.data && dbRes.data.length) {
+				response.data = dbRes.data[0]
+			} else {
+				response.code = -1;
+				response.msg = '查询失败';
 			}
 		} catch (e) {
 			//TODO handle the exception

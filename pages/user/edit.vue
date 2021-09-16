@@ -122,7 +122,6 @@
 		<u-picker v-model="datePicker.visiable" mode="time" :default-time='datePicker.value'
 			:start-year='datePicker.minDate' :end-year='datePicker.maxDate' :params="datePicker.params"
 			@confirm="confirmDatePicker($event,datePicker.key)" confirm-color='#79C58A'></u-picker>
-		<u-toast ref="uToast" />
 		<!--popup面板选择器-->
 		<u-popup mode="right" v-model="schoolPopup.visiable" border-radius="20">
 			<view class="popup-content">
@@ -318,7 +317,6 @@
 						count: 1,
 						success: (res) => {
 							let path = res.tempFilePaths[0];
-							console.log(res,12332)
 							uni.getImageInfo({
 								src: path,
 								success: (info) => {
@@ -332,7 +330,6 @@
 										filePath: path,
 										cloudPath: fileName
 									}
-									console.log(options,222)
 									resolve(options)
 								},
 								fail(err) {
@@ -643,8 +640,8 @@
 	}
 
 	.bottom-btn {
-		height: 128rpx;
 		background: #ffffff;
+		padding: 20rpx 20rpx 40rpx;
 
 		.opt-btn {
 			width: 690rpx;

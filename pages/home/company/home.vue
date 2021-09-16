@@ -6,7 +6,7 @@
 		<scroll-view scroll-y="true" class="post-container" refresher-enabled="true"
 			:refresher-triggered="loadpull.triggered" @refresherpulling="onPull" @refresherrefresh="onRefresh"
 			@refresherrestore="onRestore" @refresherabort="onAbort" @scrolltolower='scrolltolower'>
-			<view class="post-item-box" v-for="(item,index ) in postData" :key='index'>
+			<view class="post-item-box" v-for="(item,index ) in postData" :key='index' @click="toDetail(item)">
 				<view class="post-title flex align-center justify-between ">
 					<text class="post-name">{{item.post_name}}</text>
 					<text class="post-salary">
@@ -62,7 +62,7 @@
 					text: {
 						loadmore: '加载更多',
 						loading: '努力加载中',
-						nomore: '实在没有了'
+						nomore: '没有更多了'
 					}
 				},
 				pageNum: 1,
@@ -114,6 +114,14 @@
 				this.loadmore.status = 'loading'
 				this.getData()
 			},
+			//去详情页
+			toDetail(item){
+				uni.navigateTo({
+					url:"/pages/job/post/detail?_id="+item._id,
+					
+				})
+			},
+			//获取数据
 			getData() {
 				let params = {
 					pageSize: 15,
