@@ -15,7 +15,6 @@ module.exports = class RecruitService extends Service {
 			msg: '发布成功',
 		}
 		let user = this.ctx.auth;
-		console.log(publicInfo, 111)
 		let inserData = {
 			company_name: publicInfo.company_name, //所属公司
 			comopany_id: '', //所属公司id
@@ -83,7 +82,9 @@ module.exports = class RecruitService extends Service {
 			publish_uid: user.uid,
 			id_delete: dbCmd.neq(1)
 		}).get()
-		response.data = dbRes.data;
+		if (dbRes.data && dbRes.data.length) {
+			response.data = dbRes.data
+		}
 		return response
 	}
 	//发布列表
@@ -114,6 +115,7 @@ module.exports = class RecruitService extends Service {
 				tatal: dbCountRes.total,
 				list: dbRes.data
 			}
+
 		} catch (e) {
 			//TODO handle the exception
 			//TODO handle the exception
@@ -136,9 +138,18 @@ module.exports = class RecruitService extends Service {
 				response.msg = '缺少参数:_id';
 				return response
 			}
+			const $ = this.db.command.aggregate
 			let dbRes = await this.db.collection('job-recruit').doc(query._id).get()
+			let collectRes = await this.db.collection('job-recruit-collect').where({
+				post_id: query._id
+			}).get()
 			if (dbRes.data && dbRes.data.length) {
 				response.data = dbRes.data[0]
+				if(collectRes.data && collectRes.data.length){
+					response.data.is_collect = true;
+				}else{
+					response.data.is_collect = false;
+				}
 			} else {
 				response.code = -1;
 				response.msg = '查询失败';

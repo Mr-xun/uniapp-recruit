@@ -57,6 +57,13 @@
 			}
 		},
 		{
+			"path": "pages/user/collect",
+			"style": {
+				"navigationBarTitleText": "我的收藏",
+				"navigationStyle": "default"
+			}
+		},
+		{
 			"path": "pages/test/index",
 			"style": {
 				"navigationBarTitleText": "测试",

@@ -42,11 +42,11 @@
 							@click="ageSheet.visiable = true" />
 					</u-form-item>
 					<u-form-item label="工作地点" prop="work_address" required border-bottom>
-						<u-input v-model="form.work_address" input-align="right" />
+						<u-input v-model="form.work_address" input-align="right" :trim='false' />
 					</u-form-item>
 					<u-form-item label="职位描述" prop="post_content" required border-bottom label-position="top">
 						<u-input v-model="form.post_content" type="textarea" input-align="right" height="100"
-							maxlength='500' />
+							:trim='false' maxlength='500' />
 					</u-form-item>
 					<u-form-item label="工作环境" prop="company_images" border-bottom label-position="top">
 						<u-upload ref='uUpload' width="160" height="160" :auto-upload='false' max-count='9'
@@ -352,11 +352,6 @@
 				this.uploadFileList = lists
 				console.log(lists, this.uploadFileList, 'list-change')
 			},
-			backHome() {
-				uni.switchTab({
-					url: "/pages/home/index"
-				})
-			},
 			//获取职位tree
 			getPostTree() {
 				this.$cloudRequest.job.call('basic/post/tree').then(res => {
@@ -549,13 +544,13 @@
 			},
 			//提交发布
 			toSubmit() {
+
+				
 				this.$refs.uForm.validate(valid => {
 					if (valid) {
 						this.btnLoading = true;
 						this.form.company_images = this.uploadFileList;
-						console.log(this.form)
 						this.$cloudRequest.job.call('recruit/publish', this.form).then(res => {
-							console.log(res, 11)
 							let {
 								code,
 								msg
@@ -564,7 +559,13 @@
 								uni.showToast({
 									title: msg
 								});
-								this.backHome()
+								uni.switchTab({
+									url: '/pages/home/index',
+									success() {
+										let prePage = getCurrentPages()[0]
+										prePage.$vm.refreshData()
+									}
+								})
 							} else {
 								uni.showToast({
 									title: msg,

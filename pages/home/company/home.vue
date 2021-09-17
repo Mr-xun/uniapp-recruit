@@ -1,8 +1,5 @@
 <template>
 	<view class="home-company-index-page">
-		<view class="margin-bottom-sm">
-			<u-button type="success" ripple @click="toPublishRecruit()">发布信息</u-button>
-		</view>
 		<scroll-view scroll-y="true" class="post-container" refresher-enabled="true"
 			:refresher-triggered="loadpull.triggered" @refresherpulling="onPull" @refresherrefresh="onRefresh"
 			@refresherrestore="onRestore" @refresherabort="onAbort" @scrolltolower='scrolltolower'>
@@ -42,8 +39,11 @@
 				</view>
 			</view>
 			<u-loadmore :status="loadmore.status" :icon-type="loadmore.iconType" :load-text="loadmore.text"
-				@loadmore="handleLoadMore()"  margin-bottom="20"/>
+				@loadmore="handleLoadMore()" margin-bottom="20" />
 		</scroll-view>
+		<view class="publish-menu flex-all-center" @click="toPublishRecruit()">
+			<u-icon name="plus" size="54" color="#fff"></u-icon>
+		</view>
 	</view>
 </template>
 
@@ -76,7 +76,7 @@
 			this.getData()
 		},
 		onReachBottom() {
-			this.handleLoadMore()
+			this.onRefresh()
 		},
 		methods: {
 			toPublishRecruit() {
@@ -115,10 +115,10 @@
 				this.getData()
 			},
 			//去详情页
-			toDetail(item){
+			toDetail(item) {
 				uni.navigateTo({
-					url:"/pages/job/post/detail?_id="+item._id,
-					
+					url: "/pages/job/post/detail?_id=" + item._id,
+
 				})
 			},
 			//获取数据
@@ -248,6 +248,17 @@
 					}
 				}
 			}
+		}
+
+		.publish-menu {
+			position: fixed;
+			bottom: 20rpx;
+			right: 20rpx;
+			width: 80rpx;
+			height: 80rpx;
+			border-radius: 30rpx;
+			opacity: 0.85;
+			background: linear-gradient(180deg, #79C58A 0%, #D3ECD9 100%);
 		}
 	}
 </style>

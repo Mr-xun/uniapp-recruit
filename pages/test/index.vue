@@ -20,9 +20,9 @@
 			<view class="margin-bottom-sm">
 				<u-button type="success" ripple @click="addMerchant()">同步位置并添加模拟商户</u-button>
 			</view>
-			<view class="margin-bottom-sm">
+			<!-- <view class="margin-bottom-sm">
 				<u-button type="success" ripple @click="addCuisine()">添加模拟菜系</u-button>
-			</view>
+			</view> -->
 			<view class="margin-bottom-sm">
 				<u-button type="success" ripple @click="publishRecruit()">发布信息</u-button>
 			</view>
@@ -91,8 +91,8 @@
 	} from 'vuex'
 	import apiCloud from "../../common/js/apiCloud.js"
 	export default {
-		computed:{
-			...mapState('setting', ['tabbar'])
+		computed: {
+			...mapState('setting', ['tabbar']),
 		},
 		data() {
 			return {
@@ -237,6 +237,11 @@
 			},
 			//添加商户
 			async addMerchant() {
+				uni.showToast({
+					icon: 'none',
+					title: '您暂无操作权限'
+				})
+				return
 				let params = {
 					merchantName: '商家名称',
 					merchantType: 1,
@@ -546,6 +551,11 @@
 			},
 			//发布信息
 			publishRecruit() {
+				uni.showToast({
+					icon: 'none',
+					title: '您暂无操作权限'
+				})
+				return
 				uni.showLoading({
 					title: '加载中'
 				});
@@ -571,6 +581,11 @@
 			},
 			//同步院校
 			asyncAllSchool() {
+				uni.showToast({
+					icon: 'none',
+					title: '您暂无操作权限'
+				})
+				return
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -596,6 +611,11 @@
 			},
 			//同步高校院校
 			asyncUniversitySchool() {
+				uni.showToast({
+					icon: 'none',
+					title: '您暂无操作权限'
+				})
+				return
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -621,6 +641,11 @@
 			},
 			//同步中小学院校
 			asyncPrimarySchool() {
+				uni.showToast({
+					icon: 'none',
+					title: '您暂无操作权限'
+				})
+				return
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -645,6 +670,11 @@
 			},
 			//抓取高效数据
 			grapGaoKaoSchool() {
+				uni.showToast({
+					icon: 'none',
+					title: '您暂无操作权限'
+				})
+				return
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -669,6 +699,11 @@
 			},
 			//处理院校信息
 			dealSchool() {
+				uni.showToast({
+					icon: 'none',
+					title: '您暂无操作权限'
+				})
+				return
 				uni.showLoading({
 					title: '同步中'
 				});
@@ -713,6 +748,11 @@
 			},
 			//获取毕业院校列表
 			getGraduateList() {
+				uni.showToast({
+					icon: 'none',
+					title: '您暂无操作权限'
+				})
+				return
 				uni.showLoading({
 					title: '查询中'
 				});

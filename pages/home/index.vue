@@ -1,6 +1,6 @@
 <template>
 	<view class="home-page">
-		<CompanyHome />
+		<CompanyHome ref='compay-home'/>
 	</view>
 </template>
 
@@ -16,8 +16,16 @@
 		data() {
 			return {}
 		},
-		onLoad() {},
+		onLoad() {
+			console.log('onload')
+		},
+		onShow() {
+			console.log('onShow')
+		},
 		methods:{
+			refreshData(){
+				this.$refs['compay-home'].onRefresh()
+			}
 		}
 	}
 </script>

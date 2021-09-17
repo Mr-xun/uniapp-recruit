@@ -20,7 +20,7 @@
 				<view class="user-avator">
 					<u-avatar mode="circle" size="160"></u-avatar>
 				</view>
-				<button class="login-btn cu-btn round line-green  shadow" @click="loginOrRegister">立即登录</button>
+				<button class="login-btn cu-btn round line-green  shadow" @click="loginOrRegister">注册/登录</button>
 			</template>
 		</view>
 		<view class="content-container"  >
@@ -40,7 +40,7 @@
 			</view>
 			<view class="content-item flex align-center">
 				<image class="item-icon" src="../../static/user/icon-collect.png" mode=""></image>
-				<view class="item-con flex flex-sub justify-between">
+				<view class="item-con flex flex-sub justify-between" @click="toPage('/pages/user/collect')">
 					<text>我的收藏</text>
 					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
 				</view>

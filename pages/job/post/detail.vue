@@ -2,19 +2,19 @@
 	<view class="post-detail-page">
 		<scroll-view scroll-y="true" class="detail-view">
 			<view class="swiper-container" v-if="detailInfo.company_images">
-				<u-swiper :list="detailInfo.company_images" name='url' height="300" indicator-pos="bottomRight"
+				<u-swiper :list="detailInfo.company_images" name='url' height="320" indicator-pos="bottomRight"
 					:effect3d="true" @click="previewImage"></u-swiper>
 			</view>
 			<view class="info-container">
 				<view class="post-title flex align-center justify-between ">
-					<text class="post-name">{{detailInfo.post_name}}</text>
+					<text class="post-name">{{detailInfo.post_name || ''}}</text>
 					<text class="post-salary">
 						{{detailInfo.salary}}
 						<text class="post-salary-unit"
-							v-if="detailInfo.salary_type ==1">&nbsp;{{detailInfo.salary_unit}}</text>
+							v-if="detailInfo.salary_type ==1">&nbsp;{{detailInfo.salary_unit|| ''}}</text>
 					</text>
 				</view>
-				<view class="post-company color-6 f26">{{detailInfo.company_name}}</view>
+				<view class="post-company color-6 f26">{{detailInfo.company_name || ''}}</view>
 				<view class="demand-label-content  f24 color-9">
 					<text class="text-center"
 						v-if="detailInfo.demand_experience">{{detailInfo.demand_experience}}</text>
@@ -49,7 +49,7 @@
 			<view class="module-contaner post-des-container">
 				<u-section title="职位描述" line-color='#79C58A' font-size="30" :right="false" :arrow="false"></u-section>
 				<view class="module-content des-content f26 color-6">
-					{{detailInfo.post_content}}
+					{{detailInfo.post_content || ''}}
 				</view>
 			</view>
 			<view class="module-contaner address-container">
@@ -91,8 +91,9 @@
 					<text class="opt-box-txt">分享</text>
 				</view> -->
 				<view class="opt-box flex flex-direction align-center" @click="handleCollect">
-					<u-icon class="opt-box-icon" name="star" size="28"></u-icon>
-					<text class="opt-box-txt">收藏</text>
+					<u-icon class="opt-box-icon" :name="detailInfo.is_collect?'star-fill':'star'" size="28"
+						:color="detailInfo.is_collect?'#89D499':''"></u-icon>
+					<text class="opt-box-txt">{{detailInfo.is_collect?'取消收藏':'收藏'}}</text>
 				</view>
 				<view class="opt-box flex flex-direction align-center" @click="copyWechat">
 					<u-icon class="opt-box-icon" name="weixin-circle-fill" size="28"></u-icon>
@@ -109,6 +110,7 @@
 	export default {
 		data() {
 			return {
+				postId: '',
 				detailInfo: {}
 			}
 		},
@@ -117,13 +119,15 @@
 			uni.showLoading({
 				title: '加载中'
 			});
-			this.getDetail(options._id)
+			this.postId = options._id
+			this.getDetail()
 		},
 		methods: {
-			getDetail(_id) {
-				this.$cloudRequest.job.call('recruit/detail', {
-					_id
-				}).then(res => {
+			getDetail() {
+				let params = {
+					_id: this.postId
+				}
+				this.$cloudRequest.job.call('recruit/detail', params).then(res => {
 					let {
 						code,
 						data,
@@ -163,11 +167,28 @@
 			},
 			//收藏
 			handleCollect() {
-				uni.showToast({
-					title: '开发中',
-					icon: 'none',
-					duration: 2000
-				});
+				let params = {
+					type: 1, //收藏类型  1招聘 2 求职者
+					post_id: this.detailInfo._id,
+				}
+				this.$cloudRequest.job.call('collect/add', params).then(res => {
+					let {
+						code,
+						msg
+					} = res
+					if (code == 200) {
+						uni.showToast({
+							title: '收藏成功',
+						});
+						this.getDetail()
+					} else {
+						uni.showToast({
+							title: msg,
+							icon: 'none',
+							duration: 2000
+						});
+					}
+				})
 			},
 			//复制微信
 			copyWechat() {
@@ -181,15 +202,15 @@
 				}
 				uni.setClipboardData({
 					data: this.detailInfo.contact_wechat,
-					success:()=> {
+					success: () => {
 						uni.hideToast()
 						this.$refs.uToast.show({
 							title: '微信号复制成功，可前往添加哦',
 							type: 'success',
-							position:'bottom'
+							position: 'bottom'
 						})
 					},
-					fail:()=> {
+					fail: () => {
 						uni.hideToast()
 						this.$refs.uToast.show({
 							title: '复制失败',
@@ -225,6 +246,7 @@
 			flex: 1;
 			box-sizing: border-box;
 			overflow: auto;
+
 			.swiper-container {
 				margin-top: 0rpx;
 			}
@@ -273,6 +295,7 @@
 				background: #fff;
 				padding: 20rpx;
 				margin-bottom: 16rpx;
+
 				.module-content {
 					margin-top: 6rpx;
 					padding: 16rpx 16rpx 0;
@@ -324,7 +347,7 @@
 
 			.lt-wrap {
 				.opt-box {
-					width: 100rpx;
+					min-width: 100rpx;
 
 				}
 
