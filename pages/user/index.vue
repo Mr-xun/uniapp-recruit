@@ -28,7 +28,20 @@
 				<image class="item-icon" src="../../static/user/icon-info.png" mode=""></image>
 				<view class="item-con flex flex-sub justify-between" @click="toPage('/pages/user/info')">
 					<text>个人信息</text>
-					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
+					<view class="flex align-center">
+						<text class="item-tip f24 color-9">求职使用</text>
+						<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
+					</view>
+				</view>
+			</view>
+			<view class="content-item flex align-center">
+				<image class="item-icon" src="../../static/user/icon-company.png" mode=""></image>
+				<view class="item-con flex flex-sub justify-between" @click="toPage('/pages/user/company')">
+					<text>公司信息</text>
+					<view class="flex align-center">
+						<text class="item-tip f24 color-9">招聘使用</text>
+						<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
+					</view>
 				</view>
 			</view>
 			<view class="content-item flex align-center">
@@ -45,6 +58,7 @@
 					<u-icon name="arrow-right" color='#bfbfbf'></u-icon>
 				</view>
 			</view>
+			
 		</view>
 	</view>
 </template>
@@ -127,7 +141,10 @@
 				height: 48rpx;
 				margin-right: 16rpx;
 			}
-
+			.item-tip{
+				margin-right: 10rpx;
+				
+			}
 			.item-con {
 				border-bottom: 0.5rpx solid #ebeeef;
 			}

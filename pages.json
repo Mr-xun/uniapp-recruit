@@ -50,6 +50,14 @@
 			}
 		},
 		{
+			"path": "pages/user/company",
+			"style": {
+				"navigationBarTitleText": "我的公司",
+				"navigationStyle": "default",
+				"disableScroll": true
+			}
+		},
+		{
 			"path": "pages/user/publish",
 			"style": {
 				"navigationBarTitleText": "我的发布",
@@ -100,7 +108,7 @@
 		"current": 0, //当前激活的模式(list 的索引项)
 		"list": [{
 			"name": "首页", //模式名称
-			"path": "pages/home/index", //启动页面
+			"path": "pages/user/company", //启动页面
 			"query": "" //启动参数
 		}]
 	}

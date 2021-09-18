@@ -23,7 +23,17 @@ module.exports = class CollectService extends Service {
 				post_name: data.post_name, //职位名称
 				create_time: new Date().getTime(), //收藏时间
 			}
-			await this.db.collection('job-recruit-collect').add(insertData)
+			let countRes = await this.db.collection('job-recruit-collect').where({
+				post_id: insertData.post_id
+			}).count();
+			console.log(countRes,88)
+			if(countRes.total){
+				response.code = -1;
+				response.msg = '您已收藏过';
+			}else{
+				await this.db.collection('job-recruit-collect').add(insertData)
+			}
+			
 		} catch (e) {
 			//TODO handle the exception
 			//TODO handle the exception
@@ -33,11 +43,24 @@ module.exports = class CollectService extends Service {
 		return response
 	}
 	//取消收藏
-	cancle() {
+	async cancle(data) {
 		let response = {
 			code: 0,
 			data: null,
 			msg: '取消收藏'
+		}
+		try {
+			let user = this.ctx.auth;
+			let params = {
+				uid: user.uid, //用户uid
+				post_id: data.post_id, //职位id
+			}
+			await this.db.collection('job-recruit-collect').where(params).remove()
+		} catch (e) {
+			//TODO handle the exception
+			//TODO handle the exception
+			response.code = -1;
+			response.msg = '系统错误：' + e;
 		}
 		return response
 	}

@@ -176,11 +176,10 @@
 			.post-item-box {
 				margin: 24rpx;
 				background: #fff;
-				border-radius: 20rpx;
+				border-radius: 12rpx;
 				padding: 16rpx;
 				box-sizing: border-box;
 				box-shadow: 0 0 10rpx #ebeeef;
-
 				.post-name {
 					color: #333;
 					font-size: 28rpx;

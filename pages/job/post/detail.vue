@@ -91,12 +91,12 @@
 					<text class="opt-box-txt">分享</text>
 				</view> -->
 				<view class="opt-box flex flex-direction align-center" @click="handleCollect">
-					<u-icon class="opt-box-icon" :name="detailInfo.is_collect?'star-fill':'star'" size="28"
-						:color="detailInfo.is_collect?'#89D499':''"></u-icon>
+					<u-icon class="opt-box-icon" :name="detailInfo.is_collect?'star-fill':'star'" size="36"
+						:color="detailInfo.is_collect?'#ed8227':''"></u-icon>
 					<text class="opt-box-txt">{{detailInfo.is_collect?'取消收藏':'收藏'}}</text>
 				</view>
 				<view class="opt-box flex flex-direction align-center" @click="copyWechat">
-					<u-icon class="opt-box-icon" name="weixin-circle-fill" size="28"></u-icon>
+					<u-icon class="opt-box-icon" name="weixin-circle-fill" size="36"></u-icon>
 					<text class="opt-box-txt">微信</text>
 				</view>
 			</view>
@@ -167,18 +167,27 @@
 			},
 			//收藏
 			handleCollect() {
+				let url = ''
+				let tipTxt = ''
 				let params = {
-					type: 1, //收藏类型  1招聘 2 求职者
 					post_id: this.detailInfo._id,
 				}
-				this.$cloudRequest.job.call('collect/add', params).then(res => {
+				if (this.detailInfo.is_collect) {
+					url = 'collect/cancle'
+					tipTxt = '取消收藏成功'
+				} else {
+					params.type = 1; //收藏类型  1招聘 2 求职者
+					url = 'collect/add'
+					tipTxt = '收藏成功'
+				}
+				this.$cloudRequest.job.call(url, params).then(res => {
 					let {
 						code,
 						msg
 					} = res
 					if (code == 200) {
 						uni.showToast({
-							title: '收藏成功',
+							title: tipTxt,
 						});
 						this.getDetail()
 					} else {
@@ -347,10 +356,9 @@
 
 			.lt-wrap {
 				.opt-box {
-					min-width: 100rpx;
+					min-width: 115rpx;
 
 				}
-
 				.opt-box-txt {
 					margin-top: 10rpx;
 				}
