@@ -36,7 +36,7 @@
 			</view>
 			<view class="content-item flex align-center">
 				<image class="item-icon" src="../../static/user/icon-company.png" mode=""></image>
-				<view class="item-con flex flex-sub justify-between" @click="toPage('/pages/user/company')">
+				<view class="item-con flex flex-sub justify-between" @click="toPage('/pages/user/company/index')">
 					<text>公司信息</text>
 					<view class="flex align-center">
 						<text class="item-tip f24 color-9">招聘使用</text>

@@ -1,0 +1,5845 @@
+[
+    {
+        "id": 1001,
+        "title": "销售",
+        "pid": null,
+        "children": [{
+                "id": 10010001,
+                "title": "销售代表",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010002,
+                "title": "销售助理",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010003,
+                "title": "销售经理/主管",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010004,
+                "title": "销售总监",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010005,
+                "title": "电话销售",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010006,
+                "title": "销售支持",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010007,
+                "title": "汽车销售",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010008,
+                "title": "医药代表",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010009,
+                "title": "医疗器械销售",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010010,
+                "title": "网络销售",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010011,
+                "title": "区域销售",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010012,
+                "title": "渠道专员",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010013,
+                "title": "渠道经理/总监",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010014,
+                "title": "客户经理/主管",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010015,
+                "title": "大客户经理",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010016,
+                "title": "团购业务员/经理",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010017,
+                "title": "会籍顾问",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010018,
+                "title": "销售培训师/讲师",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010019,
+                "title": "销售数据分析",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010020,
+                "title": "客户代表",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010021,
+                "title": "销售业务跟单",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010022,
+                "title": "经销商",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010023,
+                "title": "客户总监",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010024,
+                "title": "渠道/分销经理/主管",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010025,
+                "title": "渠道/分销总监",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010026,
+                "title": "区域销售总监",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010027,
+                "title": "区域销售经理/主管",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010028,
+                "title": "业务拓展经理/主管",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010029,
+                "title": "销售行政经理/主管",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010030,
+                "title": "销售行政专员/助理",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010031,
+                "title": "销售运营经理/主管",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010032,
+                "title": "业务分析经理/主管/专员",
+                "pid": 1001,
+                "children": null
+            },
+            {
+                "id": 10010033,
+                "title": "销售其他",
+                "pid": 1001,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1002,
+        "title": "客服",
+        "pid": null,
+        "children": [{
+                "id": 10020034,
+                "title": "客服专员/助理",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020035,
+                "title": "客服经理/主管",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020036,
+                "title": "客服总监",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020037,
+                "title": "售前/售后服务",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020038,
+                "title": "电话客服",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020039,
+                "title": "客户关系管理",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020040,
+                "title": "网络/在线客服",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020041,
+                "title": "投诉专员",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020042,
+                "title": "VIP专员",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020043,
+                "title": "售前/售后技术支持管理",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020044,
+                "title": "售前/售后技术支持工程师",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020045,
+                "title": "客户咨询热线/呼叫中心人员",
+                "pid": 1002,
+                "children": null
+            },
+            {
+                "id": 10020046,
+                "title": "客服其他",
+                "pid": 1002,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1003,
+        "title": "人事/行政/后勤",
+        "pid": null,
+        "children": [{
+                "id": 10030047,
+                "title": "文员",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030048,
+                "title": "前台/总机/接待",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030049,
+                "title": "人事专员/助理",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030050,
+                "title": "人事经理/主管",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030051,
+                "title": "人事总监",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030052,
+                "title": "行政专员/助理",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030053,
+                "title": "行政经理/主管",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030054,
+                "title": "行政总监",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030055,
+                "title": "经理助理/秘书",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030056,
+                "title": "薪酬/绩效/员工关系",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030057,
+                "title": "猎头顾问",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030058,
+                "title": "后勤",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030059,
+                "title": "培训专员/助理",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030060,
+                "title": "培训经理/主管",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030061,
+                "title": "招聘专员/助理",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030062,
+                "title": "招聘经理/主管",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030063,
+                "title": "党工团干事",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030064,
+                "title": "人事信息系统(HRIS)管理",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030065,
+                "title": "文档/资料管理",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030066,
+                "title": "图书管理员",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030067,
+                "title": "内勤人员",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030068,
+                "title": "电脑操作/打字/录入员",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030069,
+                "title": "人力资源总监",
+                "pid": 1003,
+                "children": null
+            },
+            {
+                "id": 10030070,
+                "title": "人事行政其他",
+                "pid": 1003,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1004,
+        "title": "餐饮",
+        "pid": null,
+        "children": [{
+                "id": 10040071,
+                "title": "服务员",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040072,
+                "title": "送餐员",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040073,
+                "title": "厨师/厨师长",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040074,
+                "title": "后厨",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040075,
+                "title": "传菜员",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040076,
+                "title": "配菜/打荷",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040077,
+                "title": "洗碗工",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040078,
+                "title": "面点师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040079,
+                "title": "茶艺师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040080,
+                "title": "迎宾/接待",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040081,
+                "title": "大堂经理/领班",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040082,
+                "title": "餐饮管理",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040083,
+                "title": "学徒",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040084,
+                "title": "杂工",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040085,
+                "title": "咖啡师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040086,
+                "title": "预订员",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040087,
+                "title": "营养师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040088,
+                "title": "厨工",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040089,
+                "title": "餐厅服务员",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040090,
+                "title": "行政主厨",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040091,
+                "title": "日式厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040092,
+                "title": "西点师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040093,
+                "title": "厨师助理/学徒",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040094,
+                "title": "烧烤师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040095,
+                "title": "品酒师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040096,
+                "title": "裱花师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040097,
+                "title": "川湘菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040098,
+                "title": "小龙虾厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040099,
+                "title": "火锅炒料",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040100,
+                "title": "法国菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040101,
+                "title": "意大利菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040102,
+                "title": "西班牙菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040103,
+                "title": "墨西哥菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040104,
+                "title": "东南亚菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040105,
+                "title": "京鲁菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040106,
+                "title": "东北菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040107,
+                "title": "江浙菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040108,
+                "title": "西北菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040109,
+                "title": "粤港菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040110,
+                "title": "云贵菜厨师",
+                "pid": 1004,
+                "children": null
+            },
+            {
+                "id": 10040111,
+                "title": "餐饮其他",
+                "pid": 1004,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1005,
+        "title": "旅游",
+        "pid": null,
+        "children": [{
+                "id": 10050112,
+                "title": "订票员",
+                "pid": 1005,
+                "children": null
+            },
+            {
+                "id": 10050113,
+                "title": "导游",
+                "pid": 1005,
+                "children": null
+            },
+            {
+                "id": 10050114,
+                "title": "计调",
+                "pid": 1005,
+                "children": null
+            },
+            {
+                "id": 10050115,
+                "title": "签证专员",
+                "pid": 1005,
+                "children": null
+            },
+            {
+                "id": 10050116,
+                "title": "旅游顾问",
+                "pid": 1005,
+                "children": null
+            },
+            {
+                "id": 10050117,
+                "title": "旅游产品/线路策划",
+                "pid": 1005,
+                "children": null
+            },
+            {
+                "id": 10050118,
+                "title": "旅游其他",
+                "pid": 1005,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1006,
+        "title": "酒店",
+        "pid": null,
+        "children": [{
+                "id": 10060119,
+                "title": "楼层经理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060120,
+                "title": "洗衣房经理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060121,
+                "title": "公共区域经理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060122,
+                "title": "客房服务员",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060123,
+                "title": "房务部总监",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060124,
+                "title": "客房部经理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060125,
+                "title": "预订经理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060126,
+                "title": "预订员",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060127,
+                "title": "总机经理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060128,
+                "title": "总机员工",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060129,
+                "title": "前厅部经理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060130,
+                "title": "前台主管",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060131,
+                "title": "礼宾经理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060132,
+                "title": "宾客关系主任",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060133,
+                "title": "前厅部员工",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060134,
+                "title": "大堂副理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060135,
+                "title": "值班经理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060136,
+                "title": "前台/接待",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060137,
+                "title": "救生员",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060138,
+                "title": "总经理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060139,
+                "title": "总经理助理",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060140,
+                "title": "酒店店长",
+                "pid": 1006,
+                "children": null
+            },
+            {
+                "id": 10060141,
+                "title": "酒店其他",
+                "pid": 1006,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1007,
+        "title": "超市/百货/零售",
+        "pid": null,
+        "children": [{
+                "id": 10070142,
+                "title": "店员/营业员",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070143,
+                "title": "收银员",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070144,
+                "title": "促销/导购员",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070145,
+                "title": "理货员/陈列员",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070146,
+                "title": "防损员/内保",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070147,
+                "title": "店长/卖场经理",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070148,
+                "title": "招商经理/主管",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070149,
+                "title": "奢侈品业务",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070150,
+                "title": "品类管理",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070151,
+                "title": "食品加工/处理",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070152,
+                "title": "督导",
+                "pid": 1007,
+                "children": null
+            },
+            {
+                "id": 10070153,
+                "title": "超市/零售其他",
+                "pid": 1007,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1008,
+        "title": "美容/美发",
+        "pid": null,
+        "children": [{
+                "id": 10080154,
+                "title": "发型师",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080155,
+                "title": "美发助理/学徒",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080156,
+                "title": "洗头工",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080157,
+                "title": "美容导师",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080158,
+                "title": "美容师",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080159,
+                "title": "美容助理/学徒",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080160,
+                "title": "化妆师",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080161,
+                "title": "美甲师",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080162,
+                "title": "宠物美容/护理",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080163,
+                "title": "美容店长",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080164,
+                "title": "美容/瘦身顾问",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080165,
+                "title": "形象设计师",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080166,
+                "title": "彩妆培训师",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080167,
+                "title": "美体师",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080168,
+                "title": "美容整形师",
+                "pid": 1008,
+                "children": null
+            },
+            {
+                "id": 10080169,
+                "title": "美容美发其他",
+                "pid": 1008,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1009,
+        "title": "保健按摩",
+        "pid": null,
+        "children": [{
+                "id": 10090170,
+                "title": "按摩师",
+                "pid": 1009,
+                "children": null
+            },
+            {
+                "id": 10090171,
+                "title": "足疗师",
+                "pid": 1009,
+                "children": null
+            },
+            {
+                "id": 10090172,
+                "title": "搓澡工",
+                "pid": 1009,
+                "children": null
+            },
+            {
+                "id": 10090173,
+                "title": "针灸推拿",
+                "pid": 1009,
+                "children": null
+            },
+            {
+                "id": 10090174,
+                "title": "保健按摩其他",
+                "pid": 1009,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1010,
+        "title": "运动健身",
+        "pid": null,
+        "children": [{
+                "id": 10100175,
+                "title": "健身教练",
+                "pid": 1010,
+                "children": null
+            },
+            {
+                "id": 10100176,
+                "title": "瑜伽教练",
+                "pid": 1010,
+                "children": null
+            },
+            {
+                "id": 10100177,
+                "title": "舞蹈老师",
+                "pid": 1010,
+                "children": null
+            },
+            {
+                "id": 10100178,
+                "title": "游泳教练",
+                "pid": 1010,
+                "children": null
+            },
+            {
+                "id": 10100179,
+                "title": "台球教练",
+                "pid": 1010,
+                "children": null
+            },
+            {
+                "id": 10100180,
+                "title": "高尔夫球助理",
+                "pid": 1010,
+                "children": null
+            },
+            {
+                "id": 10100181,
+                "title": "运动健身其他",
+                "pid": 1010,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1011,
+        "title": "普工/技工",
+        "pid": null,
+        "children": [{
+                "id": 10110182,
+                "title": "普工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110183,
+                "title": "综合维修工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110184,
+                "title": "制冷/水暖工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110185,
+                "title": "电工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110186,
+                "title": "木工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110187,
+                "title": "钳工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110188,
+                "title": "切割/焊工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110189,
+                "title": "钣金工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110190,
+                "title": "油漆工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110191,
+                "title": "缝纫工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110192,
+                "title": "锅炉工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110193,
+                "title": "车工/铣工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110194,
+                "title": "铲车/叉车工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110195,
+                "title": "铸造/注塑/模具工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110196,
+                "title": "电梯工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110197,
+                "title": "操作工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110198,
+                "title": "磨工/冲压工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110199,
+                "title": "学徒工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110200,
+                "title": "包装工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110201,
+                "title": "手机维修",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110202,
+                "title": "水泥工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110203,
+                "title": "钢筋工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110204,
+                "title": "管道工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110205,
+                "title": "瓦工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110206,
+                "title": "组装工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110207,
+                "title": "样衣工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110208,
+                "title": "染工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110209,
+                "title": "纺织工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110210,
+                "title": "印花工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110211,
+                "title": "压熨工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110212,
+                "title": "电力线路工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110213,
+                "title": "拖压工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110214,
+                "title": "电镀工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110215,
+                "title": "万能工",
+                "pid": 1011,
+                "children": null
+            },
+            {
+                "id": 10110216,
+                "title": "普工/技工其他",
+                "pid": 1011,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1012,
+        "title": "生产管理/研发",
+        "pid": null,
+        "children": [{
+                "id": 10120217,
+                "title": "质量管理",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120218,
+                "title": "总工程师/副总工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120219,
+                "title": "设备管理维护",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120220,
+                "title": "工艺设计",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120221,
+                "title": "车间主任",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120222,
+                "title": "生产计划",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120223,
+                "title": "化验/检验",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120224,
+                "title": "厂长/副厂长",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120225,
+                "title": "生产总监",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120226,
+                "title": "维修工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120227,
+                "title": "工业工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120228,
+                "title": "材料工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120229,
+                "title": "技术工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120230,
+                "title": "结构工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120231,
+                "title": "生产运营管理",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120232,
+                "title": "生产项目经理/主管",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120233,
+                "title": "生产项目工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120234,
+                "title": "产品管理",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120235,
+                "title": "制造工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120236,
+                "title": "生产物料管理（PMC）",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120237,
+                "title": "包装工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120238,
+                "title": "技术文档工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120239,
+                "title": "生产文员",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120240,
+                "title": "营运主管",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120241,
+                "title": "营运经理",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120242,
+                "title": "设备主管",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120243,
+                "title": "生产跟单",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120244,
+                "title": "生产主管/组长",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120245,
+                "title": "电子技术研发工程师",
+                "pid": 1012,
+                "children": null
+            },
+            {
+                "id": 10120246,
+                "title": "生产研发其他",
+                "pid": 1012,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1013,
+        "title": "汽车制造/服务",
+        "pid": null,
+        "children": [{
+                "id": 10130247,
+                "title": "汽车设计工程师",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130248,
+                "title": "装配工艺工程师",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130249,
+                "title": "汽车/摩托车修理",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130250,
+                "title": "汽车机械工程师",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130251,
+                "title": "汽车电子工程师",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130252,
+                "title": "4S店管理",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130253,
+                "title": "汽车检验/检测",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130254,
+                "title": "汽车美容",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130255,
+                "title": "二手车评估师",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130256,
+                "title": "发动机/总装工程师",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130257,
+                "title": "安全性能工程师",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130258,
+                "title": "理赔专员/顾问",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130259,
+                "title": "洗车工",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130260,
+                "title": "停车管理员",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130261,
+                "title": "加油站工作员",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130262,
+                "title": "轮胎工",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130263,
+                "title": "零配件销售",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130264,
+                "title": "汽车修理工",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130265,
+                "title": "汽车零部件设计师",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130266,
+                "title": "汽车工程项目管理",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130267,
+                "title": "汽车机构工程师",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130268,
+                "title": "汽车电工",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130269,
+                "title": "汽车质量管理/检验检测",
+                "pid": 1013,
+                "children": null
+            },
+            {
+                "id": 10130270,
+                "title": "汽车其他",
+                "pid": 1013,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1014,
+        "title": "建筑",
+        "pid": null,
+        "children": [{
+                "id": 10140271,
+                "title": "工程项目管理",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140272,
+                "title": "工程监理",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140273,
+                "title": "建筑工程师/总工",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140274,
+                "title": "土木/土建工程师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140275,
+                "title": "造价师/预算师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140276,
+                "title": "幕墙工程师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140277,
+                "title": "安防工程师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140278,
+                "title": "安全管理/安全员",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140279,
+                "title": "道路桥梁技术",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140280,
+                "title": "给排水/制冷/暖通",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140281,
+                "title": "测绘/测量",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140282,
+                "title": "园林/景观设计",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140283,
+                "title": "岩土工程师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140284,
+                "title": "水利/港口工程技术",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140285,
+                "title": "资料员",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140286,
+                "title": "建筑设计师/制图师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140287,
+                "title": "建筑工程验收",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140288,
+                "title": "市政工程师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140289,
+                "title": "建筑施工现场管理",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140290,
+                "title": "综合布线/弱电",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140291,
+                "title": "施工员",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140292,
+                "title": "开发报建",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140293,
+                "title": "爆破工程师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140294,
+                "title": "工程设备管理",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140295,
+                "title": "楼宇自动化",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140296,
+                "title": "建筑制图",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140297,
+                "title": "架线和管道工程技术",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140298,
+                "title": "室内装潢设计",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140299,
+                "title": "城市规划与设计",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140300,
+                "title": "工程资料管理",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140301,
+                "title": "施工队长",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140302,
+                "title": "建筑工程安全管理",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140303,
+                "title": "软装设计师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140304,
+                "title": "工程总监",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140305,
+                "title": "土建勘察",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140306,
+                "title": "硬装设计师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140307,
+                "title": "橱柜设计师",
+                "pid": 1014,
+                "children": null
+            },
+            {
+                "id": 10140308,
+                "title": "建筑其他",
+                "pid": 1014,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1015,
+        "title": "物业管理",
+        "pid": null,
+        "children": [{
+                "id": 10150309,
+                "title": "物业管理/商业中心",
+                "pid": 1015,
+                "children": null
+            },
+            {
+                "id": 10150310,
+                "title": "物业维修",
+                "pid": 1015,
+                "children": null
+            },
+            {
+                "id": 10150311,
+                "title": "物业经理/主管",
+                "pid": 1015,
+                "children": null
+            },
+            {
+                "id": 10150312,
+                "title": "合同管理",
+                "pid": 1015,
+                "children": null
+            },
+            {
+                "id": 10150313,
+                "title": "招商经理/主管",
+                "pid": 1015,
+                "children": null
+            },
+            {
+                "id": 10150314,
+                "title": "物业租赁/销售",
+                "pid": 1015,
+                "children": null
+            },
+            {
+                "id": 10150315,
+                "title": "物业招商管理",
+                "pid": 1015,
+                "children": null
+            },
+            {
+                "id": 10150316,
+                "title": "监控维护",
+                "pid": 1015,
+                "children": null
+            },
+            {
+                "id": 10150317,
+                "title": "物业管理其他",
+                "pid": 1015,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1016,
+        "title": "房产中介",
+        "pid": null,
+        "children": [{
+                "id": 10160318,
+                "title": "房产经纪人",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160319,
+                "title": "置业顾问",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160320,
+                "title": "房产店长/经理",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160321,
+                "title": "房产店员/助理",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160322,
+                "title": "房产客服",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160323,
+                "title": "房产内勤",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160324,
+                "title": "房产评估师",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160325,
+                "title": "房产开发/策划",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160326,
+                "title": "其他房产职位",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160327,
+                "title": "房地产投资分析",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160328,
+                "title": "房地产项目策划经理/主管",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160329,
+                "title": "房地产项目策划专员/助理",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160330,
+                "title": "房地产资产管理",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160331,
+                "title": "房地产项目招投标",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160332,
+                "title": "房地产项目开发报建",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160333,
+                "title": "房地产项目配套工程师",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160334,
+                "title": "房地产销售经理",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160335,
+                "title": "房地产销售主管",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160336,
+                "title": "房地产中介/交易",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160337,
+                "title": "房地产项目管理",
+                "pid": 1016,
+                "children": null
+            },
+            {
+                "id": 10160338,
+                "title": "监察人员",
+                "pid": 1016,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1017,
+        "title": "家政保洁/安保",
+        "pid": null,
+        "children": [{
+                "id": 10170339,
+                "title": "保洁",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170340,
+                "title": "保姆",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170341,
+                "title": "月嫂",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170342,
+                "title": "育婴师/保育员",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170343,
+                "title": "洗衣工",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170344,
+                "title": "钟点工",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170345,
+                "title": "保安",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170346,
+                "title": "护工",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170347,
+                "title": "送水工",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170348,
+                "title": "婚礼/庆典策划服务",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170349,
+                "title": "宠物护理和美容",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170350,
+                "title": "家电维修",
+                "pid": 1017,
+                "children": null
+            },
+            {
+                "id": 10170351,
+                "title": "家政保洁其他",
+                "pid": 1017,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1018,
+        "title": "司机/交通服务",
+        "pid": null,
+        "children": [{
+                "id": 10180352,
+                "title": "商务司机",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180353,
+                "title": "客运司机",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180354,
+                "title": "货运司机",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180355,
+                "title": "出租车司机",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180356,
+                "title": "班车司机",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180357,
+                "title": "特种车司机",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180358,
+                "title": "驾校教练/陪练",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180359,
+                "title": "代驾司机",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180360,
+                "title": "列车驾驶/操作",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180361,
+                "title": "专车司机",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180362,
+                "title": "船舶驾驶/操作",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180363,
+                "title": "飞机驾驶/操作",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180364,
+                "title": "公交/地铁乘务",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180365,
+                "title": "列车乘务",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180366,
+                "title": "船舶乘务",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180367,
+                "title": "船员/水手",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180368,
+                "title": "航空乘务",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180369,
+                "title": "地勤人员",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180370,
+                "title": "安检员",
+                "pid": 1018,
+                "children": null
+            },
+            {
+                "id": 10180371,
+                "title": "交通其他",
+                "pid": 1018,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1019,
+        "title": "贸易/采购",
+        "pid": null,
+        "children": [{
+                "id": 10190372,
+                "title": "外贸专员/助理",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190373,
+                "title": "外贸经理/主管",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190374,
+                "title": "采购员",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190375,
+                "title": "采购助理",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190376,
+                "title": "采购经理/总监",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190377,
+                "title": "报关员",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190378,
+                "title": "商务专员/经理",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190379,
+                "title": "买手",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190380,
+                "title": "供应商开发",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190381,
+                "title": "供应链管理",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190382,
+                "title": "贸易跟单",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190383,
+                "title": "业务跟单经理",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190384,
+                "title": "高级业务跟单",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190385,
+                "title": "助理业务跟单",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190386,
+                "title": "国际贸易主管/专员",
+                "pid": 1019,
+                "children": null
+            },
+            {
+                "id": 10190387,
+                "title": "贸易其他",
+                "pid": 1019,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1020,
+        "title": "物流/仓储",
+        "pid": null,
+        "children": [{
+                "id": 10200388,
+                "title": "物流专员/助理",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200389,
+                "title": "物流经理/主管",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200390,
+                "title": "物流总监",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200391,
+                "title": "调度员",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200392,
+                "title": "快递员",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200393,
+                "title": "仓库管理员",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200394,
+                "title": "仓库经理/主管",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200395,
+                "title": "装卸/搬运工",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200396,
+                "title": "供应链管理",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200397,
+                "title": "单证员",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200398,
+                "title": "国际货运",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200399,
+                "title": "分拣员",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200400,
+                "title": "物料管理",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200401,
+                "title": "货运代理",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200402,
+                "title": "集装箱业务",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200403,
+                "title": "海关事务管理",
+                "pid": 1020,
+                "children": null
+            },
+            {
+                "id": 10200404,
+                "title": "物流仓储其他",
+                "pid": 1020,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1021,
+        "title": "淘宝职位",
+        "pid": null,
+        "children": [{
+                "id": 10210405,
+                "title": "网店店长",
+                "pid": 1021,
+                "children": null
+            },
+            {
+                "id": 10210406,
+                "title": "淘宝客服",
+                "pid": 1021,
+                "children": null
+            },
+            {
+                "id": 10210407,
+                "title": "淘宝美工",
+                "pid": 1021,
+                "children": null
+            },
+            {
+                "id": 10210408,
+                "title": "店铺文案编辑",
+                "pid": 1021,
+                "children": null
+            },
+            {
+                "id": 10210409,
+                "title": "网店运营",
+                "pid": 1021,
+                "children": null
+            },
+            {
+                "id": 10210410,
+                "title": "活动策划",
+                "pid": 1021,
+                "children": null
+            },
+            {
+                "id": 10210411,
+                "title": "淘宝其他",
+                "pid": 1021,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1022,
+        "title": "美术/设计/创意",
+        "pid": null,
+        "children": [{
+                "id": 10220412,
+                "title": "美编/美术设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220413,
+                "title": "服装设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220414,
+                "title": "家具/家居用品设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220415,
+                "title": "平面设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220416,
+                "title": "美术指导",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220417,
+                "title": "店面/陈列/展览设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220418,
+                "title": "工艺/珠宝设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220419,
+                "title": "多媒体/动画设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220420,
+                "title": "产品/包装设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220421,
+                "title": "装修装潢设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220422,
+                "title": "舞台美术设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220423,
+                "title": "CAD设计/制图",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220424,
+                "title": "三维/3D设计/制作",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220425,
+                "title": "设计管理人员",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220426,
+                "title": "艺术/设计总监",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220427,
+                "title": "原画师",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220428,
+                "title": "特效设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220429,
+                "title": "视觉设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220430,
+                "title": "玩具设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220431,
+                "title": "工业设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220432,
+                "title": "游戏界面设计",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220433,
+                "title": "园林景观设计师",
+                "pid": 1022,
+                "children": null
+            },
+            {
+                "id": 10220434,
+                "title": "美术创意其他",
+                "pid": 1022,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1023,
+        "title": "市场/媒介/公关",
+        "pid": null,
+        "children": [{
+                "id": 10230435,
+                "title": "市场专员/助理",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230436,
+                "title": "市场经理/总监",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230437,
+                "title": "市场拓展",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230438,
+                "title": "市场营销",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230439,
+                "title": "市场调研",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230440,
+                "title": "市场策划",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230441,
+                "title": "媒介专员/助理",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230442,
+                "title": "媒介经理/主管",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230443,
+                "title": "会务会展专员/经理",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230444,
+                "title": "品牌专员/经理",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230445,
+                "title": "公关专员/助理",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230446,
+                "title": "公关经理/主管",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230447,
+                "title": "企划经理/主管",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230448,
+                "title": "政府事务管理",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230449,
+                "title": "市场主管",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230450,
+                "title": "业务拓展专员/助理",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230451,
+                "title": "活动策划",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230452,
+                "title": "活动执行",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230453,
+                "title": "促销主管/督导/促销员",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230454,
+                "title": "学术推广",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230455,
+                "title": "市场通路专员",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230456,
+                "title": "选址拓展/新店开发",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230457,
+                "title": "市场调研与分析",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230458,
+                "title": "促销经理",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230459,
+                "title": "媒介销售",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230460,
+                "title": "公关总监",
+                "pid": 1023,
+                "children": null
+            },
+            {
+                "id": 10230461,
+                "title": "市场公关其他",
+                "pid": 1023,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1024,
+        "title": "广告/会展/咨询",
+        "pid": null,
+        "children": [{
+                "id": 10240462,
+                "title": "广告文案",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240463,
+                "title": "创意指导/总监",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240464,
+                "title": "广告设计",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240465,
+                "title": "广告创意",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240466,
+                "title": "媒介策划/管理",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240467,
+                "title": "会展策划/设计",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240468,
+                "title": "婚礼策划师",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240469,
+                "title": "制作执行",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240470,
+                "title": "移民/留学咨询",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240471,
+                "title": "咨询顾问",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240472,
+                "title": "咨询经理/主管",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240473,
+                "title": "广告客户总监/经理",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240474,
+                "title": "广告/会展业务拓展",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240475,
+                "title": "会务经理/主管",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240476,
+                "title": "会务专员/助理",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240477,
+                "title": "广告/会展项目管理",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240478,
+                "title": "企业/业务发展经理",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240479,
+                "title": "咨询总监",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240480,
+                "title": "专业顾问",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240481,
+                "title": "情报信息分析",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240482,
+                "title": "客户主管/专员",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240483,
+                "title": "企业策划",
+                "pid": 1024,
+                "children": null
+            },
+            {
+                "id": 10240484,
+                "title": "广告咨询其他",
+                "pid": 1024,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1025,
+        "title": "影视/娱乐/休闲",
+        "pid": null,
+        "children": [{
+                "id": 10250485,
+                "title": "酒吧服务员",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250486,
+                "title": "娱乐厅服务员",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250487,
+                "title": "礼仪/迎宾",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250488,
+                "title": "主持人",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250489,
+                "title": "调酒师",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250490,
+                "title": "音效师",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250491,
+                "title": "灯光师",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250492,
+                "title": "摄影师/摄像师",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250493,
+                "title": "影视/后期制作",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250494,
+                "title": "配音员",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250495,
+                "title": "放映员",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250496,
+                "title": "艺人助理",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250497,
+                "title": "艺人统筹",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250498,
+                "title": "签约艺人",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250499,
+                "title": "艺人经纪人",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250500,
+                "title": "经纪人助理",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250501,
+                "title": "执行经纪人",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250502,
+                "title": "影视制片人",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250503,
+                "title": "执行制片人",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250504,
+                "title": "统筹制片人",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250505,
+                "title": "节目编导",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250506,
+                "title": "短视频编导",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250507,
+                "title": "节目编导策划",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250508,
+                "title": "短视频运营",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250509,
+                "title": "短视频策划",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250510,
+                "title": "短视频剪辑",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250511,
+                "title": "视频剪辑助理",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250512,
+                "title": "视频剪辑师",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250513,
+                "title": "视频剪辑专员",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250514,
+                "title": "娱乐营销策划",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250515,
+                "title": "电影营销经理",
+                "pid": 1025,
+                "children": null
+            },
+            {
+                "id": 10250516,
+                "title": "娱乐休闲其他",
+                "pid": 1025,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1026,
+        "title": "教育培训",
+        "pid": null,
+        "children": [{
+                "id": 10260517,
+                "title": "教师/助教",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260518,
+                "title": "家教",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260519,
+                "title": "幼教/早教",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260520,
+                "title": "培训师/讲师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260521,
+                "title": "培训策划",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260522,
+                "title": "培训助理",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260523,
+                "title": "教学/教务管理",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260524,
+                "title": "教育产品开发",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260525,
+                "title": "学术研究/科研",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260526,
+                "title": "招生/课程顾问",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260527,
+                "title": "校长",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260528,
+                "title": "野外拓展训练师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260529,
+                "title": "音乐/美术教师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260530,
+                "title": "考研/公务员培训讲师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260531,
+                "title": "小学老师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260532,
+                "title": "初中教师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260533,
+                "title": "高中教师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260534,
+                "title": "职业技术教师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260535,
+                "title": "大学教师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260536,
+                "title": "兼职教师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260537,
+                "title": "理科教师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260538,
+                "title": "文科教师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260539,
+                "title": "外语教师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260540,
+                "title": "体育老师/教练",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260541,
+                "title": "教学/教务管理人员",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260542,
+                "title": "培训督导",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260543,
+                "title": "外籍教师",
+                "pid": 1026,
+                "children": null
+            },
+            {
+                "id": 10260544,
+                "title": "教育培训其他",
+                "pid": 1026,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1027,
+        "title": "财务/审计/统计",
+        "pid": null,
+        "children": [{
+                "id": 10270545,
+                "title": "财务经理/主管",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270546,
+                "title": "财务总监",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270547,
+                "title": "会计/会计师",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270548,
+                "title": "财务/会计助理",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270549,
+                "title": "出纳",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270550,
+                "title": "审计专员/助理",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270551,
+                "title": "审计经理/主管",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270552,
+                "title": "统计员",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270553,
+                "title": "税务专员/助理",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270554,
+                "title": "税务经理/主管",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270555,
+                "title": "财务分析员",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270556,
+                "title": "成本管理员",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270557,
+                "title": "财务顾问",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270558,
+                "title": "首席财务官CFO",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270559,
+                "title": "资产/资金管理",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270560,
+                "title": "会计经理/主管",
+                "pid": 1027,
+                "children": null
+            },
+            {
+                "id": 10270561,
+                "title": "财务其他",
+                "pid": 1027,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1028,
+        "title": "法律",
+        "pid": null,
+        "children": [{
+                "id": 10280562,
+                "title": "律师/法律顾问",
+                "pid": 1028,
+                "children": null
+            },
+            {
+                "id": 10280563,
+                "title": "律师助理",
+                "pid": 1028,
+                "children": null
+            },
+            {
+                "id": 10280564,
+                "title": "法务专员/主管",
+                "pid": 1028,
+                "children": null
+            },
+            {
+                "id": 10280565,
+                "title": "产权/专利顾问",
+                "pid": 1028,
+                "children": null
+            },
+            {
+                "id": 10280566,
+                "title": "合规管理",
+                "pid": 1028,
+                "children": null
+            },
+            {
+                "id": 10280567,
+                "title": "合同管理",
+                "pid": 1028,
+                "children": null
+            },
+            {
+                "id": 10280568,
+                "title": "法律其他",
+                "pid": 1028,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1029,
+        "title": "翻译",
+        "pid": null,
+        "children": [{
+                "id": 10290569,
+                "title": "英语翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290570,
+                "title": "日语翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290571,
+                "title": "韩语翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290572,
+                "title": "法语翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290573,
+                "title": "俄语翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290574,
+                "title": "德语翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290575,
+                "title": "西班牙语翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290576,
+                "title": "意大利语翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290577,
+                "title": "葡萄牙语翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290578,
+                "title": "阿拉伯语翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290579,
+                "title": "小语种翻译",
+                "pid": 1029,
+                "children": null
+            },
+            {
+                "id": 10290580,
+                "title": "翻译其他",
+                "pid": 1029,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1030,
+        "title": "编辑/出版/印刷",
+        "pid": null,
+        "children": [{
+                "id": 10300581,
+                "title": "总编/副总编/主编",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300582,
+                "title": "编辑/撰稿",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300583,
+                "title": "记者/采编",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300584,
+                "title": "出版/发行",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300585,
+                "title": "排版设计/制作",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300586,
+                "title": "印刷操作",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300587,
+                "title": "装订/烫金",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300588,
+                "title": "录入/校对",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300589,
+                "title": "数码直印/菲林输出",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300590,
+                "title": "文编/组稿",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300591,
+                "title": "调墨技师",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300592,
+                "title": "印刷机械机长",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300593,
+                "title": "艺术指导/舞美设计",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300594,
+                "title": "主持人/司仪",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300595,
+                "title": "演员/模特",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300596,
+                "title": "经纪人/星探",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300597,
+                "title": "放映管理",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300598,
+                "title": "作家/编剧/撰稿人",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300599,
+                "title": "文案策划",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300600,
+                "title": "发行管理",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300601,
+                "title": "主笔设计师",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300602,
+                "title": "灯光师",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300603,
+                "title": "调色员",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300604,
+                "title": "烫金工",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300605,
+                "title": "晒版员",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300606,
+                "title": "装订工",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300607,
+                "title": "电分操作员",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300608,
+                "title": "打稿机操作员",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300609,
+                "title": "切纸机操作工",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300610,
+                "title": "裱胶工",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300611,
+                "title": "复卷工",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300612,
+                "title": "压痕工",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300613,
+                "title": "转播工程师",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300614,
+                "title": "视频主播",
+                "pid": 1030,
+                "children": null
+            },
+            {
+                "id": 10300615,
+                "title": "编辑出版其他",
+                "pid": 1030,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1031,
+        "title": "计算机/互联网/通信",
+        "pid": null,
+        "children": [{
+                "id": 10310616,
+                "title": "技术总监/经理",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310617,
+                "title": "技术支持/维护",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310618,
+                "title": "技术专员/助理",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310619,
+                "title": "仿真应用工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310620,
+                "title": "软件工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310621,
+                "title": "程序员",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310622,
+                "title": "硬件工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310623,
+                "title": "质量工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310624,
+                "title": "测试工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310625,
+                "title": "网站架构设计师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310626,
+                "title": "系统架构师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310627,
+                "title": "系统集成工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310628,
+                "title": "数据库管理/DBA",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310629,
+                "title": "游戏设计/开发",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310630,
+                "title": "网页设计/制作",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310631,
+                "title": "语音/视频/图形",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310632,
+                "title": "项目经理/主管",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310633,
+                "title": "产品经理/专员",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310634,
+                "title": "网站运营",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310635,
+                "title": "网站编辑",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310636,
+                "title": "网站策划",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310637,
+                "title": "网络管理员",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310638,
+                "title": "网络与信息安全工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310639,
+                "title": "实施工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310640,
+                "title": "通信技术工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310641,
+                "title": "算法工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310642,
+                "title": "有线传输工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310643,
+                "title": "无线通信工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310644,
+                "title": "电信交换工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310645,
+                "title": "数据通信工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310646,
+                "title": "移动通信工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310647,
+                "title": "电信网络工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310648,
+                "title": "通信电源工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310649,
+                "title": "手机软件开发工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310650,
+                "title": "UI/UE设计",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310651,
+                "title": "WEB前端开发",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310652,
+                "title": "需求分析师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310653,
+                "title": "脚本开发工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310654,
+                "title": "游戏策划",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310655,
+                "title": "游戏原画",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310656,
+                "title": "游戏界面设计师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310657,
+                "title": "Flash设计/开发",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310658,
+                "title": "特效设计师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310659,
+                "title": "SEO优化",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310660,
+                "title": "电子商务",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310661,
+                "title": "网络推广",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310662,
+                "title": "新媒体运营",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310663,
+                "title": "系统分析员",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310664,
+                "title": "ERP技术/开发应用",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310665,
+                "title": "计算机辅助设计师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310666,
+                "title": "IOS开发工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310667,
+                "title": "Android开发工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310668,
+                "title": "Java开发工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310669,
+                "title": "数据库开发工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310670,
+                "title": "嵌入式软件开发",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310671,
+                "title": "移动互联网开发",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310672,
+                "title": "PHP开发工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310673,
+                "title": "C语言开发工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310674,
+                "title": "高级硬件工程师",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310675,
+                "title": "嵌入式硬件开发",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310676,
+                "title": "网络运营管理",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310677,
+                "title": "网络运营专员/助理",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310678,
+                "title": "产品总监",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310679,
+                "title": "运营总监",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310680,
+                "title": "网站运营总监/经理",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310681,
+                "title": "电子商务总监",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310682,
+                "title": "网店店长",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310683,
+                "title": "网店管理员",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310684,
+                "title": "运营主管/专员",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310685,
+                "title": "微信推广",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310686,
+                "title": "淘宝/微信运营专员/主管",
+                "pid": 1031,
+                "children": null
+            },
+            {
+                "id": 10310687,
+                "title": "互联网其他",
+                "pid": 1031,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1032,
+        "title": "电子/电气",
+        "pid": null,
+        "children": [{
+                "id": 10320688,
+                "title": "自动化工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320689,
+                "title": "电子/电气工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320690,
+                "title": "电路工程师/技术员",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320691,
+                "title": "无线电工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320692,
+                "title": "测试/可靠性工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320693,
+                "title": "产品工艺/规划工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320694,
+                "title": "音频/视频工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320695,
+                "title": "灯光/照明设计工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320696,
+                "title": "变压器与磁电工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320697,
+                "title": "研发工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320698,
+                "title": "IC验证工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320699,
+                "title": "电子/电器维修",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320700,
+                "title": "集成电路/应用工程",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320701,
+                "title": "半导体技术",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320702,
+                "title": "电子软件开发",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320703,
+                "title": "嵌入式软件开发",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320704,
+                "title": "嵌入式硬件开发",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320705,
+                "title": "FAE现场应用工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320706,
+                "title": "激光/光电子技术",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320707,
+                "title": "光伏系统工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320708,
+                "title": "电器研发工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320709,
+                "title": "电子/电器工艺/制程工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320710,
+                "title": "模拟电路设计/应用工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320711,
+                "title": "电子元器件工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320712,
+                "title": "光源/照明工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320713,
+                "title": "电池/电源开发",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320714,
+                "title": "家用电器/数码产品研发",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320715,
+                "title": "空调工程/设计",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320716,
+                "title": "安防系统工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320717,
+                "title": "电子/电器设备工程师",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320718,
+                "title": "电子/电器项目管理",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320719,
+                "title": "电气线路设计",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320720,
+                "title": "线路结构设计",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320721,
+                "title": "电声/音响工程师/技术员",
+                "pid": 1032,
+                "children": null
+            },
+            {
+                "id": 10320722,
+                "title": "电子/电气其他",
+                "pid": 1032,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1033,
+        "title": "机械/仪器仪表",
+        "pid": null,
+        "children": [{
+                "id": 10330723,
+                "title": "机电工程师",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330724,
+                "title": "机械工程师",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330725,
+                "title": "研发工程师",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330726,
+                "title": "测试/可靠性工程师",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330727,
+                "title": "版图设计工程师",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330728,
+                "title": "仪器/仪表/计量",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330729,
+                "title": "气动工程师",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330730,
+                "title": "CNC/数控工程师",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330731,
+                "title": "机械维修/保养",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330732,
+                "title": "飞机设计与制造",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330733,
+                "title": "飞机维修/保养",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330734,
+                "title": "列车设计与制造",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330735,
+                "title": "列车维修/保养",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330736,
+                "title": "船舶设计与制造",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330737,
+                "title": "船舶维修/保养",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330738,
+                "title": "装配技师",
+                "pid": 1033,
+                "children": null
+            },
+            {
+                "id": 10330739,
+                "title": "机器/仪器其他",
+                "pid": 1033,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1034,
+        "title": "金融/银行/证券/投资",
+        "pid": null,
+        "children": [{
+                "id": 10340740,
+                "title": "证券/期货/外汇经纪人",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340741,
+                "title": "证券经理/总监",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340742,
+                "title": "证券分析/金融研究",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340743,
+                "title": "信用卡/银行卡业务",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340744,
+                "title": "银行经理/主任",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340745,
+                "title": "银行会计/柜员",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340746,
+                "title": "信贷管理/资信评估",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340747,
+                "title": "资产评估",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340748,
+                "title": "担保/拍卖/典当",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340749,
+                "title": "拍卖师",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340750,
+                "title": "外汇/基金/国债经理人",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340751,
+                "title": "投资/理财顾问",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340752,
+                "title": "融资专员",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340753,
+                "title": "融资经理/总监",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340754,
+                "title": "风险管理/控制",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340755,
+                "title": "股票交易员",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340756,
+                "title": "进出口/信用证结算",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340757,
+                "title": "综合业务专员/助理",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340758,
+                "title": "公司业务",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340759,
+                "title": "个人业务",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340760,
+                "title": "信贷管理/资信评估/分析",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340761,
+                "title": "信审核查",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340762,
+                "title": "外汇交易",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340763,
+                "title": "清算人员",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340764,
+                "title": "个人业务部门经理/主管",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340765,
+                "title": "公司业务部门经理/主管",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340766,
+                "title": "高级客户经理/客户经理",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340767,
+                "title": "信用卡销售",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340768,
+                "title": "证券/投资客户总监",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340769,
+                "title": "证券/投资客户经理",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340770,
+                "title": "证券/投资客户主管",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340771,
+                "title": "投资/理财服务",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340772,
+                "title": "投资银行业务",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340773,
+                "title": "融资总监",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340774,
+                "title": "股票/期货操盘手",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340775,
+                "title": "金融/经济研究员",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340776,
+                "title": "金融产品经理",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340777,
+                "title": "金融产品销售",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340778,
+                "title": "基金项目经理",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340779,
+                "title": "金融服务经理",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340780,
+                "title": "投资经理",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340781,
+                "title": "投资银行财务分析",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340782,
+                "title": "金融租赁",
+                "pid": 1034,
+                "children": null
+            },
+            {
+                "id": 10340783,
+                "title": "金融投资其他",
+                "pid": 1034,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1035,
+        "title": "保险",
+        "pid": null,
+        "children": [{
+                "id": 10350784,
+                "title": "储备经理人",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350785,
+                "title": "保险客户经理",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350786,
+                "title": "车险专员",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350787,
+                "title": "保险内勤",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350788,
+                "title": "保险培训师",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350789,
+                "title": "保险客服",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350790,
+                "title": "保险顾问",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350791,
+                "title": "保险经纪人",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350792,
+                "title": "保险项目经理",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350793,
+                "title": "保险精算师",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350794,
+                "title": "续期管理",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350795,
+                "title": "保险其他职位",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350796,
+                "title": "保险产品开发",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350797,
+                "title": "保险核保/理赔",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350798,
+                "title": "保险契约管理",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350799,
+                "title": "汽车定损/车险理赔",
+                "pid": 1035,
+                "children": null
+            },
+            {
+                "id": 10350800,
+                "title": "保险电销",
+                "pid": 1035,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1036,
+        "title": "医院/医疗/护理",
+        "pid": null,
+        "children": [{
+                "id": 10360801,
+                "title": "医生",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360802,
+                "title": "保健医生",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360803,
+                "title": "心理医生",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360804,
+                "title": "护士/护理",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360805,
+                "title": "护理主任/护士长",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360806,
+                "title": "导医",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360807,
+                "title": "药剂师",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360808,
+                "title": "理疗师",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360809,
+                "title": "医药质检",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360810,
+                "title": "医疗管理",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360811,
+                "title": "美容整形师",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360812,
+                "title": "验光师",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360813,
+                "title": "营养师",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360814,
+                "title": "宠物护理/兽医",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360815,
+                "title": "产科医生",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360816,
+                "title": "麻醉师",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360817,
+                "title": "医学化验/检验",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360818,
+                "title": "公共卫生/疾病控制",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360819,
+                "title": "医学影像/放射科医师",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360820,
+                "title": "综合门诊/全科医生",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360821,
+                "title": "牙科医生",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360822,
+                "title": "中医科医生",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360823,
+                "title": "化验/检验科医师",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360824,
+                "title": "针灸/推拿",
+                "pid": 1036,
+                "children": null
+            },
+            {
+                "id": 10360825,
+                "title": "医院护理其他",
+                "pid": 1036,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1037,
+        "title": "制药/生物工程",
+        "pid": null,
+        "children": [{
+                "id": 10370826,
+                "title": "医药研发/生产/注册",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370827,
+                "title": "临床研究/协调",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370828,
+                "title": "生物工程/生物制药",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370829,
+                "title": "医疗器械研发/维修",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370830,
+                "title": "医疗器械注册",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370831,
+                "title": "化学分析测试员",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370832,
+                "title": "临床数据分析员",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370833,
+                "title": "医药招商",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370834,
+                "title": "医药销售经理/主管",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370835,
+                "title": "药品市场推广经理/主管",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370836,
+                "title": "药品市场推广专员/助理",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370837,
+                "title": "医疗器械推广",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370838,
+                "title": "医药学术推广",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370839,
+                "title": "医药项目管理",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370840,
+                "title": "医药项目招投标管理",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370841,
+                "title": "医疗器械研发",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370842,
+                "title": "医药化学分析",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370843,
+                "title": "医药技术研发管理人员",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370844,
+                "title": "医疗器械生产/质量管理",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370845,
+                "title": "临床推广经理",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370846,
+                "title": "医药技术研发人员",
+                "pid": 1037,
+                "children": null
+            },
+            {
+                "id": 10370847,
+                "title": "制药生物其他",
+                "pid": 1037,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1038,
+        "title": "服装/纺织/食品",
+        "pid": null,
+        "children": [{
+                "id": 10380848,
+                "title": "服装设计师",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380849,
+                "title": "纺织品设计师",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380850,
+                "title": "服装打样/制版",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380851,
+                "title": "生产管理",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380852,
+                "title": "样衣工",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380853,
+                "title": "食品/饮料研发/检验",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380854,
+                "title": "板房/底格出格师",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380855,
+                "title": "电脑放码员",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380856,
+                "title": "纸样师/车板工",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380857,
+                "title": "裁剪工",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380858,
+                "title": "服装/纺织/皮革工艺师",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380859,
+                "title": "服装/纺织/皮革跟单",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380860,
+                "title": "食品制作工",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380861,
+                "title": "服装/纺织品/皮革质量管理",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380862,
+                "title": "服装/纺织设计总监",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380863,
+                "title": "挡车工",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380864,
+                "title": "浆纱工",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380865,
+                "title": "面料辅料开发/采购",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380866,
+                "title": "整经工",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380867,
+                "title": "鞋子设计",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380868,
+                "title": "细纱工",
+                "pid": 1038,
+                "children": null
+            },
+            {
+                "id": 10380869,
+                "title": "服装/纺织其他",
+                "pid": 1038,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1039,
+        "title": "环保/能源",
+        "pid": null,
+        "children": [{
+                "id": 10390870,
+                "title": "固体污水废气处理",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390871,
+                "title": "环境工程技术",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390872,
+                "title": "环境管理/保护",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390873,
+                "title": "环保技术",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390874,
+                "title": "EHS管理",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390875,
+                "title": "环保工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390876,
+                "title": "环保检测",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390877,
+                "title": "水质检测员",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390878,
+                "title": "环境绿化",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390879,
+                "title": "核力/火电工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390880,
+                "title": "石油天然气技术人员",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390881,
+                "title": "地质勘查",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390882,
+                "title": "空调/热能工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390883,
+                "title": "环境评价工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390884,
+                "title": "水处理工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390885,
+                "title": "固废处理工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390886,
+                "title": "废气处理工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390887,
+                "title": "生态治理/规划",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390888,
+                "title": "环境管理/园林景区保护",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390889,
+                "title": "水利/水电工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390890,
+                "title": "能源/矿产项目管理",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390891,
+                "title": "电力系统研发工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390892,
+                "title": "电力电子研发工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390893,
+                "title": "控制保护研发工程师",
+                "pid": 1039,
+                "children": null
+            },
+            {
+                "id": 10390894,
+                "title": "环保/能源其他",
+                "pid": 1039,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1040,
+        "title": "质控/安防",
+        "pid": null,
+        "children": [{
+                "id": 10400895,
+                "title": "质量管理/测试经理",
+                "pid": 1040,
+                "children": null
+            },
+            {
+                "id": 10400896,
+                "title": "质量检验员/测试员",
+                "pid": 1040,
+                "children": null
+            },
+            {
+                "id": 10400897,
+                "title": "测试工程师",
+                "pid": 1040,
+                "children": null
+            },
+            {
+                "id": 10400898,
+                "title": "安全消防",
+                "pid": 1040,
+                "children": null
+            },
+            {
+                "id": 10400899,
+                "title": "认证工程师/审核员",
+                "pid": 1040,
+                "children": null
+            },
+            {
+                "id": 10400900,
+                "title": "安全管理",
+                "pid": 1040,
+                "children": null
+            },
+            {
+                "id": 10400901,
+                "title": "体系工程师",
+                "pid": 1040,
+                "children": null
+            },
+            {
+                "id": 10400902,
+                "title": "故障分析工程师",
+                "pid": 1040,
+                "children": null
+            },
+            {
+                "id": 10400903,
+                "title": "质检/安防其他",
+                "pid": 1040,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1041,
+        "title": "高级管理",
+        "pid": null,
+        "children": [{
+                "id": 10410904,
+                "title": "CEO/总裁/总经理",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410905,
+                "title": "首席运营官COO",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410906,
+                "title": "首席财务官CFO",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410907,
+                "title": "首席技术官CTO",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410908,
+                "title": "副总裁/副总经理",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410909,
+                "title": "总裁助理/总经理助理",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410910,
+                "title": "总监",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410911,
+                "title": "分公司经理",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410912,
+                "title": "合伙人",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410913,
+                "title": "投资者关系",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410914,
+                "title": "部门/事业部管理",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410915,
+                "title": "工厂厂长/副厂长",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410916,
+                "title": "校长/副校长",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410917,
+                "title": "办事处首席代表",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410918,
+                "title": "企业秘书/董事会秘书",
+                "pid": 1041,
+                "children": null
+            },
+            {
+                "id": 10410919,
+                "title": "高级管理其他",
+                "pid": 1041,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1042,
+        "title": "农/林/牧/渔业",
+        "pid": null,
+        "children": [{
+                "id": 10420920,
+                "title": "饲料业务",
+                "pid": 1042,
+                "children": null
+            },
+            {
+                "id": 10420921,
+                "title": "养殖人员",
+                "pid": 1042,
+                "children": null
+            },
+            {
+                "id": 10420922,
+                "title": "农艺师/花艺师",
+                "pid": 1042,
+                "children": null
+            },
+            {
+                "id": 10420923,
+                "title": "畜牧师",
+                "pid": 1042,
+                "children": null
+            },
+            {
+                "id": 10420924,
+                "title": "场长",
+                "pid": 1042,
+                "children": null
+            },
+            {
+                "id": 10420925,
+                "title": "养殖部主管",
+                "pid": 1042,
+                "children": null
+            },
+            {
+                "id": 10420926,
+                "title": "动物营养/饲料研发",
+                "pid": 1042,
+                "children": null
+            },
+            {
+                "id": 10420927,
+                "title": "林业技术人员",
+                "pid": 1042,
+                "children": null
+            },
+            {
+                "id": 10420928,
+                "title": "动物育种/养殖",
+                "pid": 1042,
+                "children": null
+            },
+            {
+                "id": 10420929,
+                "title": "饲料销售",
+                "pid": 1042,
+                "children": null
+            },
+            {
+                "id": 10420930,
+                "title": "农林牧鱼其他",
+                "pid": 1042,
+                "children": null
+            }
+        ]
+    },
+    {
+        "id": 1043,
+        "title": "其他招聘信息",
+        "pid": null,
+        "children": [{
+            "id": 10430931,
+            "title": "其他职位",
+            "pid": 1043,
+            "children": null
+        }]
+    }
+]

@@ -8,7 +8,7 @@
 				<text class="item-type">用户头像</text>
 				<view class="flex align-center">
 					<image v-if="editInfo.avatar" class="item-img" :src="editInfo.avatar" mode=""></image>
-					<text v-else class="item-val flex flex-sub" :class="{'item-no-val': !editInfo.gender}">请上传头像</text>
+					<text v-else class="item-val flex flex-sub" :class="{'item-no-val': !editInfo.avatar}">请上传头像</text>
 					<u-icon name="arrow-right" color='#bfbfbf' size="22"></u-icon>
 				</view>
 			</view>

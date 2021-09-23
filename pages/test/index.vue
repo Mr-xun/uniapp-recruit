@@ -47,9 +47,12 @@
 			<view class="margin-bottom-sm">
 				<u-button type="success" ripple @click="getGraduateList()">获取毕业院校列表</u-button>
 			</view>
-			<!-- 	<view class="margin-bottom-sm">
+				<view class="margin-bottom-sm">
 					<u-button type="success" ripple @click="asyncPost()">同步职位</u-button>
-				</view> -->
+				</view>
+			<view class="margin-bottom-sm">
+				<u-button type="success" ripple @click="asyncIndustry()">同步行业分类</u-button>
+			</view>
 			<view class="margin-bottom-sm">
 				<u-button type="success" ripple @click="getLocation()">获取当前位置</u-button>
 			</view>
@@ -784,6 +787,31 @@
 					title: '同步中'
 				});
 				this.$cloudRequest.job.call('basic/post/asyncData').then(res => {
+					console.log(res, 11)
+					let {
+						code,
+						msg
+					} = res
+					if (code == 200) {
+						uni.showToast({
+							title: msg
+						});
+					} else {
+						uni.showToast({
+							title: msg,
+							icon: 'none',
+							duration: 2000
+						});
+					}
+					uni.hideLoading()
+				})
+			},
+			//同步行业分类
+			asyncIndustry() {
+				uni.showLoading({
+					title: '同步中'
+				});
+				this.$cloudRequest.job.call('basic/industry/asyncData').then(res => {
 					console.log(res, 11)
 					let {
 						code,

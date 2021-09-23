@@ -154,3 +154,56 @@ export const ENUM_WELFARE = [{
 }, {
 	text: '年终奖'
 }]
+//公司规模
+export const ENUM_COMPANY_SIZE = [{
+		text: '10人以下',
+		value: 1
+	},
+	{
+		text: '10-50人',
+		value: 2
+	}, {
+		text: '50-100人',
+		value: 3
+	}, {
+		text: '100-500人',
+		value: 4
+	}, {
+		text: '500-1000人',
+		value: 5
+	}, {
+		text: '1000人以上',
+		value: 6
+	}
+]
+//公司性质
+export const ENUM_COMPANY_NATURE = [{
+		text: '国有企业',
+		value: 1
+	},
+	{
+		text: '集体企业',
+		value: 2
+	}, {
+		text: '私营企业',
+		value: 3
+	}, {
+		text: '个体工商户',
+		value: 4
+	}, {
+		text: '合伙企业',
+		value: 5
+	}, {
+		text: '联营企业',
+		value: 6
+	}, {
+		text: '股份合作制企业',
+		value: 7
+	}, {
+		text: '有限责任公司',
+		value: 8
+	}, {
+		text: '股份有限公司',
+		value: 9
+	}
+]

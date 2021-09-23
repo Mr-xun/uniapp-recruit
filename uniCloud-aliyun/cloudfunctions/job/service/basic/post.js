@@ -5,7 +5,8 @@
 const {
 	Service
 } = require('uni-cloud-router')
-// const postClassificationData = require("../../assets/post-classification.json")
+const postClassificationData = require("../../assets/basic-post-classification.json")
+const postClassificationTree = require("../../assets/basic-post-classification-tree.json")
 module.exports = class PostService extends Service {
 	//同步职位分类
 	async asyncData(data) {
@@ -17,10 +18,15 @@ module.exports = class PostService extends Service {
 		let user = this.ctx.auth;
 		const dbCmd = this.db.command;
 		let startTime = new Date().getTime();
-		await this.db.collection('job-basic-post-category-all').add(postClassificationData
-			.post_classification_all)
-		await this.db.collection('job-basic-post-category-tree').add(postClassificationData
-			.post_classification_tree)
+		let insertData = {
+			categoryData:postClassificationData,
+			categoryTree:postClassificationTree
+		}
+		// await this.db.collection('job-basic-post-category').add(insertData)
+		// await this.db.collection('job-basic-post-category-all').add(postClassificationData
+		// 	.post_classification_all)
+		// await this.db.collection('job-basic-post-category-tree').add(postClassificationData
+		// 	.post_classification_tree)
 		let endTime = new Date().getTime();
 		let allUseTimes = (endTime - startTime) / 1000
 		response.msg += '总用时' + allUseTimes + 's'
@@ -34,8 +40,8 @@ module.exports = class PostService extends Service {
 			msg: '查询成功'
 		}
 		try {
-			let dbRes = await this.db.collection('job-basic-post-category-tree').where({}).get()
-			response.data = dbRes.data;
+			let dbRes = await this.db.collection('job-basic-post-category').where({}).get()
+			response.data = dbRes.data[0].categoryTree;
 		} catch (e) {
 			//TODO handle the exception
 			response.code = -1;
